@@ -1,0 +1,159 @@
+%\def\Variables{MathsVariables}%
+\catcode`@=11\relax
+\def\Api{Mathematicon@Api}%
+%%%% Newif
+%\def\@firstofone#1{#1}
+
+\newif\ifexonumber
+%%%% Switches
+\exonumberfalse
+\catcode`@=11\relax
+\input LD@Header.tex
+\input LD.tex
+\input LD@Typesetting.tex
+\input LD@Exercices.tex
+\input LD@Exercices.tex
+\def\LD@Exercice@Display@Code{\eightpts}%
+% debug tikz
+\let\@firstofone\pgfutil@firstofone
+\let\@ifnextchar\pgfutil@ifnextchar
+
+\olspept
+\DefineRGBcolor F0F9E3=VLGreen.
+\DefineRGBcolor E5F9D1=LGreen.
+\DefineRGBcolor DAF9BE=TGreen.
+\DefineRGBcolor 5DA93B=Green.
+\DefineRGBcolor F6DCCA=VLRed.
+\DefineRGBcolor F6D4BD=LRed.
+\DefineRGBcolor DAF9BE=TRed.
+\DefineRGBcolor B5F9A1=TTRed.
+\DefineRGBcolor F6B080=Red.
+\DefineRGBcolor F9F5E3=VLOrange.
+\DefineRGBcolor F9F5D0=LOrange.
+\DefineRGBcolor DAF9BE=TOrange.
+\DefineRGBcolor B5F9A1=TTOrange.
+\DefineRGBcolor D7A93B=Orange.
+\DefineRGBcolor EEEEEE=VLBlack.
+\DefineRGBcolor DDDDDD=LBlack.
+\DefineRGBcolor CCCCCC=TBlack.
+\DefineRGBcolor B5F9A1=TTBlack.
+\DefineRGBcolor 000000=Black.
+
+\def\transparent{%
+	\CS long\EC\def\Demonstration##1\CQFD{}%
+}%
+%\transparent
+\def\Students{%
+	\DefineRGBcolor FFFFFF=VLGreen.
+	\DefineRGBcolor FFFFFF=LGreen.
+	\DefineRGBcolor FFFFFF=TGreen.
+	\DefineRGBcolor 000000=Green.
+	\DefineRGBcolor FFFFFF=VLRed.
+	\DefineRGBcolor FFFFFF=LRed.
+	\DefineRGBcolor FFFFFF=TRed.
+	\DefineRGBcolor FFFFFF=TTRed.
+	\DefineRGBcolor 000000=Red.
+	\DefineRGBcolor FFFFFF=VLOrange.
+	\DefineRGBcolor FFFFFF=LOrange.
+	\DefineRGBcolor FFFFFF=TOrange.
+	\DefineRGBcolor FFFFFF=TTOrange.
+	\DefineRGBcolor 000000=Orange.
+	\DefineRGBcolor FFFFFFF=VLBlack.
+	\DefineRGBcolor FFFFFF=LBlack.
+	\DefineRGBcolor FFFFFF=TBlack.
+	\DefineRGBcolor FFFFFF=TTBlack.
+	\DefineRGBcolor 000000=Black.
+}
+\Students
+\def\red{}
+\def\blue{}
+\def\Red#1{#1}%%%% Fix this !
+\def\Blue#1{#1}%
+\def\Font #1@#2pt{\font\olbi=cmr10\olbi}
+\font\SvgText=cmr10\relax
+%
+%
+%\catcode`@=11\relax
+%\def\Api{Mathematicon@Api}%
+%
+%\input LD@Header.tex
+%\input LD.tex
+%\input LD@Exercices.tex
+%\input LD@Typesetting.tex
+%
+%\catcode`@=11\relax
+\font\LD@Font@Arial="Arial" at 10pt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%															%
+%						Métrique des courbes							%
+%															%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcount\LD@Count@Temp
+\def\LD@Exercice@Display@Code{}%%\LD@Option@@Label\qquad\eightpts}%
+\def\LD@Exercice@Display@Code@Post{%
+	\ifcsname LD@Exo@@Solution\endcsname
+		\unless\ifx\LD@Exo@@Solution\LD@Empty
+			\pn{\eightpts Solution : \eightpts \LD@Exo@@Solution}%
+		\fi
+	\fi
+}%
+\def\LD@Display#1{%
+	\LD@Count@Temp=#1\relax
+	\ifcase\LD@Count@Temp
+	\or
+	Math. Sup.
+	\or
+	Math. Sp\'e
+	\else
+	\fi
+}%
+\newcount\LD@Exo@Total\LD@Exo@Total=0\relax
+
+
+%%% TD 11.
+\centerline{Rappels utiles sur limites, DL, \'equivalents, fonctions n\'egligeables}
+\hrule
+\medskip
+\bigskip
+\epsfbox{Courgr1.eps}\hfill\null\pn
+\centerline{Figure 1. \qquad Support de l'astro\"\i de $\Phi:t\mapsto(\cos^3t,\sin^3t)$ pour $I=\ob R$}
+
+\hfill\epsfbox{courbure.eps}\hfill\null\pn
+\centerline{Figure 2. \qquad Centre et cercle 
+de courbure de $t\mapsto(\cos^3t,\sin^3t)$ au point $M(\pi/3)$. }
+
+\noindent\epsfxsize 6cm
+\epsfbox{hel.ps}
+\epsfxsize 5cm
+\epsfbox{hell.eps}\medskip
+\centerline{ Figures 3 \& 4 : allure 
+et comportement local de l'h\'elice $t\mapsto \b(t,\cos(\pi t),\sin(\pi t)\b)$.}
+\bigskip
+\epsfxsize=6cm\noindent
+\hfill\epsfbox{env.eps}\hfill\null
+\medskip
+\centerline{Figure 5. Enveloppe de la famille de droite $\Delta_t:x\cos t+y\sin t=\cos t\sin t$.}
+\bigskip
+\medskip\epsfxsize=5cm
+\epsfysize=5cm
+\noindent\hfill\epsfbox{Card.eps}\hfill\epsfxsize=5cm
+\epsfysize=5cm
+\epsfbox{Dell.eps}\hfill\null
+\medskip
+\bigskip
+\noindent\hfill
+\epsfbox{Dcercle.eps}\hfill\null
+\medskip
+\centerline{Figure 8. D\'eveloppantes de cercle.}
+\bigskip
+\medskip\noindent
+\hfill\epsfbox{Cycloide.eps}\hfill\null
+\medskip
+\centerline{Figure 9. 
+Cyclo\"\i de $t\mapsto(t-\sin t,1-\cos t)$.} 
+\bigskip
+\medskip\epsfxsize=6cm
+\noindent\hfill\epsfbox{Ellip.eps}\hfill\null
+\medskip
+\bye
+

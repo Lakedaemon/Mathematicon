@@ -1,0 +1,499 @@
+\newif\ifbook\booktrue
+\ifbook\magnification 1100\else\magnification 1400
+\fi
+\input color.txs
+\input pstricks
+\input pst-plot
+\input eplaingt
+\input Macrols
+\input epsf
+\SecLabelEqtrue             % le numero de section prefixe le label des equations
+\NumReftrue                    % les references bibliographiques sont numerotees automatiquement
+\titreun=0
+
+
+
+\long\def\Touche#1{\psshadowbox[shadowcolor=gray,shadowsize=2pt,framearc=0]{\hbox{\eightpts #1}}}
+\long\def\touche#1{\psframebox[framearc=0]{\hbox{\sevenpts #1}}}
+\def\UnderBrace#1_#2{{\black\underbrace{#1}_{\hbox{\sevenpts\black #2}}}}
+
+
+\book
+\hautspages{O. L. Bindus}{Structures de Maple}
+\book
+\pagetitretrue
+
+
+\CSect Maple1, Structures de Maple. 
+\bigskip
+
+En math\'ematiques, les nombres peuvent \^etre de diff\'erents types : entiers, d\'ecimaux, rationnels, r\'eels ou complexes et les techniques de calcul varient en cons\'equence. 
+De m\^eme, Maple permet l'utilisation d'objets de diff\'erents types. 
+Pour faire face \`a la majorit\'e des probl\`emes pos\'es en situation de concours, il est n\'ecessaire d'apprendre \`a manipuler ces objets et \`a les convertir d'un type vers un autre. 
+\bigskip
+
+
+\Secti Mapple2, Types. 
+
+\Section Reconnaitre le type d'un objet
+
+Pour connaitre le type d'un objet Maple, on utilise la commande {\it whattype}. 
+$$
+\eqalign{
+&\hskip-16em\red >whattype(1/3);
+\cr
+&\blue fraction
+\cr
+&\hskip-16em\red >whattype([1,2,3]);
+\cr
+&\blue list
+\cr
+&\hskip-16em\red >whattype(4,2,1);
+\cr
+&\blue exprseq
+}
+$$
+
+\Section Les types issus des math\'ematiques
+
+$$
+\vbox{
+\offinterlineskip
+\halign{
+\vrule#&\quad#\hfil\strut\quad&\vrule#&\quad\hfil#\hfil\quad&\vrule#&\quad\hfil#\hfil\quad&\vrule#\tabskip=0pt\cr
+\noalign{\hrule}\cr
+&Type Maple&&Math\'ematiques&&Exemples&\cr
+\noalign{\hrule}\cr
+&integer&&Nombre entier relatif&&-13&\cr
+\noalign{\hrule}\cr
+&fraction&&Nombre rationnel&&$2/3$&\cr
+\noalign{\hrule}\cr
+&float&&Nombre \`a virgule flottante&& $2.71828$\hbox{ ou }$2.3E-3$&\cr
+\noalign{\hrule}\cr
+&set&&Ensemble d'objets&&$\{-1,0,1,exp(1),\hbox{Pi},\hbox{metal}\}$&\cr
+\noalign{\hrule}\cr
+}}
+$$
+
+\Remarque : l'expression Maple $2.3E-3$ d\'esigne le nombre $2.3\times10^{-3}=0.0023$. 
+\smallskip 
+\noindent
+Les calculs sur les entiers et les fractions sont exacts contrairement aux calculs sur les nombres \`a virgules flottantes (approximations). 
+\bigskip
+
+
+\Section Les types issus de l'informatique
+
+$$\vbox{
+\offinterlineskip
+\halign{
+\vrule#&\quad#\hfil\strut\quad&\vrule#&\quad\hfil#\hfil\quad&\vrule#&\quad\hfil#\hfil\quad&\vrule#\tabskip=0pt\cr
+\noalign{\hrule}\cr
+&Type&&Informatique&&Exemples&\cr
+\noalign{\hrule}\cr
+&string&&Chaine de caract\`eres&&"Hekathomb", "r0cks", u&\cr
+\noalign{\hrule}\cr
+&symbol&&Nom Maple&& $'\hbox{x1}'$, \hbox{x1}, $'\hbox{a}'$, a, U\_r\_my\_Sl4v3s&\cr
+\noalign{\hrule}\cr
+&list&&liste d'objets&&$[\ 9,10,\hbox{valet}, \hbox{dame}, \hbox{roi}\ ]$&\cr
+\noalign{\hrule}\cr
+&exprseq&&s\'equence&&$1,\hbox{Death}, 2, \hbox{Emperor},  ..., 9999, \hbox{Britney}$&\cr
+\noalign{\hrule}\cr
+}}
+$$
+
+\Remarques : une chaine de caract\`eres est constitu\'ee de caract\`eres accol\'es les uns aux autres entre deux guillemets \touche{"} et \touche{"}.
+\smallskip\noindent
+Une liste est une s\'equence entre crochets \touche{[} et \touche{]}. 
+\smallskip\noindent
+Un ensemble est une s\'equence entre accolades \touche{$\{$} et \touche{$\}$}, dont les \'el\'ements sont distincts deux \`a deux et ne sont pas ordonn\'es (comme en Maths).  
+\smallskip\noindent
+Un nom Maple commence par une lettre et peut contennir des lettres, des chiffres, des underscores.  Il peut \'eventuellement \^etre entre deux apostrophes \touche{$'$} et \touche{$'$}. 
+
+\Secti Maple2, Conversion. 
+
+\Section Conversion de s\'equence
+
+$$\vbox{
+\offinterlineskip
+\halign{
+\vrule#&\quad\hfil#\hfil\quad&\vrule#&\quad\hfil$\vcenter to1.3em{}$#\hfil\quad&\vrule#\tabskip=0pt\cr
+\noalign{\hrule}\cr
+&Conversion&&Commande&\cr
+\noalign{\hrule}\cr
+&S\'equence$\Rightarrow$Liste&& $[$Sequence$]$&\cr
+\noalign{\hrule}\cr
+&S\'equence$\rightarrow$Ensemble&& $\{$S\'equence$\}$&\cr
+\noalign{\hrule}\cr
+}}
+$$
+
+\Remarque : j'emploie le symbole $\Rightarrow$ pour d\'ecrire les conversions sans perte d'information et le symbole $\rightarrow$ pour les autres : 
+lors d'une conversion vers le type ensemble, il y a eventuellement perte d'information : ordre et occurences...
+\bigskip
+
+\Section Conversion en s\'equence
+
+$$
+\vbox{
+\offinterlineskip
+\halign{
+\vrule#&\quad\hfil#\hfil\quad&\vrule#&\quad\hfil$\vcenter to1.3em{}$#\hfil\quad&\vrule#\tabskip=0pt\cr
+\noalign{\hrule}\cr
+&Conversion&&Commande&\cr
+\noalign{\hrule}\cr
+&Liste$\Rightarrow$S\'equence&& op({\it Liste})&\cr
+\noalign{\hrule}\cr
+&Ensemble$\Rightarrow$S\'equence&& op({\it Ensemble})&\cr
+\noalign{\hrule}\cr
+}}
+$$
+
+
+Les autres conversions s'en d\'eduisent naturellement par composition, en faisant un d\'etour par les s\'equences. 
+\bigskip
+
+$$\vbox{
+\offinterlineskip
+\halign{
+\vrule#&\quad\hfil#\hfil\quad&\vrule#&\quad\hfil$\vcenter to1.3em{}$#\hfil\quad&\vrule#\tabskip=0pt\cr
+\noalign{\hrule}\cr
+&Conversion&&Commande&\cr
+\noalign{\hrule}\cr
+&Liste$\rightarrow$Ensemble&& $\{$op({\it Liste})$\}$&\cr
+\noalign{\hrule}\cr
+&Ensemble$\Rightarrow$Liste&& [op({\it Liste})]&\cr
+\noalign{\hrule}\cr
+}}
+$$
+
+
+Consid\'erons la s\'equence $S$, la liste $L$ et l'ensemble $E$ suivants
+$$
+\eqalign{
+&\hskip-14em
+\red S:=1,3,3,7\ ;\ \red L:= [6,6,1,6,1]\ ;\  \red E:=\{7,8,9\}\ ;
+\cr
+&\blue S:=1,3,3,7
+\cr
+&\blue L:=[6,6,1,6,1]
+\cr&\blue E:=\{7,8,9\}\cr
+&\hskip-14em\red op(E);
+\cr
+&\blue 7,8,9
+\cr
+&\hskip-14em
+\red [S];
+\cr
+&\blue [1,3,3,7]
+\cr
+&\hskip-14em\red \{S\};
+\cr
+&\blue \{1,3,7\}
+\cr
+&\hskip-14em\red \{op(L)\};
+\cr
+&\blue \{1,6\}
+}
+$$
+
+\Secti Maple2, Op\'erations. 
+
+\Section Op\'erations sur les ensembles
+
+Comme en math\'ematiques, les op\'erations suivantes sont peuvent \^etre \'eefectu\'ees sur des objets de type ensemble. 
+
+$$\vbox{
+\offinterlineskip
+\halign{
+\vrule#&\quad\hfil#\hfil\strut\quad&\vrule#&\quad\hfil#\hfil\quad&\vrule#&\quad\hfil#\hfil\quad&\vrule#\tabskip=0pt\cr
+\noalign{\hrule}\cr
+&Math\'ematiques&&Maple&&Description&\cr
+\noalign{\hrule}\cr
+&$A\cup B$&&A union B&&la r\'eunion des ensembles $A$ et $B$&\cr
+\noalign{\hrule}\cr
+&$A\cap B$&&A intersect B&&l'intersection des ensembles $A$ et $B$&\cr
+\noalign{\hrule}\cr
+&$A\ssm B$&&A minus B&&L'ensemble $A$ priv\'e de $B$&\cr
+\noalign{\hrule}\cr}}
+$$
+
+$$
+\eqalign{
+&\hskip-14em
+\red A:=\{1,3,7\}\ ;\ \red B:= \{1,6\}\ ;\ 
+\cr
+&\blue A:=\{1,3,7\}
+\cr
+&\blue B:=\{1,6\}
+\cr
+&\hskip-14em\red A\hbox{ union }B;
+\cr
+&\blue \{1,3,6,7\}
+\cr
+&\hskip-14em
+\red A\hbox{ intersect }B;
+\cr
+&\blue \{1\}
+\cr
+&\hskip-14em\red A\hbox{ minus }B;
+\cr
+&\blue \{3,7\}
+}
+$$
+
+\Section Op\'erations sur les s\'equences
+
+La s\'equence vide se note {\it NULL}. 
+$$
+\eqalign{
+&\hskip-14em
+\red S:=NULL\ ; 
+\cr
+&\blue S:=
+}
+$$
+
+$$\vbox{
+\offinterlineskip
+\halign{
+\vrule#&\quad\hfil#\hfil\strut\quad&\vrule#&\quad\hfil#\hfil\quad&\vrule#&\quad\hfil#\hfil\quad&\vrule#\tabskip=0pt\cr
+\noalign{\hrule}\cr
+&Math\'ematiques&&Maple&&Description&\cr
+\noalign{\hrule}\cr
+&$f(1),f(2),\cdots,f(n)$&& seq(f(k),k=1..n)&&la s\'equence des valeurs de $f(k)$ pour $1\le k\le n$&\cr
+\noalign{\hrule}\cr
+&$\underbrace{x,x,x,x,x...,x}_n$&& x\$n&&la s\'equence consitu\'ee de n occurences de $x$. &\cr
+\noalign{\hrule}\cr
+&$\underbrace{1,2,3}_S,\underbrace{4,5}_T$&& S,T&&La concat\'enation des s\'equence $S$ et $T$&\cr
+\noalign{\hrule}\cr}}
+$$
+
+
+$$
+\eqalign{
+&\hskip-6em
+\red f:=x-> x\hat{\quad}2\ ;  
+\cr
+&\hskip8em\blue f:=x\rightarrow x^2
+\cr
+&\hskip-6em\red S:=seq(f(k),k=2..4)\ ;
+\cr
+&\hskip8em\blue S:=4,9,16
+\cr
+&\hskip-6em\red 666, S, Warf\$3, 667\ ;
+\cr
+&\hskip8em\blue 666,4,9,16,Warf, Warf, Warf, 667
+}
+$$
+
+\Section Extraction d'\'el\'ements
+
+
+Les op\'erations suivantes marchent pour listes, s\'equences et ensembles. La syntaxe est donn\'ee pour les s\'equences. 
+
+$$\vbox{
+\offinterlineskip
+\halign{
+\vrule#&\quad\hfil#\hfil\strut\quad&\vrule#&\quad\hfil#\hfil\quad&\vrule#&\quad\hfil#\hfil\quad&\vrule#\tabskip=0pt\cr
+\noalign{\hrule}\cr
+&Math\'ematiques&&Maple&&Description&\cr
+\noalign{\hrule}\cr
+&$L:=x_1,x_2,\cdots,\underbrace{x_i}_{\llap{\sevenrm\'el\'ement retourn\'e}},\cdots,x_n$&& L[i]&&
+donne le $i^\ieme$ \'el\'ement&\cr
+\noalign{\hrule}\cr
+&$L:=x_{-n},\cdots,\underbrace{x_{-i}}_{\llap{\sevenrm\'el\'ement retourn\'e}},\cdots,x_{-1}$&&L[-i]&&
+donne le $i^\ieme$ \'el\'ement en partant de la fin. &\cr
+\noalign{\hrule}\cr
+&$L:=x_1,\cdots,\underbrace{x_a,\cdots,x_b}_{\llap{\sevenrm\'el\'ements retourn\'es}},\cdots,x_n$&& L[a..b]&&donne les \'el\'ements des rangs $a$ \`a $b$. &\cr
+\noalign{\hrule}\cr
+}}
+$$
+
+$$
+\eqalign{
+&\hskip-6em
+\red f:=x-> x\hat{\quad}2\ ;  
+\cr
+&\hskip8em\blue f:=x\rightarrow x^2
+\cr
+&\hskip-6em\red S:=seq(f(k),k=1..10)\ ;
+\cr
+&\hskip8em\blue S:=1,4,9,16,25,36,49,64,81,100
+\cr
+&\hskip-6em\red S[3]\ ;\ S[-2]\ ; S[4..-3]\ ; 
+\cr
+&\hskip8em\blue 9
+\cr
+&\hskip8em\blue 81
+\cr
+&\hskip8em\blue 16,25,36,49,64
+}
+$$
+
+On peut \'egalement extraire en cascade des \'el\'ements de listes/s\'equences/ensembles imbriqu\'es en extrayant de fa\c con successive \`a l'aide de la syntaxe $L[i][j]$ ou $L[i,j]$, etc... 
+$$
+\eqalign{
+&\hskip-2em
+\red L:=[1,2,[31,32,33,[341,342,343],35,36],4,5,6,[71,72]]\ ;  
+\cr
+&\hskip8em\blue L:=[1,2,[31,32,33,[341,342,343],35,36],4,5,6,[71,72]]\ ;  
+\cr
+&\hskip-2em\red L[-1]\ ;
+\cr
+&\hskip8em\blue [71,72]
+\cr
+&\hskip-2em\red L[-1][2]\ ; 
+\cr
+&\hskip8em\blue 72
+\cr
+&\hskip-2em\red L[3][4][2]\ ; L[3,4,2]\ \;
+\cr
+&\hskip8em\blue 342
+\cr
+&\hskip8em\blue 342
+}
+$$
+
+
+\Secti Mapple2, Programmation. 
+
+
+\Section boucle {\it for}
+
+Pour effectuer des taches/calculs r\'ep\'etitifs, on peut utilisier la syntaxe suivante
+$$
+\eqalign{
+&\touche{for}\ \overbrace{\hbox{ \it i }}^{\llap{compteur}}\ \touche{ from }\ \hbox{ \it d\'ebut }\ \touche{ to }\ \hbox{ \it fin }\ \overbrace{\touche{by}\ \hbox{ \it incr\'ement }}^{\llap{facultatif}}\ \touche{do}
+\cr
+&\hbox{\it commandes}
+\cr
+&\touche{od :}
+\cr
+}
+$$
+
+$$
+\eqalign{
+&\hskip-12em
+\red > s:=0; \cr
+&\hskip-12em\red
+> \hbox{for }a\hbox{ from }1\hbox{ to }3\hbox{ do}\cr
+&\hskip-12em
+\red \quad s:=s+a\ ;
+\cr
+&\hskip-12em\red\quad \hbox{od\ ;}
+\cr
+&\hskip8em\blue s:=0
+\cr
+&\hskip8em\blue s:=1
+\cr
+&\hskip8em\blue s:=3
+\cr
+&\hskip8em\blue s:=6
+}
+$$
+
+Une syntaxe alternative est 
+$$
+\eqalign{
+&\touche{for}\ \overbrace{\hbox{ \it i }}^{\llap{compteur}}\ \touche{ in }\ \hbox{ \it liste }\ \touche{do}
+\cr
+&\hbox{\it commandes}
+\cr
+&\touche{od :}
+\cr
+}
+$$
+$$
+\eqalign{
+&\hskip-12em
+\red > s:=0; L:=[2,4,9]\ ;\cr
+&\hskip-12em\red
+> \hbox{for }a\hbox{ in }L\hbox{ do}\cr
+&\hskip-12em
+\red \quad s:=s+a\ ;
+\cr
+&\hskip-12em\red\quad \hbox{od\ ;}
+\cr
+&\hskip8em\blue s:=0
+\cr
+&\hskip8em\blue L:=[2,4,9]
+\cr
+&\hskip8em\blue s:=2
+\cr
+&\hskip8em\blue s:=4
+\cr
+&\hskip8em\blue s:=9
+}
+$$
+
+
+\Section boucle {\it for}
+
+
+
+\vfill\null
+\eject
+\centerline{\fourteenbf TD Maple n$^\circ 2$}
+\bigskip
+
+
+\noindent{\bf Exercice 1. }Le but de cet exercice est d'apprendre à manipuler liste, ensemble et  s\'equences pour tapper le moins de caract\`eres possibles 
+en entrant les donn\'ees dans Maple.   \pn
+a) d\'efinir la s\'equence 
+$$
+S_0:=1,1,2,2,2,2,3,3,3,3,3,3,4,\cdots,8, 9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9
+$$ 
+a) Quel est le $59^\ieme$ \'el\'ement de cette liste ? \pn
+b) Convertir la s\'equence $S_0$ en ensemble $E_0$. Observation ? \pn
+c) D\'efinir la liste 
+$$
+L_1:=[1,3,5,7,9,11,\cdots, 255].
+$$ 
+d) Convertir la liste $L_1$ en ensemble $E_1$. \pn
+e) Extraire de $L_1$ la liste $L_2$ allant de $15$ \`a $251$ et convertir $L_2$ en ensemble $E_2$. \pn
+f) Calculer $E_0\cap E_1$ et $E_0\cup(E_1\ssm E_2)$. \pn
+g) Fabriquer la liste $L_2:=[1,9,25,\cdots,255^2]$ constitu\'ee du carr\'e des \'el\'ements de $L_1$. On pourra utiliser {\it map}. 
+\medskip
+
+\noindent{\bf Exercice 2. }a) Soit $n$ un entier positif quelconque. Ecrire une boucle {\it for} qui calcule $n!$. \pn
+b) En modifiant l\'eg\'erement le programme pr\'ec\'edent, fabriquer une fonction/proc\'edure ``fact'' qui mange un nombre entier positif $n$ et retourne $n!$. 
+\medskip
+
+\noindent{\bf Exercice 3. }a) Ecrire une boucle  qui, \'etant donn\'ee une liste quelconque $L$ de nombres calcule leur somme (respectivement leur produit). 
+Au besoin, on pourra calculer le nombre d'\'el\'ements de la liste avec {\it nops}. \pn
+b) En modifiant l\'eg\`erement le programme pr\'ec\'edent, fabriquer une fonction/procedure quiu calcule la somme (resp. le produit) des nombres d'une liste quelconque $L$. 
+\medskip
+
+\noindent{\bf Exercice 4. }Calculer la double somme suivante 
+$$
+\sum_{k=3}^{15}\sum_{\ell=-1}^7{k\F k+\ell}
+$$
+d'abord en utilisant deux sommes  {\it sum} puis en utilisant deux boucles {\it for} imbriqu\'ees. 
+\medskip
+ 
+\noindent{\bf Exercice 5. }On consid\`ere la suite de Fibonnacci, qui est d\'efinie par les conditions initiales $F_0:=0$, $F(1):=1$ et par la relation de r\'ecurence
+$$
+\forall n\ge2, \qquad F(n):=F(n-1)+F(n-2)
+$$
+a) Ecrire une procedure r\'ecursive ``F'' qui mange un entier $n\ge0$ et qui retourne $F(n)$. \pn
+b) Calculer $F(25)$. Votre programme est lent, pourquoi ? 
+\bigskip
+
+\noindent
+{\bf Exercice 6. }Le crible d'\'Eratosth\`ene. C'est une m\'ethode permettant de d\'eterminer quels sont les nombres premiers parmi une liste d'entiers $L$ allant de $2$ \`a $N$. \medskip
+\noindent
+Etape 1. On initialise la liste $L$ des entiers de $2$ \`a  $N$ en leur octroyant la valeur ``{\it true}''. \pn
+Etape 2. On raye de la liste les multiples de $2$ en leur octroyant la valeur ``{\it false}''. \pn
+Etape 3. On raye de la liste les multiples de $3$ en leur octroyant la valeur ``{\it false}''. \pn\qquad 
+\vdots\pn
+Etape $P$. On raye de la liste les multiples de $P$ en leur octroyant la valeur ``{\it false}''. \pn
+\bigskip
+\noindent
+a) Pourquoi la derni\`ere \'etape utile $P$ v\'erifie-t-elle $2\le P\le n/2$ ? \pn
+b) Ecrire le programme complet. \pn
+c) En d\'eduire la liste des nombres premiers inf\'erieurs \`a $1000$ (avec {\it select}). 
+ \bigskip
+
+\bye

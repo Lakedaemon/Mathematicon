@@ -1,0 +1,71 @@
+\catcode`@=11\relax
+\def\Api{Mathematicon@Api}%
+
+\input LD@Header.tex
+\input LD.tex
+\input LD@Exercices.tex
+
+\catcode`@=11\relax
+\font\LD@Font@Arial="Arial" at 10pt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%															%
+%						Espaces Euclidiens ||							%
+%															%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcount\LD@Count@Temp
+\def\LD@Exercice@Display@Code{}%%\LD@Option@@Label\qquad\eightpts}%
+\def\LD@Exercice@Display@Code@Post{%
+	\ifcsname LD@Exo@@Solution\endcsname
+		\unless\ifx\LD@Exo@@Solution\LD@Empty
+			\pn{\eightpts Solution : \eightpts \LD@Exo@@Solution}%
+		\fi
+	\fi
+}%
+\def\LD@Display#1{%
+	\LD@Count@Temp=#1\relax
+	\ifcase\LD@Count@Temp
+	\or
+	Math. Sup.
+	\or
+	Math. Sp\'e
+	\else
+	\fi
+}%
+\newcount\LD@Exo@Total\LD@Exo@Total=0\relax
+
+%%% TD 8.
+\vglue-10mm\rightline{Sp\'e PT\hfill TD 8 : Espaces euclidiens 2\hfill}%\date}
+\bigskip
+
+\Exercice{PTacq}%
+\bigskip
+
+\Exercice{PTvr}%
+\bigskip
+
+\Exercice{PTtr}%
+\bigskip
+
+\Exercice{PTvw}%
+
+\bigskip
+\centerline{$\underline{\hbox{\fourteenbf Propri\'et\'e m\'ega-importante du cours}}$}%
+\bigskip
+
+\noindent
+Un endomorphisme sym\'etrique $u:E\to E$ est diagonalisable dans une base orthonormale, i.e. 
+il au moins une base orthonormale constitu\'ee de vecteurs propres de $u$. 
+\medskip
+\noindent
+Une matrice sym\'etrique r\'eelle $A$ est diagonalisable dans  une base orthonormale, autrement dit :  il~existe une matrice orthogonale $P$ et une matrice diagonale $D$ telle que 
+$$
+A=PDP^{-1}=PD^{\hbox{\rm t}}P. 
+$$
+
+
+\Exercice{PTww}%
+\bigskip
+
+\Exercice{PTxg}%
+\bigskip
+\bye

@@ -1,0 +1,63 @@
+\catcode`@=11\relax
+\def\Api{Mathematicon@Api}%
+
+\input LD@Header.tex
+\input LD@Library.tex
+
+\input LD@Exercices.tex
+\input LD@Typesetting.tex
+\catcode`@=11\relax
+\ifHtml\input LD@Html\else \let\ancientjobname\jobname
+\def\jobname{\ancientjobname-print}
+\definecontentsfile{toc}
+%\def\indexfilebasename{\ancientjobname-print}
+\fi
+\catcode`@=12\relax
+\catcode`@=11\relax
+\ifHtml
+\font\LD@Font@Arial=cmr10
+\else
+\font\LD@Font@Arial="Arial" at 10pt
+\fi
+\catcode`@=11\relax
+%\font\LD@Font@Arial="Arial" at 10pt
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%															%
+%						Exo 09 : Intégrales généralisées					%
+%															%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\LD@Exo@Label@Show
+\def\LD@Exercice@Display@Code@Post{%
+	\ifcsname LD@Exo@@Solution\endcsname
+		\unless\ifx\LD@Exo@@Solution\LD@Empty
+			\pn{\eightpts Solution : \LD@Exo@@Solution}%
+		\fi
+	\fi
+	\ifcsname LD@Exo@@Technique\endcsname
+		\unless\ifx\LD@Exo@@Technique\LD@Empty
+			\pn{\eightpts Voie possible de r\'esolution :  \LD@Exo@@Technique}%
+		\fi
+	\fi
+}%
+\let\SingleTheme\Déterminant
+\readtocfile
+
+\bigskip
+\centerline{\bf SUP}
+\bigskip
+\LD@Exo@Theme@Display1{\LD@Empty\SingleTheme}{\Colles ,\Cours ,\TravauxDirigés ,\Exercices,\Maple}%
+\bigskip
+\centerline{\bf SPE}
+\bigskip
+\LD@Exo@Theme@Display2{\LD@Empty\SingleTheme}{\Colles ,\Cours ,\TravauxDirigés ,\Exercices,\Maple}%
+\bigskip
+\input LD@Ouput@Xhtml.tex
+
+$$
+\mbox{ alors c'est l'histoire d'un $\pi$ qui devient $\int_a^bf(t)d t$ et puis rien}
+$$
+%\LD@Exo@Theme@Display2{\LD@Empty\EspacesPréHilbertiens\InégalitéDeCauchySchwarz\Orthonormalisation\EndomorphismesOrthogonaux\MatricesOrthogonales\EndomorphismesSymétriques\MatricesSymétriques\FormesQuadratiques}%{\Colles ,\Cours ,\TravauxDirigés ,\Exercices}%
+
+
+\bye

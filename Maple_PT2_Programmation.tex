@@ -1,0 +1,182 @@
+\catcode`@=11\relax
+%\def\Api{Mathematicon@Api}%
+\input LD@Header.tex
+\input LD@Library.tex
+\input LD@Exercices.tex
+\input LD@Typesetting.tex
+
+\DefineRGBcolor F0F9E3=VLGreen.
+\DefineRGBcolor E5F9D1=LGreen.
+\DefineRGBcolor DAF9BE=TGreen.
+\DefineRGBcolor 5DA93B=Green.
+\DefineRGBcolor F6DCCA=VLRed.
+\DefineRGBcolor F6D4BD=LRed.
+\DefineRGBcolor DAF9BE=TRed.
+\DefineRGBcolor B5F9A1=TTRed.
+\DefineRGBcolor F6B080=Red.
+\DefineRGBcolor F9F5E3=VLOrange.
+\DefineRGBcolor F9F5D0=LOrange.
+\DefineRGBcolor DAF9BE=TOrange.
+\DefineRGBcolor B5F9A1=TTOrange.
+\DefineRGBcolor D7A93B=Orange.
+\DefineRGBcolor EEEEEE=VLBlack.
+\DefineRGBcolor DDDDDD=LBlack.
+\DefineRGBcolor CCCCCC=TBlack.
+\DefineRGBcolor B5F9A1=TTBlack.
+\DefineRGBcolor 000000=Black.
+
+%\DefineRGBcolor 000000=Green.
+%\definecolor{ColorVLGreen}{rgb}{1,1,1}%
+%\definecolor{ColorLGreen}{rgb}{1,1,1}%
+%\definecolor{ColorTGreen}{rgb}{1,1,1}%
+%\expandafter\definecolor\temp
+%\DefineRGBcolor 000000=Red.
+%\definecolor{ColorVLRed}{rgb}{1,1,1}%
+%\definecolor{ColorLRed}{rgb}{1,1,1}%
+%\definecolor{ColorTRed}{rgb}{1,1,1}%
+
+\catcode`@=11\relax
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%															%
+%						TD 03 : Trigonalisation						%
+%															%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\MapleCommands#1{{\it\LD@Loop@For\LD@Command=#1\WithSeparator,\Do{\LD@Command\unless\ifx\LD@Loop@For@Tail\LD@Empty,\fi}}}%
+\def\MapleSolution#1{\par\noindent Solution de l'exercice \ref{labelexo#1} : \par\noindent}
+
+\vglue-10mm\rightline{PT\hfill Maple 2 :  Programmation\hfill}
+\bigskip
+\bigskip
+
+
+
+Le but de ce TD Maple est d'apprendre \`a programmer. De ce fait, il est interdit d'utiliser les commandes $sum$, $prod$, $!$, etc... pour traiter les exos.\pn
+Les commandes que vous avez le droit d'utiliser sont :  
+\medskip\noindent
+Pour les tests : \MapleCommands{if, then, elif, else, fi}.\pn 
+Pour les proc\'edures : \MapleCommands{proc, option remember, local, global, end}.\pn 
+Pour les boucles : \MapleCommands{for, from, by, while, do, od}.\pn 
+Pour les graphiques : \MapleCommands{plot, listplot,with(plots)}.\pn 
+Et aussi eventuellement : \MapleCommands{rand, seq, op, nops, etc...}. 
+\medskip
+
+\bigskip
+
+\Exercice{PTSIxq}
+
+\Exercice{PTSIxs}
+
+\Exercice{PTSIxt}
+
+\Exercice{PTSIxr}
+
+\Exercice{PTSIxv}
+
+\Exercice{PTSIxw}
+
+\Exercice{PTSIxy}
+
+\Exercice{PTSIxx}
+
+\Exercice{PTSIxu}
+
+\eject\centerline{\seventeenbf Solutions}
+
+\MapleSolution{PTSIxq}{\verbatim|
+>Max:=proc(a,b) 
+   if a>b then 
+      		a
+   else
+      		b
+   fi
+end:
+|endverbatim}
+
+
+
+\MapleSolution{PTSIxs}{\verbatim|
+>Fact:=proc(n) option remember:
+   if n=0 then 
+      		1
+   else
+      		n*Fact(n-1)
+   fi
+end:
+|endverbatim}
+
+\MapleSolution{PTSIxt}{\verbatim|
+> c:=proc(n,k) option remember:
+   if k=0 then 
+      	1
+   elif n=k then
+      	1
+   else
+         c(n-1,k-1)+c(n-1,k)
+   fi
+end:
+|endverbatim}
+
+
+\MapleSolution{PTSIxr}{\verbatim|
+>Max:=proc(a,b) 
+   if a>b then 
+      		a
+   else
+      		b
+   fi
+end:
+|endverbatim}
+
+
+
+\MapleSolution{PTSIxv}{\verbatim|
+>syracuse:=proc(n)
+   a:=n;
+   for etape from 1 by 1 while a>1 do
+         if type(a,odd) then
+         a:=3*a+1
+      else
+         a:=a/2
+      fi
+   od:  
+   etape;
+end:
+|endverbatim}
+
+
+
+\MapleSolution{PTSIxw}{\def\Text{$\ell$}\verbatim|
+Approx:=proc(a,b,epsilon)
+  local c;
+  while (a-b>epsilon) do
+    c:=a;
+    a:=(a+b)/2;     // u_{n+1}=(u_n+v_n)/2
+    b:=sqrt(c*b);   // v_{n+1}=\sqrt{v_n * u_n}
+  od;
+  return (a+b)/2;   // on retourne la moyenne de u_n et v_n comme approximation de |Text 
+end;
+|endverbatim
+}
+
+\MapleSolution{PTSIxu}{\verbatim|
+> pileouface:=proc(n)
+   argent:=n;
+   for nb_essai from 1 by 1 while argent>0 do
+      argent:=argent+resultat_piece();
+      graphe(nb_essai):=argent;
+   od:
+   listplot([seq([i,graphe(i)],i=1..nb_essai-1)]);
+end:
+|endverbatim}
+\bye
+
+
+
+
+
+
+
+
+

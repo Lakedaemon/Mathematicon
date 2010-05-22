@@ -1,0 +1,68 @@
+\catcode`@=11\relax
+%\def\Api{Mathematicon@Api}%
+
+\input LD@Header.tex
+\input LD@Library.tex
+\input LD@Exercices.tex
+\input LD@Typesetting.tex
+\catcode`@=11\relax
+\ifHtml\input LD@Html\else \let\ancientjobname\jobname
+\def\jobname{\ancientjobname-print}
+\definecontentsfile{toc}
+%\def\indexfilebasename{\ancientjobname-print}
+\fi
+\catcode`@=12\relax
+\catcode`@=11\relax
+\ifHtml
+\font\LD@Font@Arial=cmr10
+\else
+\font\LD@Font@Arial="Arial" at 10pt
+\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%															%
+%						Exo 01 : déterminant							%
+%															%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\input LD@Ouput@Xhtml.tex
+\newcount\LD@Count@Temp
+\def\LD@Exercice@Display@Code{}%%\LD@Option@@Label\qquad\eightpts}%
+\def\LD@Exercice@Display@Code@Post{%
+	\ifcsname LD@Exo@@Solution\endcsname
+		\unless\ifx\LD@Exo@@Solution\LD@Empty
+			\pn{\eightpts Solution : \eightpts \LD@Exo@@Solution}%
+		\fi
+	\fi
+	\ifcsname LD@Exo@@Technique\endcsname
+		\unless\ifx\LD@Exo@@Technique\LD@Empty
+			\pn{\eightpts Voie possible de r\'esolution : \eightpts \LD@Exo@@Technique}%
+		\fi
+	\fi
+}%
+\def\LD@Display#1{%
+	\LD@Count@Temp=#1\relax
+	\ifcase\LD@Count@Temp
+	\or
+	Math. Sup.
+	\or
+	Math. Sp\'e
+	\else
+	\fi
+}%
+%\LD@String@Split{}{}\ola\olb
+%\meaning\ola QQ\meaning\olb
+%\bye
+\newcount\LD@Exo@Total\LD@Exo@Total=0\relax
+
+\LD@Exo@Label@Show
+\readtocfile
+
+\LD@Loop@For\LD@Level=1,2\WithSeparator ,\Do{%
+	\centerline{\seventeenbf \LD@Display\LD@Level}%
+	\bigskip
+	%\EA\let\EA\LD@List\CS LD@Exo@Theme@@\LD@Level\EC
+	{\LD@Exo@Theme@Display\LD@Level\LD@Exo@Theme@List{\Cours,\TravauxDirigés,\Exercices,\Colles,\Problèmes,\Others,\Mathematica,\Maple,\LD@Empty}%
+	}%
+}%
+\medskip\noindent
+\the\LD@Exo@Total\LD@Space Exercices
+\bye

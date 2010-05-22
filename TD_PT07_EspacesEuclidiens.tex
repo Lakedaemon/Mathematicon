@@ -1,0 +1,82 @@
+\catcode`@=11\relax
+\def\Api{Mathematicon@Api}%
+
+\input LD@Header.tex
+\input LD@Library.tex
+\input LD@Exercices.tex
+
+\catcode`@=11\relax
+\font\LD@Font@Arial="Arial" at 10pt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%															%
+%						Primitives : prérequis pour les équas diffs				%
+%															%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcount\LD@Count@Temp
+\def\LD@Exercice@Display@Code{}%%\LD@Option@@Label\qquad\eightpts}%
+\def\LD@Exercice@Display@Code@Post{%
+	\ifcsname LD@Exo@@Solution\endcsname
+		\unless\ifx\LD@Exo@@Solution\LD@Empty
+			\pn{\eightpts Solution : \eightpts \LD@Exo@@Solution}%
+		\fi
+	\fi
+}%
+\def\LD@Display#1{%
+	\LD@Count@Temp=#1\relax
+	\ifcase\LD@Count@Temp
+	\or
+	Math. Sup.
+	\or
+	Math. Sp\'e
+	\else
+	\fi
+}%
+\newcount\LD@Exo@Total\LD@Exo@Total=0\relax
+\def\LD@Exo@Theme@Display#1#2#3{%
+	{\LD@Loop@For\LD@Theme=#2\WithSeparator\Do{%
+		\goodbreak\bigskip
+		\centerline{\LD@Font@Arial \LD@Theme}%
+		\medskip
+		{\LD@Loop@For\LD@Exo@Type=#3\WithSeparator ,\Do{%
+			\ifcsname LD@Exo@Theme@@#1@@\LD@Theme @@\LD@Exo@Type\endcsname
+			%	\medskip\noindent$\underline{\hbox{\LD@Font@Arial\LD@Exo@Type}}$\medskip\noindent
+				\EA\let\EA\LD@Exo@List\CS LD@Exo@Theme@@#1@@\LD@Theme @@\LD@Exo@Type\EC
+				{\LD@Loop@For\LD@Exo@Label=\LD@Exo@List\WithSeparator ,\Do{%
+					\llap{\LD@Exo@Label\qquad}\EA\Exercice\EA{\LD@Exo@Label}\medskip\noindent
+					\global\advance\LD@Exo@Total by1\relax
+				}}%
+			\fi
+		}}%
+	}}%
+
+}%
+%%% TD 7.
+\vglue-10mm\rightline{Sp\'e PT\hfill TD 7 : Orthonormalisation\hfill}%\date}
+\bigskip
+
+\centerline{$\underline{\hbox{\fourteenbf Propri\'et\'es importantes du cours}}$}%
+\bigskip
+
+
+\Exercice{PTaos}%
+\bigskip
+
+\Exercice{PTaot}%
+\bigskip
+
+\centerline{$\underline{\hbox{\fourteenbf Applications classiques de l'orthogonalisation}}$}%
+\bigskip
+
+
+\Exercice{PTSIvh}%
+\bigskip
+
+\Exercice{PTtz}%
+\bigskip
+
+\Exercice{PTua}%
+\bigskip
+
+\Exercice{PTSIvg}%
+\bigskip
+\bye

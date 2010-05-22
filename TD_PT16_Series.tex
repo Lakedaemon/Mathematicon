@@ -1,0 +1,224 @@
+%\def\Variables{MathsVariables}%
+\catcode`@=11\relax
+\def\Api{Mathematicon@Api}%
+%%%% Newif
+%\def\@firstofone#1{#1}
+
+\newif\ifexonumber
+%%%% Switches
+\exonumberfalse
+\catcode`@=11\relax
+\input LD@Header.tex
+\input LD.tex
+\input LD@Typesetting.tex
+\input LD@Exercices.tex
+\input LD@Exercices.tex
+\def\LD@Exercice@Display@Code{\eightpts}%
+% debug tikz
+\let\@firstofone\pgfutil@firstofone
+\let\@ifnextchar\pgfutil@ifnextchar
+
+\olspept
+\DefineRGBcolor F0F9E3=VLGreen.
+\DefineRGBcolor E5F9D1=LGreen.
+\DefineRGBcolor DAF9BE=TGreen.
+\DefineRGBcolor 5DA93B=Green.
+\DefineRGBcolor F6DCCA=VLRed.
+\DefineRGBcolor F6D4BD=LRed.
+\DefineRGBcolor DAF9BE=TRed.
+\DefineRGBcolor B5F9A1=TTRed.
+\DefineRGBcolor F6B080=Red.
+\DefineRGBcolor F9F5E3=VLOrange.
+\DefineRGBcolor F9F5D0=LOrange.
+\DefineRGBcolor DAF9BE=TOrange.
+\DefineRGBcolor B5F9A1=TTOrange.
+\DefineRGBcolor D7A93B=Orange.
+\DefineRGBcolor EEEEEE=VLBlack.
+\DefineRGBcolor DDDDDD=LBlack.
+\DefineRGBcolor CCCCCC=TBlack.
+\DefineRGBcolor B5F9A1=TTBlack.
+\DefineRGBcolor 000000=Black.
+
+\def\transparent{%
+	\CS long\EC\def\Demonstration##1\CQFD{}%
+}%
+%\transparent
+\def\Students{%
+	\DefineRGBcolor FFFFFF=VLGreen.
+	\DefineRGBcolor FFFFFF=LGreen.
+	\DefineRGBcolor FFFFFF=TGreen.
+	\DefineRGBcolor 000000=Green.
+	\DefineRGBcolor FFFFFF=VLRed.
+	\DefineRGBcolor FFFFFF=LRed.
+	\DefineRGBcolor FFFFFF=TRed.
+	\DefineRGBcolor FFFFFF=TTRed.
+	\DefineRGBcolor 000000=Red.
+	\DefineRGBcolor FFFFFF=VLOrange.
+	\DefineRGBcolor FFFFFF=LOrange.
+	\DefineRGBcolor FFFFFF=TOrange.
+	\DefineRGBcolor FFFFFF=TTOrange.
+	\DefineRGBcolor 000000=Orange.
+	\DefineRGBcolor FFFFFFF=VLBlack.
+	\DefineRGBcolor FFFFFF=LBlack.
+	\DefineRGBcolor FFFFFF=TBlack.
+	\DefineRGBcolor FFFFFF=TTBlack.
+	\DefineRGBcolor 000000=Black.
+}
+\Students
+\def\red{}
+\def\blue{}
+\def\Red#1{#1}%%%% Fix this !
+\def\Blue#1{#1}%
+\def\Font #1@#2pt{\font\olbi=cmr10\olbi}
+\font\SvgText=cmr10\relax
+%
+%
+%\catcode`@=11\relax
+%\def\Api{Mathematicon@Api}%
+%
+%\input LD@Header.tex
+%\input LD.tex
+%\input LD@Exercices.tex
+%\input LD@Typesetting.tex
+%
+%\catcode`@=11\relax
+\font\LD@Font@Arial="Arial" at 10pt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%															%
+%					 Intégrales généralisées à un paramètre					%
+%															%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcount\LD@Count@Temp
+\def\LD@Exercice@Display@Code{}%%\LD@Option@@Label\qquad\eightpts}%
+\def\LD@Exercice@Display@Code@Post{%
+	\ifcsname LD@Exo@@Solution\endcsname
+		\unless\ifx\LD@Exo@@Solution\LD@Empty
+			\pn{\eightpts Solution : \eightpts \LD@Exo@@Solution}%
+		\fi
+	\fi
+}%
+\def\LD@Display#1{%
+	\LD@Count@Temp=#1\relax
+	\ifcase\LD@Count@Temp
+	\or
+	Math. Sup.
+	\or
+	Math. Sp\'e
+	\else
+	\fi
+}%
+\newcount\LD@Exo@Total\LD@Exo@Total=0\relax
+
+%%% TD 14.
+\vglue-10mm\rightline{Sp\'e PT\hfill TD 14 : S\'eries\hfill}%\date}
+\bigskip
+\vfill
+%
+%\centerline{Convergence des s\'eries}
+%\hrule
+%\medskip\noindent
+%
+%
+%\Definition [$(u_k)_{k\in\ob N}$ suite complexe] 
+%La s\'erie $\sum_{k=0}^\infty u_k$ converge vers $S\in\ob C\Leftrightarrow$ 
+%la suite des sommes partielles d\'efinie par 
+%$$
+%\forall n\in\ob N, \qquad S_n:=\sum_{k=0}^nu_k 
+%$$
+%converge vers un nombre complexe $S$,  qui est appel\'e somme de la s\'erie. On \'ecrit alors  
+%$$
+%\sum_{k=0}^\infty u_k=\sum_{k\ge0}u_k=\lim_{n\to\infty}\sum_{0\le k\le n}u_k=\lim_{n\to\infty}S_n=S. 
+%$$ 
+%Si la s\'erie de terme g\'en\'eral $(u_n)$ ne converge vers aucun nombre $S\in\ob K$, i.e. si la suite~$(S_n)$ des sommes partielles de $(u_n)$ n'admet aucune limite finie, 
+%on dit que la s\'erie diverge. 
+%\bigskip
+%\Remarque : si l'on sait calculer les sommes  $S_n$, \'etudier la nature de $\sum_{k=0}^\infty u_k$ est facile. \bigskip
+
+
+
+\centerline{S\'eries t\'elescopiques}
+\hrule
+\medskip\noindent
+
+\Propriete [$(u_n)_{n\in\ob N}$ suite complexe]
+La s\'erie $u_0+\sum_{n=1}^\infty(u_n-u_{n-1})$ converge $\ssi$ la suite 
+$(u_n)_{n\in\ob N}$ converge. De plus, en~cas de convergence, on a 
+\Equation [\bf S\'eries t\'elescopiques]
+$$
+u_0+\sum_{n=1}^\infty(u_n-u_{n-1})=\lim_{n\to\infty}u_n. 
+$$
+{\it lorsque les sommes partielles sont t\'el\'escopiques, on en trouve facilement une expression et la limite}. 
+
+\noindent
+\Exercice{PTpm}
+\vfill
+\noindent
+\Exercice{PTpn}
+\vfill
+\noindent
+\Exercice{PTpl}
+\vfill
+
+\centerline{Th\'eor\`eme special des s\'eries altern\'ees}
+\hrule
+\medskip\noindent
+
+
+\Theoreme [$(u_n)_{n\in\ob N}$ suite r\'eelle altern\'ee]
+Si la suite $|u_n|$ est d\'ecroissante, de limite nulle et si $(-1)u_n$ est de signe constant \`a partir d'un certain rang, 
+alors la s\'erie $\sum_{n=0}^\infty u_n$ converge et 
+\Equation [\bf Th\'eor\`eme sp\'ecial]
+$$
+\forall k\ge0, \qquad  \sum_{n=k}^\infty u_n \sbox { est  compris entre } 0 \sbox{ et }u_k \sbox{ inclus}.
+$$ 
+
+\bigskip
+\Exercice{PTpk}
+\bigskip
+\noindent
+\Exercice{PTpj}
+\bigskip
+\noindent
+\Exercice{PTon}
+\bigskip
+\Exercice{PTom}
+\bigskip
+\Exercice{PToq}
+\bigskip
+\Exercice{PTama}
+\medskip\noindent
+\centerline{Convergence absolue}
+\hrule
+\medskip\noindent
+
+\Propriete [$(u_n)_{n\in\ob N}$ suite complexe] 
+Si la s\'erie $\sum_{n=0}^\infty|u_n|$ converge, alors la s\'erie $\sum_{n=0}^\infty u_n$ converge et l'on a 
+\Equation [\bf Convergence absolue]
+$$
+\Q|\sum_{n=0}^\infty u_n\W|\le \sum_{n=0}^\infty|u_n|. 
+$$
+
+\Theoreme [$f:[0,\infty[\to\ob R$ continue par morceaux sur $[0,\infty[$]
+Si $f$ est positive et d\'ecroissante sur $[0, \infty[$, alors l'int\'egrale $\int_0^\infty f(t)\d t$ 
+et la s\'erie $\sum_{n=0}^\infty f(n)$ ont la m\^eme nature. 
+
+\centerline{Exercices fun sur les s\'eries}
+\hrule
+\medskip\noindent
+\bigskip
+\Exercice{PTux}
+\bigskip
+\Exercice{PTpi}
+\vfill\null
+
+
+
+
+
+
+
+
+
+
+
+\bye
