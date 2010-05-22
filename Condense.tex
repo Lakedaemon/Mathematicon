@@ -1,0 +1,69 @@
+\catcode`@=11\relax
+\def\Api{Mathematicon@Api}%
+\input LD@Header.tex
+\input LD.tex
+
+\DefineRGBcolor F0F9E3=VLGreen.
+\DefineRGBcolor E5F9D1=LGreen.
+\DefineRGBcolor DAF9BE=TGreen.
+\DefineRGBcolor 5DA93B=Green.
+\DefineRGBcolor F6DCCA=VLRed.
+\DefineRGBcolor F6D4BD=LRed.
+\DefineRGBcolor DAF9BE=TRed.
+\DefineRGBcolor B5F9A1=TTRed.
+\DefineRGBcolor F6B080=Red.
+\DefineRGBcolor F9F5E3=VLOrange.
+\DefineRGBcolor F9F5D0=LOrange.
+\DefineRGBcolor DAF9BE=TOrange.
+\DefineRGBcolor B5F9A1=TTOrange.
+\DefineRGBcolor D7A93B=Orange.
+\DefineRGBcolor EEEEEE=VLBlack.
+\DefineRGBcolor DDDDDD=LBlack.
+\DefineRGBcolor CCCCCC=TBlack.
+\DefineRGBcolor B5F9A1=TTBlack.
+\DefineRGBcolor 000000=Black.
+
+%\DefineRGBcolor 000000=Green.
+%\definecolor{ColorVLGreen}{rgb}{1,1,1}%
+%\definecolor{ColorLGreen}{rgb}{1,1,1}%
+%\definecolor{ColorTGreen}{rgb}{1,1,1}%
+%\expandafter\definecolor\temp
+%\DefineRGBcolor 000000=Red.
+%\definecolor{ColorVLRed}{rgb}{1,1,1}%
+%\definecolor{ColorLRed}{rgb}{1,1,1}%
+%\definecolor{ColorTRed}{rgb}{1,1,1}%
+\input LD@Exercices.tex
+\catcode`@=11\relax
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%															%
+%						Condense de cours							%
+%															%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Analyse
+\tikzpicture
+\node (AA) {\eightpts$|u|<1$, $x\in\ob R$, $z\in\ob C$, $N\ge0$}
+\node[below of=A, node distance=3cm] (A) {\eightpts$
+\eqalign{
+{1\F1-u}&=\sum\limits_{n\ge0}u^n, 
+\cr
+\e^z&=\sum\limits_{n\ge0}{z^n\F n!}, 
+\cr
+\ch(x)&=\sum\limits_{n\ge0}{x^{2n}\F(2n)!}, 
+\cr
+\sh(x)&=\sum\limits_{n\ge0}{x^{2n+1}\F(2n+1)!},
+}$}
+\node [right of=A,node distance=4cm](B) {\eightpts$
+\eqalign{
+\ln(1+u)&=\sum\limits_{n\ge0}(-1)^n{u^{n+1}\F n+1}.
+\cr
+\sum_{n\ge N} a_nx^n&=a_nx^N+o_0(x^N)
+\cr
+\cos(x)&=\sum\limits_{n\ge0}(-1)^n{x^{2n}\F(2n)!},
+\cr
+\sin(x)&=\sum\limits_{n\ge0}(-1)^n{x^{2n+1}\F(2n+1)!},
+}$}
+
+\endtikzpicture
+\bye
