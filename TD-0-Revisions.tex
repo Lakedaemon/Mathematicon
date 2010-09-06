@@ -1,7 +1,8 @@
 \catcode`@=11\relax
-\def\Api{Mathematicon@Api}%
 \input LD@Header.tex
-\input LD.tex
+\input LD@Library.tex
+\input LD@Exercices.tex
+\input LD@Typesetting.tex
 
 \DefineRGBcolor F0F9E3=VLGreen.
 \DefineRGBcolor E5F9D1=LGreen.
@@ -23,16 +24,9 @@
 \DefineRGBcolor B5F9A1=TTBlack.
 \DefineRGBcolor 000000=Black.
 
-%\DefineRGBcolor 000000=Green.
-%\definecolor{ColorVLGreen}{rgb}{1,1,1}%
-%\definecolor{ColorLGreen}{rgb}{1,1,1}%
-%\definecolor{ColorTGreen}{rgb}{1,1,1}%
-%\expandafter\definecolor\temp
-%\DefineRGBcolor 000000=Red.
-%\definecolor{ColorVLRed}{rgb}{1,1,1}%
-%\definecolor{ColorLRed}{rgb}{1,1,1}%
-%\definecolor{ColorTRed}{rgb}{1,1,1}%
-\input Exercices.tex
+\LD@Exo@Label@Hide
+\LD@Colors@Hide
+\overfullrule=0pt\relax
 \catcode`@=11\relax
 
 
