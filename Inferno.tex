@@ -10,14 +10,18 @@
 	\font\LD@Font@Tiny=cmr10\relax
 	\font\LD@Font@Inferno=cmr10\relax
 	\font\LD@Font@Arial=cmr10\relax
+	\font\LD@Font@Gothic=cmr10\relax
+	\font\LD@Font@Sanctuary=cmr10\relax
 \else
 	\LD@AFour@Book
-	\font\LD@Font@Tiny=cmr5\relax
-	\font\LD@Font@Inferno="Riot Act 2" at 8pt\relax
+	\catcode`@=11\relax
+	\let\LD@Font@Tiny\fiverm\relax
+	\font\LD@Font@Inferno="Riot Act Two" at 12pt\relax
 	\font\LD@Font@Arial="Arial" at 10pt\relax
+	\font\LD@Font@Gothic="Metal Macabre"\relax
+	\font\LD@Font@Sanctuary="Sanctuary"\relax
 \fi
-
-
+\tenrm
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -28,8 +32,8 @@
 \newcount\LD@Count@Temp
 
 
-\newif\ifLD@Inferno@Master@\LD@Inferno@Master@true
-\LD@Exo@Label@Show
+\newif\ifLD@Inferno@Master@\LD@Inferno@Master@false
+\LD@Exo@Label@Hide
 
 
 
@@ -85,7 +89,7 @@
 	\or
 	Math. Sup.
 	\or
-	Math. Sp\'e
+	Math. Spé
 	\else
 	\fi
 }%
@@ -190,28 +194,28 @@
 	%\unless\ifHtml\font\SvgText=Papyrus\relax\fi
 	\tikzpicture
 	\ifHtml 
-		\node[text height=2\LD@dimenb,text width=2\LD@dimenb,tex4ht node/escape=true] (a) {\noindent\smash{\Image[Height=2\LD@dimenb,Width=2\LD@dimenb]{F:/TeX/Mathematicon/Abime.jpg}}}%
+		\node[text height=2\LD@dimenb,text width=2\LD@dimenb,tex4ht node/escape=true] (a) {\noindent\smash{\Image[Height=2\LD@dimenb,Width=2\LD@dimenb]{E:/TeX/Mathematicon/Abime.jpg}}}%
 	\else
 		\ifLD@Inferno@Master@
 			\node[text width=\LD@dimena,text height=\LD@dimenb%,draw,line width=2pt,inner sep=0pt
-	] (a) at (0,-2) {\noindent\smash{\Image[Width=\LD@dimena,Height=\LD@dimenb]{F:/TeX/Mathematicon/AbimMaster.jpg}}}%
+	] (a) at (0,-2) {\noindent\smash{\Image[Width=\LD@dimena,Height=\LD@dimenb]{E:/TeX/Mathematicon/AbimMaster.jpg}}}%
 		\else
 			\node[text width=\LD@dimena,text height=\LD@dimenb%,draw,line width=2pt,inner sep=0pt
-	] (a) at (0,-2) {\noindent\smash{\Image[Width=\LD@dimena,Height=\LD@dimenb]{F:/TeX/Mathematicon/Abime.jpg}}}%
+	] (a) at (0,-2) {\noindent\smash{\Image[Width=\LD@dimena,Height=\LD@dimenb]{E:/TeX/Mathematicon/Abime.jpg}}}%
 		\fi
 	\fi
 node [below=0.7cm,inner sep=1pt] (b) at (a.north) {};
-\node [inner sep=1.5pt,above=1.7cm] (c) at (a.south) {};
-\node [inner sep=1pt,below=1cm] (d) at (c) {};
+\node [inner sep=1.5pt,above=2.1cm] (c) at (a.south) {};
+\node [inner sep=1pt,below=1.35cm] (d) at (c) {};
 \foreach\angle in {0,15,...,360}
 {%
-\node[color=black,scale=1.5] at (b.\angle) {Olus Livius Bindus};
-\node[color=black,scale=5] at (c.\angle) {\LD@Font@Inferno Inferno}; 
-\node[color=black,scale=1.5] at  (d.\angle)  {Abandon hope, all ye who enter here...};
+\node[color=black,scale=1.5] at (b.\angle) {\LD@Font@Gothic Olus Livius Bindus};
+\node[color=black,scale=6] at (c.\angle) {\LD@Font@Inferno Inferno}; 
+\node[color=black,scale=1.5] at  (d.\angle)  {\LD@Font@Sanctuary Abandon hope, all ye who enter here...};
 }%
-\node[color=gray,scale=1.5] at (b) {Olus Livius Bindus};
-\node[color=gray,scale=5] at (c) {\LD@Font@Inferno Inferno};
-\node[color=gray, scale=1.5] at (d) {Abandon hope, all ye who enter here...};
+\node[color=gray,scale=1.5] at (b) {\LD@Font@Gothic Olus Livius Bindus};
+\node[color=gray,scale=6] at (c) {\LD@Font@Inferno Inferno};
+\node[color=gray, scale=1.5] at (d) {\LD@Font@Sanctuary  Abandon hope, all ye who enter here...};
 \endtikzpicture}%
 \headline={\ifpagetitre\the\hautpagetitre
 \else\ifodd\pageno\the\hautpagedroite\else\the\hautpagegauche\fi\fi }
@@ -248,7 +252,7 @@ node [below=0.7cm,inner sep=1pt] (b) at (a.north) {};
 \pdfpageheight=297truemm
 }
 \LD@AFour@Book
-\centerline{\seventeenbf Table des Mati\`eres}
+\centerline{\seventeenbf Table des Matières}
 \bigskip
 \readtocfile
 
@@ -256,12 +260,12 @@ node [below=0.7cm,inner sep=1pt] (b) at (a.north) {};
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\formatpage
 
-\Chapter sol, Legende.
+\Chapter sol, Légende.
 
-L'ent\^ete de chaque exercise pr\'ecise le niveau \tikz\node[fill=green!30,inner sep=1pt,baseline]{$n$};, la difficult\'e \tikz\node[fill=red!30,inner sep=1pt,baseline]{$d$};, la richesse p\'edagogique \tikz\node[fill=blue!30,inner sep=1pt,baseline]{$r$}; (i.e. le nombre de nouveaux concepts, d'id\'ees int\'eressantes contenues qu'enseigne la r\'esolution de l'exercice) et parfois  \'egalement la provenance  \tikz\node[fill=purple!30,inner sep=0pt,baseline]{$o$}; de l'exercice. 
+L'entête de chaque exercise précise le niveau \tikz\node[fill=green!30,inner sep=1pt,baseline]{$n$};, la difficulté \tikz\node[fill=red!30,inner sep=1pt,baseline]{$d$};, la richesse pédagogique \tikz\node[fill=blue!30,inner sep=1pt,baseline]{$r$}; (i.e. le nombre de nouveaux concepts, d'idées intéressantes contenues qu'enseigne la résolution de l'exercice) et parfois  également la provenance  \tikz\node[fill=purple!30,inner sep=0pt,baseline]{$o$}; de l'exercice. 
 \medskip
 
-Il est \'egalement indiqu\'e si l'exercice est associ\'e {\it \`a des indications}, $\underline{\hbox{\`a des concepts utiles \`a sa r\'esolution}}$ ou {\bf \`a une solution}, \unless\ifLD@Inferno@Master@
+Il est également indiqué si l'exercice est associé {\it à des indications}, $\underline{\hbox{à des concepts utiles à sa résolution}}$ ou {\bf à une solution}, \unless\ifLD@Inferno@Master@
 que vous trouverez respectivement aux sections \refn{chapIndications}, \refn{chapNotions} et \refn{chapSolutions}, \fi
 selon le schema suivant : 
 $$
@@ -272,10 +276,10 @@ $$
 	\node[below=1pt of exo.west,fill=blue!30,inner sep=0.5pt] (r) {$\scriptstyle r$};
 	\node[left=0.15cm of exo.west,fill=purple!30,inner sep=1pt] (o) {$\scriptstyle (o)$};
 	\node[below right=-0.7cm and 0.7cm of n,matrix of nodes,fill=green!30,draw,font=\LD@Font@Tiny] (niveau) {%
-%		\flat\flat& Lyc\'ee,\cr
-		$\scriptscriptstyle n$ &Ann\'ee\\
+%		\flat\flat& Lycée,\cr
+		$\scriptscriptstyle n$ &Année\\
 		$\scriptscriptstyle\flat$&Math. Sup. (L1)\\
-		&Math. Sp\'e. (L2) \\
+		&Math. Spé. (L2) \\
 %		$\scriptscriptstyle\sharp$&Licence (L3)\\
 %		\sharp\sharp&Maitrise (M1),\cr
 %		\sharp\sharp\sharp&DEA/DESS (M2).\cr
@@ -294,14 +298,14 @@ $$
 	\node[below left=0.8cm and -0.7cm of r,matrix of nodes,fill=blue!20,draw,font=\LD@Font@Tiny] (richesse) {%
 % 		-1&Perte de temps&\\	
 		$\scriptscriptstyle r$&Type&Contenu\\
-		&Entrainement&0 id\'ee nouvelle\\
-		1&Formateur&1+ id\'ee nouvelle\\
-		2&Classique&2+ id\'ees nouvelles\\
-		3&Culte&3+ id\'ees nouvelles\\
+		&Entrainement&0 idée nouvelle\\
+		1&Formateur&1+ idée nouvelle\\
+		2&Classique&2+ idées nouvelles\\
+		3&Culte&3+ idées nouvelles\\
 	};
 	\node[below right=0.7cm and -0.5cm of exo,matrix of nodes,fill=yellow!30,draw,font=\LD@Font@Tiny] (metadata) {%
 		typographie&Contenu\\
-		Exercice&\'enonc\'e\\
+		Exercice&énoncé\\
 		{\sixit Exercice}& avec indication(s)\\
 		{\fivebf Exercice}& avec solution\\
 		$\underline{\mbox{Exercice}}$& avec notions utiles\\

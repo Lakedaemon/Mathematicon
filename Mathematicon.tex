@@ -5,7 +5,7 @@
 \input LD@Exercices.tex
 
 
-\def\LD@Exercice@Display@Code{\LD@Option@@Label\qquad\eightpts}%
+\def\LD@Exercice@Display@Code{\eightpts}%
 \LD@Exo@Label@Hide
 \LD@Colors@Hide
 \overfullrule=0pt%
@@ -15,11 +15,12 @@
 	\input LD@Html
 	\tikzstyle{every picture}=[tex4ht node/escape=true,tex4ht node css=Mathematicon]%
 	\font\LD@Font@ResMathematica=cmr10%
-	\font\LD@Font@Arial=cmr10%
 \else
 	\LD@AFour@Book
 	\font\LD@Font@ResMathematica="Caesar" at 9pt
-	\font\LD@Font@Arial="Arial" at 10pt
+		\font\LD@Font@Gothic="Metal Macabre"\relax
+	\font\LD@Font@Sanctuary="Sanctuary"\relax
+	\font\LD@Font@Inferno="Gypsy Curse"\relax
 \fi
 
 
@@ -93,17 +94,17 @@
 	] (a) at (0,-2) {\noindent\smash{\Image[Width=\LD@dimena,Height=\LD@dimenb]{E:/Tex/Images/Hekathomb4gray.jpg}}}%
 	\fi
 node [below=0.7cm,inner sep=1pt] (b) at (a.north) {};
-\node [inner sep=1.5pt,above=2cm] (c) at (a.south) {};
+\node [inner sep=1.5pt,above=2.7cm] (c) at (a.south) {};
 \node [inner sep=1pt,below=1cm] (d) at (c) {};
 \node [inner sep=1pt,below=1.5cm] (e) at (c) {};
 \foreach\angle in {0,15,...,360}
 {%
-\node[color=black,scale=1.5] at (b.\angle) {Olus Livius Bindus};
+\node[color=black,scale=1.5] at (b.\angle) {\LD@Font@Gothic Olus Livius Bindus};
 \node[color=black,scale=5] at (c.\angle) {\unless\ifHtml\LD@Font@ResMathematica\fi Res Mathematica}; 
 \node[color=black, scale=1.5] at (d.\angle) {Malédictions, charmes, maléfices et sortilèges};
 \node[color=black, scale=1.5] at (e.\angle) {à l'usage de l'apprenti-mathématicien};
 }%
-\node[color=gray,scale=1.5] at (b) {Olus Livius Bindus};
+\node[color=gray,scale=1.5] at (b) {\LD@Font@Gothic Olus Livius Bindus};
 \node[color=gray,scale=5] at (c) {\unless\ifHtml\LD@Font@ResMathematica\fi Res Mathematica};
 \node[color=gray, scale=1.5] at (d) {Malédictions, charmes, maléfices et sortilèges};
 \node[color=gray, scale=1.5] at (e) {à l'usage de l'apprenti-mathématicien};
@@ -112,7 +113,6 @@ node [below=0.7cm,inner sep=1pt] (b) at (a.north) {};
 \headline={\ifpagetitre\the\hautpagetitre\else\ifodd\pageno\the\hautpagedroite\else\the\hautpagegauche\fi\fi }
 \footline={\ifpagetitre\the\baspagetitre\else\ifodd\pageno\the\baspagedroite\else\the\baspagegauche\fi\fi \global\pagetitrefalse}
 \hautpagegauche={\ifMidFolio\the\hautpagemilieu\else\tenrm\folio\hfil\the\titrecourant\hfil\fi}
-\hautpagedroite={\ifMidFolio\the\hautpagemilieu\else\hfil\the\titrecourant\hfil\tenrm\folio\fi}
 
 
 
@@ -159,7 +159,7 @@ node [below=0.7cm,inner sep=1pt] (b) at (a.north) {};
 \eject\background{White}
 \fi
 
-\hautspages{Olus Livius Bindus}{Table des matières}%
+\hautspages{\LD@Font@Gothic Olus Livius Bindus}{Table des matières}%
 
 \centerline{\seventeenbf Table des matières}
 \bigskip
@@ -2659,7 +2659,7 @@ $$
 $$
 et le déterminant dans la base $\sc B$ du couple $(\vec u,\vec v)$ est le nombre réel défini par 
 $$
-{\det_{\sc B}(\vec u,\vec v)=\det_{\sc B}(a\vec i+b\vec j,c\vec i+d\vec j):=ad-bc}.\eqdef{determinant}
+{\det_{\sc B}(\vec u,\vec v)=\det_{\sc B}(a\vec i+b\vec j,c\vec i+d\vec j):=ad-bc}.\eqdef{déterminant}
 $$
 
 \Concept [] Colinéarité et alignement 
@@ -2693,7 +2693,7 @@ $$
 $$
 \bigskip
 
-\Concept [] Propriétés du determinant
+\Concept [] Propriétés du déterminant
 
 \noindent
 Le déterminant {$(\vec u,\vec v)\mapsto \det_{\sc B}(\vec u,\vec v)$ est une application à valeurs réelles}~vérifiant
@@ -2727,7 +2727,7 @@ Comme il ne dépend pas de la base orthonormée directe $\sc B$ choisie afin de 
 
 \Remarque{  2  :  }Pour  calculer le déterminant $\Det(\vec u,\vec v)$, il on décompose $\vec u$ et $\vec v$ sur une base
 $\sc  B={\vec  i,\vec  j}$  orthonormée  directe  (celle   qui   vous   arrange  le  plus)  puis  on  applique  la  formule
-\eqref{determinant}.  \bigskip
+\eqref{déterminant}.  \bigskip
 
 \Propriete []  Pour chaque vecteur $\vec u$ et chaque vecteur $\vec v$ du plan affine euclidien orienté~$\sc P$, on a 
 $$
@@ -2743,7 +2743,7 @@ $$
 \Concept [] Cas particulier de $\ob R^2$ et de $\ob C$. 
 
 Le plan affine $\ob R^2$ est naturellement muni d'un produit scalaire et d'une orientation, pour lesquels la base $\{(1,0),(0,1)\}$ est orthonormée directe. 
-Le determinant est alors l'application qui associe aux vecteurs $(a,b)$ et $(c,d)$ de $\ob R^2$ le nombre 
+Le déterminant est alors l'application qui associe aux vecteurs $(a,b)$ et $(c,d)$ de $\ob R^2$ le nombre 
 $$
 {\Det\B( (a,b),(c,d)\B)=\Det\Q(\pmatrix{a\cr b},\pmatrix{c\cr d} \W):=ad-bc}.
 $$
@@ -3230,7 +3230,7 @@ $$
 et le déterminant dans la base $\sc B$ du triplet $(\vec u,\vec v,\vec k)$ est le nombre réel défini par 
 $$
 \eqalign{\det_{\sc B}(\vec u,\vec v,\vec w)=\det_{\sc B}\pmatrix{a_1 & a_2  &  a_3\cr  b_1  &  b_2  &  b_3\cr  c_1  &  c_2  &
-c_3\cr}:=&a_1b_2c_3+c_1a_2b_3+a_3b_1c_2\cr &-a_3b_2c_1-a_1b_3c_2-c_3a_2b_1}.\eqdef{Espacedeterminant} $$
+c_3\cr}:=&a_1b_2c_3+c_1a_2b_3+a_3b_1c_2\cr &-a_3b_2c_1-a_1b_3c_2-c_3a_2b_1}.\eqdef{Espacedéterminant} $$
 
 \Concept [] Coplanéarité et bases. 
 
@@ -3262,7 +3262,7 @@ $$
 \mbox{les  vecteurs $\{\vec u,\vec v,\vec w\}$ forment une base indirecte}\Longleftrightarrow \det_{\sc B}(\vec u,\vec v,\vec
 w)<0. } $$ \bigskip
 
-\Concept [] Propriétés du determinant
+\Concept [] Propriétés du déterminant
 
 \noindent
 Le déterminant {$(\vec u,\vec v,\vec w)\mapsto \det_{\sc B}(\vec u,\vec v,\vec w)$ est une application à valeurs réelles} vé\-ri\-fi\-ant 
@@ -3307,7 +3307,7 @@ Comme il ne dépend pas de la base orthonormée directe $\sc B$ choisie afin de 
 \bigskip
 
 \Remarque{ 2 : }Pour calculer le déterminant $\Det(\vec u,\vec v,\vec w)$, on décompose $\vec u$, $\vec v$ et $\vec w$ sur une base $\sc B=\{\vec i,\vec j,\vec k\}$ orthonormée directe (celle qui vous arrange le plus) 
-puis on applique la formule \eqref{Espacedeterminant}. {\it Parfois, la théorie permet de faire plus simple}
+puis on applique la formule \eqref{Espacedéterminant}. {\it Parfois, la théorie permet de faire plus simple}
 \bigskip
 
 
@@ -3315,7 +3315,7 @@ puis on applique la formule \eqref{Espacedeterminant}. {\it Parfois, la théorie
 
 L'espace affine $\ob R^3$ est naturellement muni d'un produit scalaire et d'une orientation, pour lesquels la base 
 $\{(1,0,0),(0,1,0),(0,0,1)\}$ est orthonormée directe. 
-Le determinant est alors l'application qui associe aux vecteurs $(a_1,b_1,c_1)$, $(a_2,b_2,c_2)$ et $(a_3,b_3,c_3)$ de $\ob R^3$ le nombre
+Le déterminant est alors l'application qui associe aux vecteurs $(a_1,b_1,c_1)$, $(a_2,b_2,c_2)$ et $(a_3,b_3,c_3)$ de $\ob R^3$ le nombre
 $$
 \mbox{Det}\pmatrix{a_1 & a_2 & a_3\cr b_1 & b_2 & b_3\cr c_1 & c_2 & c_3\cr}
 :=a_1b_2c_3+c_1a_2b_3+a_3b_1c_2-a_3b_2c_1-a_1b_3c_2-c_3a_2b_1.
@@ -9325,7 +9325,7 @@ $$
 \forall (A,B)\in\sc M_n(\ob K)^2, \qquad \det(A\times B)=\det(A)\times\det(B). 
 $$
 
-\Propriete []  Une matrice $M$ de taille $n\in\{1,2,3\}$ est inversible si, et seulement si, son determinant est non nul. 
+\Propriete []  Une matrice $M$ de taille $n\in\{1,2,3\}$ est inversible si, et seulement si, son déterminant est non nul. 
 Et dans ce cas, on a 
 $$
 \det\b(M^{-1}\b)={1\F \det(M)}.
@@ -9339,7 +9339,7 @@ $$
 $$ 
 
 \Propriete []  Soit $E$ un $\ob K$-espace vectoriel de dimension $n\in\{1, 2,3\}$ muni d'une base 
-$\sc B$, alors la famille de $n$ vecteurs $(f_1,\cdots, f_n)$ est une base de $E$ si, et~seulement~si le determinant de cette famille dans la base $\sc B$ n'est pas nul. 
+$\sc B$, alors la famille de $n$ vecteurs $(f_1,\cdots, f_n)$ est une base de $E$ si, et~seulement~si le déterminant de cette famille dans la base $\sc B$ n'est pas nul. 
 $$
 \mbox{$(f_1,\cdots,f_n)$ est une base }\Longleftrightarrow \det_{\sc B}(f_1,\cdots,f_n)\neq0
 $$
@@ -9375,7 +9375,7 @@ u\in\sc L(E)\mbox{ automorphisme }\Longleftrightarrow\det_{\sc B}(u)\neq0.
 $$
 
 
-\Concept [] Propriétés du determinant en dimension 2
+\Concept [] Propriétés du déterminant en dimension 2
 
 \noindent
 Le déterminant $(\vec u,\vec v)\mapsto \det_{\sc B}(\vec u,\vec v)$ est une application à valeurs réelles vérifiant
@@ -9391,7 +9391,7 @@ w)} \cr &{\det_{\sc B}(\vec w,\lambda\vec u+\mu\vec v)=\lambda\det_{\sc B}(\vec 
 w,\vec v)} }\W.\leqno{\mbox{(bilinéarité)}} $$
 
 
-\Concept [] Propriétés du determinant en dimension 3
+\Concept [] Propriétés du déterminant en dimension 3
 
 \noindent
 Le déterminant {$(\vec u,\vec v,\vec w)\mapsto \det_{\sc B}(\vec u,\vec v,\vec w)$ est une application à valeurs réelles} vé\-ri\-fi\-ant 
@@ -12966,7 +12966,7 @@ $$
 \Subsection c, Le groupe $(\sc{SO}(E),\circ)$. 
 
 \Definition []  Soit $E$ un espace euclidien orienté, muni d'une base orthonormée directe $\sc B$. 
-Alors, l'ensemble des automorphismes orthogonaux de determinant $1$ est noté 
+Alors, l'ensemble des automorphismes orthogonaux de déterminant $1$ est noté 
 $$
 \sc{SO}(E):=\{u\in\sc O(E):\det_{\sc B}(u)=1\}
 $$
@@ -13036,7 +13036,7 @@ $$
 \Subsection c, Le groupe $(\sc{SO}(n),\times)$. 
 
 \Definition []  Soit $n\in\ob N^*$. 
-Alors, l'ensemble des matrices orthogonales de taille $n$ et de determinant $1$ est noté 
+Alors, l'ensemble des matrices orthogonales de taille $n$ et de déterminant $1$ est noté 
 $$
 \sc{SO}(n):=\{M\in\sc O(n):\Det(M)=1\}
 $$
@@ -13845,7 +13845,7 @@ $$
 
 \catcode`@=11\relax
 
-\def\LD@Font@Inferno{}
+
 
 \eject
 \hautspages{}{}%
@@ -13865,17 +13865,20 @@ $$
 	] (a) at (0,-2) {\noindent\smash{\Image[Width=\LD@dimena,Height=\LD@dimenb]{E:/Tex/Images/Hekathomb5gray.jpg}}}%
 	\fi
 node [below=0.7cm,inner sep=1pt] (b) at (a.north) {};
-\node [inner sep=1.5pt,above=1.7cm] (c) at (a.south) {};
-\node [inner sep=1pt,below=1cm] (d) at (c) {};
+\node [inner sep=1.5pt,above=2.7cm] (c) at (a.south) {};
+\node [inner sep=1pt,below=1.5cm] (d) at (c) {};
 \foreach\angle in {0,15,...,360}
 {%
-\node[color=black,scale=1.5] at (b.\angle) {Olus Livius Bindus};
-\node[color=black,scale=5] at (c.\angle) {Mathematicon}; 
-\node[color=black,scale=1.5] at  (d.\angle)  {Errare humanum est Perseverare diabolicum};
+\node[color=black,scale=1.5] at (b.\angle) {\LD@Font@Gothic Olus Livius Bindus};
+\node[color=black,scale=8] at (c.\angle) {\unless\ifHtml\LD@Font@Inferno\fi Mathematicon}; 
 }%
-\node[color=gray,scale=1.5] at (b) {Olus Livius Bindus};
-\node[color=gray,scale=5] at (c) {\unless\ifHtml\LD@Font@Inferno\fi Mathematicon};
-\node[color=gray, scale=1.5] at (d) {Errare humanum est Perseverare diabolicum};
+\node[color=gray,scale=1.5] at (b) {\LD@Font@Gothic Olus Livius Bindus};
+\node[color=gray,scale=8] at (c) {\unless\ifHtml\LD@Font@Inferno\fi Mathematicon};
+\foreach\angle in {0,15,...,360}
+{%
+\node[color=black,scale=2] at  (d.\angle)  {\LD@Font@Sanctuary  Errare humanum est Perseverare diabolicum};
+}%
+\node[color=gray, scale=2] at (d) {\LD@Font@Sanctuary Errare humanum est Perseverare diabolicum};
 \endtikzpicture}%
 \headline={\ifpagetitre\the\hautpagetitre
 \else\ifodd\pageno\the\hautpagedroite\else\the\hautpagegauche\fi\fi }
@@ -14116,7 +14119,7 @@ L'ensemble des formes $n$-linéaires alternées sur $E$ forme une droite vectori
 
 \Demonstration. Théorème admis. \CQFD
 
-\Remarque : ce théorème, d'aspect anodin, est très important pour le cours : il affirme que le determinant existe et qu'il est unique à une constante multiplicative près. 
+\Remarque : ce théorème, d'aspect anodin, est très important pour le cours : il affirme que le déterminant existe et qu'il est unique à une constante multiplicative près. 
 Nous verrons une belle application pratique de ce théorème plus loin (déterminant par blocs). 
 
 \Section Determinant, Déterminant.
@@ -14195,7 +14198,7 @@ $$
 \Propriete [$E$ $\ob K$-EV de dimension $n$, $\sc B$ base de $E$]
 On ne change pas le déterminant d'une famille de vecteurs lorsque l'on ajoute à l'un de ses vecteurs une combinaison linéaires des autres vecteurs
 
-\Demonstration. Si nous ajoutons au vecteur $x_i$ la combinaison linéaire $\sum_{k\neq i}\lambda_kx_k$ des autres vecteurs, nous remarquons que le determinant ne change pas
+\Demonstration. Si nous ajoutons au vecteur $x_i$ la combinaison linéaire $\sum_{k\neq i}\lambda_kx_k$ des autres vecteurs, nous remarquons que le déterminant ne change pas
 $$
 \eqalign{
 \det_{\sc B}(x_1, \cdots, x_n)&=\det_{\sc B}(x_1, \cdots, x_n)+\sum_{k\neq i}\lambda_k\underbrace{\det_{\sc B}(x_1, \cdots, x_{i-1}, x_k, x_{i+1}, \cdots, x_n)}_{0}\cr
@@ -14299,10 +14302,10 @@ $$
 \medskip
 
 \Definition [$n\ge1$]
-Le déterminant d'une matrice carrée $M\in\sc M_n(\ob K)$ est le determinant de ses vecteurs colonnes dans la base canonique de $\sc M_{n,1}(\ob K)$. 
+Le déterminant d'une matrice carrée $M\in\sc M_n(\ob K)$ est le déterminant de ses vecteurs colonnes dans la base canonique de $\sc M_{n,1}(\ob K)$. 
 
-\Remarque : Il n'est pas nécessaire de disposer d'une formule pour calculer un determinant, les propriétés précédentes suffisent en pratique. Rappelons cependant les formules 
-permettant de calculer un determinant en dimension $n\le3$ : 
+\Remarque : Il n'est pas nécessaire de disposer d'une formule pour calculer un déterminant, les propriétés précédentes suffisent en pratique. Rappelons cependant les formules 
+permettant de calculer un déterminant en dimension $n\le3$ : 
 $$
 \eqalign{
 \det\pmatrix{a}&:=a, \cr
@@ -14314,7 +14317,7 @@ $$
 \Exercice{PTalh}%
 
 \Remarque : La belle expression compacte du déterminant d'une matrice en fonction de ses coefficients n'est pas au programme en PT (elle recquiert des concepts hors-programmes). \medskip
-En notant $\sc C=\{c_1, \cdots, c_n\}$ la base canonique de $\sc M_{n,1}(\ob K)$ et en utilisant la $n$-linéarité du determinant, nous établissons cependant facilement que 
+En notant $\sc C=\{c_1, \cdots, c_n\}$ la base canonique de $\sc M_{n,1}(\ob K)$ et en utilisant la $n$-linéarité du déterminant, nous établissons cependant facilement que 
 \Equation [$\dag$]formulemoche
 $$
  \forall A=(a_{i,j})_{1\le i\le n\atop1\le j\le n}, \qquad \det A=\sum_{(i_1, \cdots, i_n)\in\{1, \cdots, n\}^n}a_{i_1, 1}a_{i_2, 2}\cdots a_{i_n,n}\underbrace{\det_{\sc C}(c_{i_1}, \cdots, c_{i_n})}_{\in\{-1\ ;\ 0\ ;\ 1\}}.
@@ -14372,7 +14375,7 @@ Notant $\sc C$ la base canonique de l'espace des colonnes $\sc M_{n,1}(\ob K)$, 
 $$
 \sc Mat_{\sc C}(v)=A,\qquad \sc Mat_{\sc C}(u)=B \qquad \sbox{ et }\qquad \sc Mat_{\sc C}(v\circ u)=AB.
 $$
-Comme le determinant d'un endomorphisme est le même que celui de sa matrice dans n'importe qu'elle base, nous obtenons alors que 
+Comme le déterminant d'un endomorphisme est le même que celui de sa matrice dans n'importe qu'elle base, nous obtenons alors que 
 $$
 \eqalign{
 \det(AB)&=\det\sc Mat_{\sc C}(v\circ u)=\det(v\circ u)=\det(v)\det(u)=\det\Q(\sc Mat_{\sc C}(v)\W)\det\Q(\sc Mat_{\sc C}(u)\W)\cr&=\det(A)\det(B).}
@@ -14386,7 +14389,7 @@ $$
 \det\Q(A^{-1}\W)=\det(A)^{-1}.
 $$
 
-\Demonstration. Soit $A\in\sc Gl_n(\ob K)$. Alors $A^{-1}A=\mbox I_n$. La multiplicativité du determinant induit alors que 
+\Demonstration. Soit $A\in\sc Gl_n(\ob K)$. Alors $A^{-1}A=\mbox I_n$. La multiplicativité du déterminant induit alors que 
 $$
 1=\det(I_n)=\det(A^{-1}A)=\det(A^{-1})\det(A)
 $$
@@ -14462,7 +14465,7 @@ En utilisant la linéarité par rapport à la $j^\ieme$ colonne, nous obtenons q
 $$
 \det A=\det(C_1, \cdots, C_{j-1},\sum_{1\le i\le n}a_{i,j}f_i, C_{j+1}, \cdots, C_n)=\sum_{1\le i\le n}a_{i, j}\det(C_1, \cdots, C_{j-1},f_i, C_{j+1}, \cdots, C_n). 
 $$
-Comme le determinant est anti-symétrique, nous pouvons maintenant procéder à $j-1$ échanges de colonnes ($C_1\leftrightarrow C_2, \cdots, C_{j-1}\leftrightarrow C_j$) pour obtenir que 
+Comme le déterminant est anti-symétrique, nous pouvons maintenant procéder à $j-1$ échanges de colonnes ($C_1\leftrightarrow C_2, \cdots, C_{j-1}\leftrightarrow C_j$) pour obtenir que 
 $$
 \det(C_1, \cdots, C_{j-1},f_i, C_{j+1}, \cdots, C_n)=(-1)^{j-1}\det\det(f_i, C_1, \cdots, C_{j-1}, C_{j+1}, \cdots, C_n). 
 $$
@@ -14515,7 +14518,7 @@ $$
 c_{i,j}=\sum_{1\le k\le n}a_{i,k}(-1)^{k+j}\det(\tilde A_{j,k}). 
 $$
 Notant $B_{i,j}$ la matrice constituée par la matrice $A$ dont on a remplacé la $j^\ieme$ ligne par la $i^\ieme$ ligne de la matrice $A$, 
-nous reconnaissons la formule du développement de $\det(B_{i,j})$ suivant la $j^\ieme$ ligne et nous déduisons du caractère alterné du determinant que 
+nous reconnaissons la formule du développement de $\det(B_{i,j})$ suivant la $j^\ieme$ ligne et nous déduisons du caractère alterné du déterminant que 
 $$
 \forall (i,j)\in\{1, \cdots, n\}^2, \qquad c_{i,j}=\det(B_{i,j})=\cases{
 	\det(A)& si $i=j$\cr
@@ -14696,7 +14699,7 @@ $$
 \Blue{P=-X^3+3X+2}=(X^2+2X+1)(2-X)=-(\Red{X+1})^2(\Red{X-2}). 
 $$
 
-\Remarque : pour calculer un polynôme caractéristique, on utilise surtout les propriétés du determinant (forme multi-linéaire, alternée, anti-symétrique, calcul par blocks, déve\-lop\-pe\-ment par rapport aux colonnes/lignes) et la formule de Sarrus en dernier recours seulement (car il est alors très difficile de factoriser la formule développée) . 
+\Remarque : pour calculer un polynôme caractéristique, on utilise surtout les propriétés du déterminant (forme multi-linéaire, alternée, anti-symétrique, calcul par blocks, déve\-lop\-pe\-ment par rapport aux colonnes/lignes) et la formule de Sarrus en dernier recours seulement (car il est alors très difficile de factoriser la formule développée) . 
 \bigskip
 
 Pour factoriser un polynôme caractéristique, il faudra la plupart du temps faire diminuer son degré en trouvant des racines évidentes. Pour cela, vous pouvez : 
@@ -14707,7 +14710,7 @@ Pour factoriser un polynôme caractéristique, il faudra la plupart du temps fai
 \medskip
 
 \noindent 
-2) Travailler sur le determinant $\det(A-\lambda\mbox I_n)$ : utiliser les propriétés du determinant pour le simplifier et factoriser des termes. 
+2) Travailler sur le déterminant $\det(A-\lambda\mbox I_n)$ : utiliser les propriétés du déterminant pour le simplifier et factoriser des termes. 
 \medskip
 
 \noindent
@@ -14773,7 +14776,7 @@ Enfin, le terme constant du polynôme $P$ est $P(0)=\det(A-0.\mbox I_n)=\det(A)$
 \CQFD
 
 \Propriete
-La somme et le produit des valeurs propres, comptées avec multiplicité, d'une matrice (resp. d'un endomorphisme) sont égaux à la trace et au determinant de cette matrice (resp. de cet endomorphisme). 
+La somme et le produit des valeurs propres, comptées avec multiplicité, d'une matrice (resp. d'un endomorphisme) sont égaux à la trace et au déterminant de cette matrice (resp. de cet endomorphisme). 
 
 \Subsection Determinant, Matrices semblables. 
 
@@ -14818,7 +14821,7 @@ $$
 \Propriete
 Deux matrices semblables ont même déterminant, même polynôme caractéristique, mêmes valeurs propres comptées avec multiplicité et même trace.
 
-\Demonstration. Si $A$ et $B$ sont semblables, il existe une matrice $P\in\sc Gl_n(\ob K)$ telle que $A=P^{-1}BP$ et alors nous déduisons de la multiplicativité du determinant que 
+\Demonstration. Si $A$ et $B$ sont semblables, il existe une matrice $P\in\sc Gl_n(\ob K)$ telle que $A=P^{-1}BP$ et alors nous déduisons de la multiplicativité du déterminant que 
 $$
 \eqalign{\det(A)&=\det(P^{-1}BP)=\det(P^{-1})\det(B)\det(P)=\det(P^{-1})\det(P)\det(B)\cr
 &=\det(\underbrace{P^{-1}P}_{\mbox I_n})\det(B)=\det(B). }

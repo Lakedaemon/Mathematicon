@@ -891,7 +891,7 @@ Déterminer valeurs propres et vecteurs propres de $B$ \pn
 Diagonaliser la matrice $A:=\pmatrix{0&1\cr-2&3\cr}$. 
 
 
-\exo [Level=2,Fight=2,Learn=1,Type=\Exercices,Field=\Déterminant,Origin=,Indication={Montrer que $D_n(\lambda_1,\cdots,\lambda_n)=\lambda_1D_{n-1}(\lambda_2-\lambda_1,\cdots,\lambda_n-\lambda_1)$ puis intuiter une proposition de récurrence},Notion=Operations elementaires|determinant par blocs|Recurrence,Solution={$D_n(\lambda_1,\cdots,\lambda_n)=\lambda_1\prod_{i=2}^n(\lambda_i-\lambda_{i-1})$}] fb. 
+\exo [Level=2,Fight=2,Learn=1,Type=\Exercices,Field=\Déterminant,Origin=,Indication={Montrer que $D_n(\lambda_1,\cdots,\lambda_n)=\lambda_1D_{n-1}(\lambda_2-\lambda_1,\cdots,\lambda_n-\lambda_1)$ puis intuiter une proposition de récurrence},Notion=Operations elementaires|déterminant par blocs|Recurrence,Solution={$D_n(\lambda_1,\cdots,\lambda_n)=\lambda_1\prod_{i=2}^n(\lambda_i-\lambda_{i-1})$}] fb. 
 Pour $n\ge1$ et $(\lambda_1,\cdots,\lambda_n)\in\ob C^n$, calculer le déterminant 
 $D_n(\lambda_1,\cdots,\lambda_n):=\Q|\matrix{
 \lambda_1&\ldots&\ldots&\lambda_1
@@ -963,7 +963,7 @@ V_n(a_0,\cdots, a_n):=\det\pmatrix{
 \cr}.\leqno{\mbox{(Déterminant de Vandermond)}}
 $$
 
-\exo [Origin=,Level=2,Fight=2,Learn=2,Type=\Cours,Field=\Déterminant,Indication={Développer par rapport à la première colonne pour obtenir une récurrence linéaire},Notion={Développement par rapport à une colonne|Determinant par bloc|Récurrence linéaire|Sommes geometriques},Solution={$D_n(a)=\Q\{%
+\exo [Origin=,Level=2,Fight=2,Learn=2,Type=\Cours,Field=\Déterminant,Indication={Développer par rapport à la première colonne pour obtenir une récurrence linéaire},Notion={Développement par rapport à une colonne|Déterminant par bloc|Récurrence linéaire|Sommes geometriques},Solution={$D_n(a)=\Q\{%
 	\eqalign{%
 	{1-a^{2n+2}\F 1-a^2}&\mbox{ si }a^2\neq1\cr
 	n+1&\mbox{ si }a^2=1\cr
@@ -4634,7 +4634,7 @@ C(a,b)=\sum_{p=0}^n\ch(a+pb), \qquad\ds S(a,b)=\sum_{p=0}^n\sh(a+pb)\quad\hbox{e
 $$ 
 
 \exo [Level=2,Fight=3,Learn=2,Field=\Déterminant,Type=\Exercices,Origin=\MP,Indication={faire $L_k-L_{k-1}\to L_k$ pour $2\le k\le n$},Solution={$det A_p=\det A_{p-1}=\cdots=\det A_0=1$}] aeh. 
-Pour $p\ge1$, calculer le determinant de la matrice $A_p:=\pmatrix{
+Pour $p\ge1$, calculer le déterminant de la matrice $A_p:=\pmatrix{
 \Q({n\atop 0}\W)&\Q({n\atop 1}\W)&\ldots&\Q({n\atop p}\W)\cr
 \Q({n+1\atop 0}\W)&\Q({n+1\atop 1}\W)&\ldots&\Q({n+1\atop p}\W)\cr
 \vdots&\vdots&\ldots&\vdots\cr
