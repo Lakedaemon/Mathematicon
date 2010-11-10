@@ -1569,8 +1569,13 @@ est une application de classe $\sc C^\infty$ sur $\ob R$.
 \exo [Level=2,Fight=2,Learn=2,Field=\FonctionsDéfiniesParUneIntégrale,Type=\Exercices,Origin=] jz. 
 Soit $f\in\sc C\b([0,1),\ob C\b)$. Pour $x\in\ob R$, on pose $F(x):=\int_0^1 xf(t)\e^{-xt}\d t$. \pn
 a) Montrer que $F$ est continue sur $\ob R$. \pn
-b) Calculer $\int_0^1 x\e^{-xt}\d t$ ainsi que la limite de cette intégrale lorsque $x\to+\infty$. \pn
-c) En déduire la limite $\ds\lim_{x\to+\infty}F(x)$ (On commencera par supposer que $f(0)=0$). 
+b) Posant $\ds M(u) = \sup_{0\le t\le u}\b|f(t) - f(0)\b|$, établir la majoration
+$$
+\Q|F(x)-f(0)\int_0^1 x\e^{-xt}\d t\W| \le M\Q({1\F \sqrt x}\W) + M(1)\int_{1\F\sqrt x}^1 x\e^{-xt}\d t\qquad(x>0).
+$$
+c) Calculer les intégrales $\int_0^1 x\e^{-xt}\d t$ et $\int_{1\F\sqrt x}^1 x\e^{-xt}\d t$ ainsi que leur limite lorsque $x\to+\infty$. \pn
+d) Prouver (par un raisonnement epsilonnique) que $\ds\lim_{u\to 0^+}M(u)=0$. \pn
+e) En déduire la limite $\ds\lim_{x\to+\infty}F(x)$. 
 
 \exo [Level=2,Fight=2,Learn=2,Field=\FonctionsDéfiniesParUneIntégrale,Type=\Exercices,Origin=] ka. 
 Pour $x>0$, on pose $F(x):=\int_0^{\pi/2}\ln\b(x\cos^2t+\sin^2t\b)\d t$. \pn
