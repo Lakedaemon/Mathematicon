@@ -760,4 +760,94 @@ $$
 F(x+1)=(x+1)F(x)\qquad (x\ge0).
 $$
 
+\sol PTaql. 
+\noindent 1. Pour $x\in\ob R$, les applications $t\mapsto{\sin^2(tx)\F t^2}$ et $t\mapsto{\sin^2(tx)\F t^2(1+t^2)}$ sont continues sur $]0, +\infty[$ en tant que quotient de fonctions continues dont le dénominateur ne s'annule pas sur cet intervalle. De plus, nous remarquons d'une part que 
+$$
+{\sin^2(tx)\F t^2(1+t^2)} = x^2 +o_0(1) = {\sin^2(tx)\F t^2}, 
+$$
+c'est-à-dire que ces deux fonctions sont prolongeables par continuité en $0$, et d'autre part que 
+$$
+\Q|{\sin^2(tx)\F t^2(1+t^2)}\W| \le \Q|{\sin^2(tx)\F t^2}\W| \le {1\F t^2} \qquad (t\ge1).
+$$
+Comme l'intégrale de Riemann $\int_1^\infty{\d t\F t^2}$ converge ($\alpha = 2>1$), nous concluons que $A(x)$ et $F(x)$ sont deux intégrales convergeantes. A fortiori, les fonctions $A$ et $F$ sont définies sur $\ob R$.  
+\medskip\noindent
+2. Lorsque $x\neq 0$, nous posons $\alpha := x/|x| \in\{-1, 1\}$ et nous procédons au changement de variable (difféomorphisme de classe $\sc C^1$) $t=u/x$ pour obtenir que 
+$$
+A(x):=\int_0^\infty{\sin^2(tx)\F t^2}\d t=\int_0^{\alpha\infty}{x^2\sin^2(u)\F u^2}{\d u\F x} = x\int_0^{\alpha\infty}{\sin^2(t)\F t^2}\d t.
+$$
+Comme l'application $t\mapsto {\sin^2(t)\F t^2}$ est paire, nous obtenons finalement que 
+$$
+A(x)= \alpha x \int_0^\infty{\sin^2(t)\F t^2}\d t = |x| A(1).
+$$
+Comme cette égalité est également vraie lorsque $x=0$, nous concluons que
+$$
+\forall x\in\ob R, \qquad A(x)=|x| A(1).
+$$
+3. Pour $x\in\ob R$, nous remarquons que 
+$$
+F(x)-A(x) = -\int_0^\infty{sin^2(tx)\F 1+ t^2}\d t
+$$
+En majorant en module à l'aide de la relation $|\sin(u)|\le 1\ (u\in\ob R)$, il vient alors
+$$
+\Q|F(x)-A(x)\W| =  \int_0^\infty {\sin^2(tx)\F 1+ t^2}\d t \le  \int_0^\infty {1\F 1+ t^2}\d t= \Q[\arctan t\W]_0^\infty = {\pi\F2}.  
+$$
+En particulier, nous concluons que 
+$$
+\forall x\in \ob R, \qquad F(x)=A(x) + O(1) = |x|A(1) + O(1).
+$$
+Comme $A(1)>0$ en tant qu'intégrale d'une fonction continue, positive, non identiquement nulle, il vient
+$$
+F(x) \mathop\sim\limits_{\pm\infty} A(1)|x|.
+$$
+4. Pour chaque $t>0$, l'application $x\mapsto {\sin^2(tx)\F t^2(1+t^2)}$ est de classe $\sc C^2$ sur $\ob R$ en tant que quotient de fonctions de classe $\sc C^2$ dont le dénominateur ne s'annule jamais. \PAR\noindent
+Pour $x\in\ob R$ fixé, l'application $t\mapsto{\sin^2(tx)\F t^2(1+t^2)}$ et ses dérivées partielles  $t\mapsto {\sin(2tx)\F t(1+t^2)}$ et $t\mapsto {2\cos(2tx)\F 1+t^2}$ par rapport à $x$ sont continues sur $]0,+\infty[$, prolongeables par morceaux en $0$, et sont majorées par $2/t^2$ pour $t\ge1$. A fortiori, elles sont continues par morceaux et intégrables sur $]0,+\infty[$. 
+\PAR\noindent
+Enfin, pour $x\in\ob R$ et $t>0$, nous remarquons que 
+$$
+\Q|{2\cos(2tx)\F 1+t^2}\W|\le{2\F 1+t^2}
+$$
+avec $\int_0^\infty {2\F 1+t^2}$ qui est une intégrale convergente. A fortiori, il résulte du théorème de dérivation des intégrales impropres à un paramètre que l'application $F$ est de classe $\sc C^2$ sur $\ob R$ et que l'on peut intervertir dérivation et intégration (2 fois) pour calculer ses dérivées. Ainsi, on a 
+$$
+\forall x\in \ob R, \qquad F'(x) = \int_0^\infty{\sin(2tx)\F t(1+t^2)}\d t\quad\hbox{et}\quad F''(x)= \int_0^\infty{2\cos(2tx)\F 1+t^2}\d t
+$$
+5. Pour $x\in\ob R$, nous déduisons des calculs effectués aux questions 3 et 4 que 
+$$
+\eqalign{
+F(x)-A(1)|x|&=F(x)-A(x)=-\int_0^\infty{sin^2(tx)\F 1+ t^2}\d t
+={1\F 2}\int_0^\infty{cos(2tx)-1\F 1+ t^2}\d t
+\cr
+&={F''(x)\F 4}-{1\F2}\int_0^\infty{1\F 1+ t^2}\d t={F''(x)\F 4}-{\pi\F 4}.}
+$$
+6. En particulier, pour  $a:=-4A(1)$ et $b:=\pi$, l'application $F$ est solution de l'équation différentielle linéaire du second ordre avec second membre
+$$
+F''(x)-4F(x)=a|x|+b\qquad (x\in\ob R).
+$$
+7. Les fonctions $t\mapsto \e^{2t}$ et $t\mapsto\e^{-2t}$ sont trivialement solutions de l'équation homogène $y''-4y$. De plus, l'application $t\mapsto A(1)|t| - {\pi\F 4}$ est solution de l''équation différentielle avec second membre sur chacun des intervales $]-\infty, 0[$ et $]0, +\infty[$. Comme l'application $F$ en est également solution sur chacun de ces deux intervales, il existe des constantes $\lambda, \beta, \alpha, \beta$ dans $\ob R$, uniques, telles que 
+$$
+F(x)=A(1) |x| - {\pi\F 4}+ \cases{
+    \alpha\e^{2x} + \beta\e^{-2x}& $si x<0$\cr
+    \lambda\e^{2x} + \mu\e^{-2x}& $si x>0$\cr    
+}
+$$
+Comme $F(x)\sim_{\pm\infty} A(1)|x|$, les relations $\beta = \lambda = 0$ sont nécessairement vérifiées de sorte que 
+$$
+F(x)=A(1) |x| - {\pi\F 4}+ \cases{
+    \alpha\e^{2x} & $si x<0$\cr
+    \mu\e^{-2x}& $si x>0$\cr    
+}
+$$
+Par ailleurs, l'application $F$ \'etant continue sur $\ob R$ et plus particulièrement en $0$, il résulte de l'identité $F(0^-) =F(0^+)= F(0)=0$ que 
+$$
+0 = - {\pi\F 4} + \alpha = - {\pi\F 4} + \mu
+$$
+c'est-à-dire que $\alpha=\mu={\pi\F 4}$ et par conséquent que 
+$$
+F(x)=A(1) |x| - {\pi\F 4} + {\pi\F 4}\e^{-2|x|} \qquad (x\neq 0). 
+$$
+8) Comme l'application $F$ est de classe $\sc C^1$ sur $\ob R$ et plus particulièrement en $0$, il résulte alors de l'égalité $F'(0^+)=F'(0)=0$ que 
+$$
+A(1) - {\pi\F 2} = 0.
+$$
+En conclusion $\ds \int_0^\infty{\sin^2(t)\F t^2}\d t= A(1) = {\pi\F 2}$.
+
 \endinput
