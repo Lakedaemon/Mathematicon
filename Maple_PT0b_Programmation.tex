@@ -1,0 +1,423 @@
+\catcode`@=11\relax
+
+\input LD@Maths@TD.tex
+
+
+
+
+
+\long\def\Touche#1{\tikz\node[draw,baseline]{\eightpts #1};}
+\long\def\touche#1{\tikz\node[draw,baseline]{\sevenpts #1};}
+\def\UnderBrace#1_#2{{\underbrace{#1}_{\hbox{\sevenpts #2}}}}
+
+
+\def\red{}
+\def\black{}
+\def\blue{}
+
+\Chapter Maple1, Bases de Maple. 
+\bigskip
+
+
+Maple est un langage de manipulation symbolique, muni d'une larges biblioth\`eque de fonctions permettant 
+de r\'ealiser des calculs num\'eriques ou formels.  
+\bigskip
+L'apprentissage de Maple figure au programme des classes de PTSI/PT et certaines \'ecoles d'ing\'enieurs (ENSAM,...) \'evaluent \`a l'oral  
+la capacit\'e des candidats au concour  \`a utiliser l'outil informatique pour les math\'ematiques.  
+\bigskip
+
+
+\Section Maple1Interface, Interface. 
+
+\Concept  La ligne de commande
+
+Lorsqu'il ne calcule pas, Maple attend. L'utilisateur peut alors lui demander d'executer une expression Maple
+en la tapant  apr\`es le prompt ``$>$'' de la ligne de commande\footnote{1}{Mapple affiche le caract\`ere $>$ pour vous signifier qu'il attend vos ordres} 
+puis en appuyant sur la touche ``Entr\'ee''. 
+$$
+\UnderBrace{\red >}_{prompt} \hbox{\red \bf Expression Maple}\ \Touche{Entr\'ee}
+$$
+
+\Concept  Ligne de commande suppl\'ementaire
+
+Pour obtenir une ligne de commande suppl\'ementaire, appuyer sur l'ic\^one \touche{[$>$} du menu. 
+
+\Concept  Ligne de texte
+
+Pour transformer une ligne de commande en ligne de texte, c'est \`a dire une ligne non executable sans prompt, que vous pouvez utiliser pour \'ecrire des commentaires, appuyer sur la touche \touche{T} du menu
+
+\Concept  Passer une ligne
+
+Pour passer une ligne, appuyer simultan\'ement sur les touches \touche{Maj}et \touche{Entr\'ee}.  
+Ceci est tr\`es utile pour formater de mani\`ere lisible une s\'equence de commandes complexes. 
+\medskip
+
+\Concept  Aide
+
+Maple dispose d'une rubrique d'aide (en anglais) � laquelle on acc\`ede : \pn 
+soit par le menu {\bf Help$\backslash$Topic Search} pour une recherche par th\`emes, \pn 
+soit par le menu {\bf Help$\backslash$Full Text Search}   pour une recherche par mots cl\'es. 
+\medskip
+
+L'aide donne pour chaque commande la syntaxe \`a utiliser, ses param\`etres, une d\'escriptio d\'etaill\'ee 
+de son fonctionnement et de son utilisation qu'elle illustre par quelques exemples. 
+\medskip
+
+A partir du prompt, il est \'egalement possible d'acc\'eder \`a la rubrique d'aide d'une commande dont on connait la syntaxe. 
+Pour cela, apr\`es le prompt, il suffit de taper un point d'exclamation "?" le nom de la commande puis d'appuyer sur la touche ``Entr\'ee''. 
+$$
+\red>\  \Touche{?\ }\  \hbox{\bf Commande}\ \Touche{\black Entr\'ee}
+$$
+
+\Concept  Variantes selon les claviers
+
+Sur certains claviers, \pn 
+la touche \touche{Maj} est la touche \touche{Shift} ou \touche{$\Uparrow$} ; \pn
+la touche  \touche{Entr\'ee} est la touche \touche{Return} ou \touche{{$\tenpts \hookleftarrow$}}. 
+
+
+
+
+\Section Maple1Calculatrice, Calculatrice. 
+
+Maple est un formidable outil. Qu'on puisse s'en servir pour effectuer des calculs simples, \`a l'instar d'une calculatrice, est la moindre des choses. 
+Dans ce qui suit, nous expliquons comment proc\'eder. 
+\bigskip
+
+\Concept  Syntaxe d'une expression Maple. 
+
+Mapple execute les commandes suivies d'un {\it point-virgule} \touche{;\ } en affichant leur r\'esultat. 
+Mapple execute les commandes suivies de {\it deux-points} \touche{:\ } sans afficher leur r\'esultat.
+\bigskip
+
+Une expression Maple comporte une ou plusieurs commandes, chacune d'entre elles 
+\'etant suivie par  un {\it point-virgule} \touche {;\ } ou {\it deux-points} \touche{:\ }. 
+$$
+\eqalign{
+&\hskip-12em\red{>\UnderBrace{\red 7*8}_{ordre $1$}\ \Touche{:\ }\  \UnderBrace{\red 1332/2}_{ordre $2$}\ \Touche{;\ }\ 
+\UnderBrace{\red \log(3)}_{ordre $3$}\ \Touche{;\ }\ \UnderBrace{\red \exp(7)}_{ordre $4$}\ \Touche{:\ }}
+\cr
+&\hskip10em{\blue666}
+\cr
+&\hskip10em{\blue\ln(3)}
+}
+$$
+
+
+\Concept  Constantes 
+
+Pour les constantes c\'el\`ebres, Maple utilise une syntaxe tr\`es particuli\`ere faisant intervenir des caract\`eres minuscules et parfois majuscules. 
+
+$$\vbox{
+\offinterlineskip
+\halign{
+\vrule#&\quad\hfil#\hfil\strut\quad&\vrule#&\quad\hfil#\hfil\quad&\vrule#&\quad\hfil#\hfil\quad&\vrule#\tabskip=0pt\cr
+\noalign{\hrule}\cr
+&Math\'ematiques&&Maple&&Description&\cr
+\noalign{\hrule}\cr
+&$\pi$&&Pi&&le nombre $\pi=3.14159265\ldots$&\cr
+\noalign{\hrule}\cr
+&$\pi$&&pi&&la lettre grecque $\pi$&\cr
+\noalign{\hrule}\cr
+&$i$&&I&&le nombre complexe $i$ racine de $-1$&\cr
+\noalign{\hrule}\cr
+&$\e$&&E&&la base $\e$ du logarithme n\'ep\'erien&\cr
+\noalign{\hrule}\cr
+&$\infty$&&infinity&&le symbole infini&\cr
+\noalign{\hrule}\cr
+&$\gamma$&&gamma&&la constante d'Euler $\gamma=0.577215\ldots$ &
+\cr
+\noalign{\hrule}\cr
+}}
+$$
+
+\noindent{\it Attention :} ne pas utiliser les mots r\'eserv\'es ``E'', ``I'' ou ``gamma'' comme nom de variable !
+\medskip
+
+
+
+\Concept  Op\'erateurs \'el\'ementaires
+
+$$\vbox{
+\offinterlineskip
+\halign{
+\vrule#&\quad#\hfil\strut\quad&\vrule#&\quad\hfil#\hfil\quad&\vrule#\tabskip=0pt\cr
+\noalign{\hrule}\cr
+&Math\'ematiques&&Maple&\cr
+\noalign{\hrule}\cr
+&Addition&&+&\cr
+\noalign{\hrule}\cr
+&Soustration&&-&\cr
+\noalign{\hrule}\cr
+&Multiplication&&*&\cr
+\noalign{\hrule}\cr
+&Division&&/&\cr
+\noalign{\hrule}\cr
+&Factorielle&&!&\cr
+\noalign{\hrule}\cr
+}}
+$$
+
+\Concept  Puissances
+
+$$\vbox{
+\offinterlineskip
+\halign{
+\vrule#&\quad#\hfil\strut\quad&\vrule#&\quad\hfil#\hfil\quad&\vrule#&\quad#\hfil\quad&\vrule#&\quad#\hfil\quad&\vrule#\tabskip=0pt\cr
+\noalign{\hrule}\cr
+&Math\'ematiques&&Maple&&Exemple Maple&&Exemple Math\'ematiques&\cr
+\noalign{\hrule}\cr
+&\hfil Puissance&&$\hat{\quad}$&&\hfil$2\hat{\quad}3$&&\hfil$2^{3\strut}$&\cr
+\noalign{\hrule}\cr
+}}
+$$
+
+
+\Concept  Racine, exponentielle, logarithmes, puissances
+
+$$\vbox{
+\offinterlineskip
+\halign{
+\vrule#&$\quad\vcenter to1.5em{}$\hfil#\hfil\strut\quad&\vrule#&\quad\hfil#\hfil\quad&\vrule#\tabskip=0pt\cr
+\noalign{\hrule}\cr
+&Math\'ematiques&&Maple&\cr
+\noalign{\hrule}\cr
+&$\sqrt x$&&sqrt(x)&\cr
+\noalign{\hrule}\cr
+&$\exp(x)$ ou $\e^x$&&exp(x)&\cr
+\noalign{\hrule}\cr
+&$\ln(x)$ ou $\log(x)$&&ln(x) ou log(x)&\cr
+\noalign{\hrule}\cr
+&$\log_{10}(x)$&&log10(x)&\cr
+\noalign{\hrule}\cr
+&$\log_b(x)$&&log[b](x)&\cr
+\noalign{\hrule}\cr
+}}$$
+
+\Concept  Fonctions trigonometriques et hyperboliques
+
+$$\vbox{
+\offinterlineskip
+\halign{
+\vrule#&\quad\hfil#\hfil\strut\quad&\vrule#&\quad\hfil#\hfil\quad&\vrule#\tabskip=0pt\cr
+\noalign{\hrule}\cr
+&Math\'ematiques&&Maple&\cr
+\noalign{\hrule}\cr
+&$\cos(x)$&&cos(x)&\cr
+\noalign{\hrule}\cr
+&$\sin(x)$&&sin(x)&\cr
+\noalign{\hrule}\cr
+&$\tan(x)$&&tan(x)&\cr
+\noalign{\hrule}\cr
+&$\cot(x)$&&cot(x)&\cr
+\noalign{\hrule}\cr
+}}\qquad
+\vbox{
+\offinterlineskip
+\halign{
+\vrule#&\quad\hfil#\hfil\strut\quad&\vrule#&\quad\hfil#\hfil\quad&\vrule#\tabskip=0pt\cr
+\noalign{\hrule}\cr
+&Math\'ematiques&&Maple&\cr
+\noalign{\hrule}\cr
+&$\ch(x)$&&cosh(x)&\cr
+\noalign{\hrule}\cr
+&$\sh(x)$&&sinh(x)&\cr
+\noalign{\hrule}\cr
+&$\th(x)$&&tanh(x)&\cr
+\noalign{\hrule}\cr
+&$\coth(x)$&&cotanh(x)&\cr
+\noalign{\hrule}\cr
+}}
+$$
+
+\Concept  Fonctions trigonometriques et hyperboliques r\'eciproques
+
+$$\vbox{
+\offinterlineskip
+\halign{
+\vrule#&\quad\hfil#\hfil\strut\quad&\vrule#&\quad\hfil#\hfil\quad&\vrule#\tabskip=0pt\cr
+\noalign{\hrule}\cr
+&Math\'ematiques&&Maple&\cr
+\noalign{\hrule}\cr
+&$\arccos(x)$&&arccos(x)&\cr
+\noalign{\hrule}\cr
+&$\arcsin(x)$&&arcsin(x)&\cr
+\noalign{\hrule}\cr
+&$\arctan(x)$&&arctan(x)&\cr
+\noalign{\hrule}\cr
+&peu utilis\'ee&&arccot(x)&\cr
+\noalign{\hrule}\cr
+}}\qquad
+\vbox{
+\offinterlineskip
+\halign{
+\vrule#&\quad\hfil#\hfil\strut\quad&\vrule#&\quad\hfil#\hfil\quad&\vrule#\tabskip=0pt\cr
+\noalign{\hrule}\cr
+&Math\'ematiques&&Maple&\cr
+\noalign{\hrule}\cr
+&$\argch(x)$&&arccosh(x)&\cr
+\noalign{\hrule}\cr
+&$\argsh(x)$&&arcsinh(x)&\cr
+\noalign{\hrule}\cr
+&$\argth(x)$&&arctanh(x)&\cr
+\noalign{\hrule}\cr
+&peu utilis\'ee&&arccotanh(x)&\cr
+\noalign{\hrule}\cr
+}}
+$$
+
+\Concept  Valeur absolue, parties entieres et fractionnaires, arrondi
+
+$$\vbox{
+\offinterlineskip
+\halign{
+\vrule#&\quad\hfil#\hfil\strut\quad&\vrule#&\quad\hfil#\hfil\quad&\vrule#\tabskip=0pt\cr
+\noalign{\hrule}\cr
+&Math\'ematiques&&Maple&\cr
+\noalign{\hrule}\cr
+&$|x|$&&abs(x)&\cr
+\noalign{\hrule}\cr
+&partie enti\`ere de $x$&&floor(x)&\cr
+\noalign{\hrule}\cr
+&partie fractionnaire de $x$&&frac(x)&\cr
+\noalign{\hrule}\cr
+&arrondi de $x$ \`a l'entier le plus proche&&round(x)&\cr
+\noalign{\hrule}\cr
+}}
+$$
+
+\Concept  \'Ecriture d\'ecimale d'un nombre 
+
+La commande {\it evalf($x$)} retourne une \'evaluation d\'ecimale \`a $10$ chiffres significatifs du nombre $x$. 
+On peut changer le nombre $n$ de chiffres significatifs \`a l'aide de la variable (reserv\'ee) {\it $Digits$}. 
+$$
+\eqalign{
+&{\red >Digits:=20;}
+\cr
+&\hskip 10em{\blue Digits:=20}
+\cr
+&{\red >evalf(4/3);}
+\cr 
+&\hskip10em\UnderBrace{\blue 1.3333333333333333333}_{$20$ chiffres significatifs}
+}
+$$
+On peut \'egalement utiliser la syntaxe {\it evalf($x,n$)} qui retourne une \'evaluation d\'ecimale avec $n$ chiffres significatifs du nombre $x$. 
+$$
+\eqalign{
+&{\red >evalf(Pi,6);}
+\cr 
+&\hskip10em\UnderBrace{\blue 3.14159}_{$6$ chiffres significatifs}
+}
+$$
+
+
+\Section Maple1Variables, Variables. 
+
+\Concept  Variables
+
+Comme tous les langages, Maple utilise des variables. Le nom d'une variable doit commencer par une lettre, comporter moins de 500 caract\`eres et peut comporter des lettres, des chiffres ou le symbole soulign\'e \touche{\_\strut}. 
+\bigskip
+
+{\bf Attention \`a la casse !} Maple fait la diff\'erence entre les majuscules et les minuscules pour les noms de commandes et de variables. 
+Il faut \^etre tr\`es vigilant quant \`a l'orthographe de vos commandes, car c'est une source tr\`es fr\'equente d'erreur. 
+\bigskip
+
+\Concept  Affectation. 
+
+Pour affecter une valeur \`a une variable, on \'ecrit ``variable:=valeur''
+$$
+\eqalign{
+&\red\hskip-16em>  xa:=2*3;
+\cr
+&\blue xa:=6
+\cr
+&\red\hskip-16em>  xb:=5*xa;
+\cr
+&\blue xb:=30
+}
+$$
+
+\Concept  Lib\'erer les variables
+
+On peut r\'einitialiser Maple et, ce faisant, lib\'erer toutes les variables utilis\'ees via la commande {\it restart}
+
+$$
+\eqalign{
+&\hskip-16em\red>  x:=1;
+\cr
+&\blue x:=1
+\cr
+&\hskip-16em\red>  restart;
+\cr
+&\hskip-16em\red>  x;
+\cr
+&\blue x
+}
+$$
+
+On peut \'egalement lib\'erer une variable en lui affectant son nom \`a l'aide de la touche apostrophe \touche{'}, c'est \`a dire en tapant 
+$
+variable:=\touche{'}\ variable\ \touche{'}
+$
+
+$$
+\eqalign{
+&\hskip-16em\red>  x:=1:
+\cr
+&\hskip-16em\red>  x;
+\cr
+&\blue 1
+\cr
+&\hskip-16em\red>  x:='x':
+\cr
+&\hskip-16em\red>  x;
+\cr
+&\blue x
+}
+$$
+\eject
+\centerline{\fourteenbf Exercices}
+
+\noindent{Exercice 1. }Donner une valeur d\'ecimale \`a 10 chiffres significatifs des nombres  
+$$
+a_1:={1-{\pi+3\F \e+4}\F 1-{4\F1+\pi}}\qquad a_2:={4\F1+{1^2\F2+{3^2\F2+{5^2\F2+{7^2\F2+9^2}}}}}\qquad 
+a_3:={\sqrt{\sqrt2+\sqrt3}\F 1-(\sqrt 3+\sqrt2)(\sqrt5-\sqrt2)}
+$$
+\medskip
+\noindent{Exercice 2. }\'Etant donn\'e le polyn\^ome $P:x\mapsto 5x^4+3x^3-x+3$, 
+determiner les 12 premiers chiffres apr\`es la virgule des nombres  
+$$
+b_1:=P\Q({1\F3}\W), \qquad b_2:=P\Q(-{1\F4}\W)\qquad\hbox{et}\qquad b_3:=P(\pi)
+$$
+\medskip
+
+\noindent{Exercice 3. }Soit $f$ la fonction $\ds f:x\mapsto {1\F 1+x^2}$. \pn
+a) Dessiner le graphique de cette fonction pour $x\in[-5,5]$. {\it on pourra utiliser ``plot''}. \pn
+b) Calculer les nombres d\'eriv\'es $f'(0)$ et $f'(1)$. {\it on pourra utiliser ``$D$''}. \pn
+c) Calculer $f''(x)$ et dessiner son graphe sur $[-5,5]$. 
+\bigskip
+
+ 
+\noindent{Exercice 4. }Pour $n\in\ob N$ et $x\in\ob R$, calculer {\it (en utilisant sum)} les sommes 
+$$
+S_1:=\sum_{k=1}^nk, \qquad S_2:=\sum_{k=1}^nk^2\qquad \hbox{et}\qquad S_3:=\sum_{k=0}^{n-1}x^k
+$$
+b) D\'evelopper les expressions obtenues pour $S_1$ et  $S_2$ {\it avec expand ou simplify}. 
+\pn
+c) Que vaut $S_3$ pour $x={1\F2}$ et $n=5$ ? et pour $x={1\F3}$ et $n=10$ ? 
+\bigskip
+
+\noindent{Exercice 5. }Pour $n\in\ob N$ et $x\in\ob R$, calculer la somme 
+$$
+T_n:=\sin^3{x\F 3}+3\sin^3{x\F 3^2}+\cdots+3^{n-1}\sin^3{x\F 3^n}.
+$$
+
+\medskip
+\noindent{Exercice 6. }Tracer la courbe param\'etr\'ee par 
+$$
+\Q\{\eqalign{x(t)=t^3-4t\cr
+y(t):=2t^2-3}\W.\qquad(-4\le t\le 4).
+$$
+On pourra regarder \`a {\it plot} dans la rubrique {\it parametric} 
+
+\bye
