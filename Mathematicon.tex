@@ -18,7 +18,7 @@
 \else
 	\LD@AFour@Book
 	\font\LD@Font@ResMathematica="Caesar" at 9pt
-		\font\LD@Font@Gothic="Metal Macabre"\relax
+	\font\LD@Font@Gothic="Metal Macabre"\relax
 	\font\LD@Font@Sanctuary="Sanctuary"\relax
 	\font\LD@Font@Inferno="Gypsy Curse"\relax
 \fi
@@ -71,7 +71,7 @@
 
 
 
-
+\def\imageFolder{/media/Main/TeX/Images}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -88,10 +88,10 @@
 	%\unless\ifHtml\font\SvgText=Papyrus\relax\fi
 	\tikzpicture
 	\ifHtml 
-		\node[text height=2\LD@dimenb,text width=2\LD@dimenb,text only=false] (a) {\noindent\smash{\Image[Height=20\LD@dimenb,Width=20\LD@dimenb]{E:/Tex/Images/Hekathomb4gray.jpg}}}%
+		\node[text height=2\LD@dimenb,text width=2\LD@dimenb,text only=false] (a) {\noindent\smash{\Image[Height=20\LD@dimenb,Width=20\LD@dimenb]{\imageFolder/Hekathomb4gray.jpg}}}%
 	\else
 			\node[text width=\LD@dimena,text height=\LD@dimenb%,draw,line width=2pt,inner sep=0pt
-	] (a) at (0,-2) {\noindent\smash{\Image[Width=\LD@dimena,Height=\LD@dimenb]{E:/Tex/Images/Hekathomb4gray.jpg}}}%
+	] (a) at (0,-2) {\noindent\smash{\Image[Width=\LD@dimena,Height=\LD@dimenb]{\imageFolder/Hekathomb4gray.jpg}}}%
 	\fi
 node [below=0.7cm,inner sep=1pt] (b) at (a.north) {};
 \node [inner sep=1.5pt,above=2.7cm] (c) at (a.south) {};
@@ -4060,21 +4060,6 @@ $$
 \forall x\in\ob R, \qquad \ch(x)\ge1.
 $$
 
-%%\readdata{\chgraph}{Graphes/GraphCh.txt}
-%%\psset{xunit=1cm, yunit=0.8cm}
-\pspicture*[](-3,-.5)(3,5)
-\dataplot[plotstyle=curve,linewidth=.8pt,linecolor=red]{\chgraph}
-\psaxes*[labels=none,ticks=none]{<->}(0,0)(-3,-.4)(3,5)
-\rput{0}(-.2,4.8){$y$}
-\rput{0}(2.9,-.25){$x$}
-\rput{0}(1,0){$+$}
-\rput{0}(1.1,-.3){$1$}
-\rput{0}(-.2,-.3){$0$}
-\psline[linewidth=.5pt,linestyle=dotted]{-}(-3,1)(3,1)
-\rput{0}(0,1){$+$}
-\rput{0}(-.15,0.75){$1$}
-\endpspicture
-
 \medskip
 \centerline{%
 	\tikzpicture
@@ -4118,7 +4103,7 @@ $$
 		\draw[very thin,color=gray] (-2.2,-4.1) grid (2.2,4.1);
 		\draw[->] (0,0) -- (2.3,0) node[below] {$x$};
 		\draw[->] (0,0) -- (0,4.2) node[left] {$y$};
-		\draw[domain=-2.2:2.2,samples=66,color=blue,smooth] plot (\x,{sinh(\x)});
+		\draw[domain=-2.2:2.2,samples=66,color=blue,smooth] plot (\x,{sinh(\x)}) ;
 	\endtikzpicture
 }%
 \Figure [Index=Courbes!Sinus hyperbolique] Graphe $y=\sh(x)$. 
@@ -4143,21 +4128,7 @@ La tangente hyperbolique est minorée par $-1$ et majorée par $1$
 $$
 \forall x\in\ob R, \qquad -1<\th(x)<1.
 $$
-%%\readdata{\thgraph}{Graphes/GraphTh.txt}
-%%\psset{xunit=1cm, yunit=1cm}
-\pspicture*[](-3,-1.3)(3,1.3)
-\dataplot[plotstyle=curve,linewidth=.8pt,linecolor=red]{\thgraph}
-\psaxes*[labels=none,ticks=none]{<->}(0,0)(-3,-1.3)(3,1.3)
-\rput{0}(-.2,4.8){$y$}
-\rput{0}(2.9,-.25){$x$}
-\rput{0}(1,0){$+$}
-\rput{0}(1.1,-.3){$1$}
-\rput{0}(.2,-.3){$0$}
-\psline[linewidth=.5pt,linestyle=dotted]{-}(-3,1)(3,1)
-\psline[linewidth=.5pt,linestyle=dotted]{-}(-3,-1)(3,-1)
-\rput{0}(0,1){$+$}
-\rput{0}(-.15,0.75){$1$}
-\endpspicture
+
 
 \medskip
 \centerline{%
@@ -4165,7 +4136,7 @@ $$
 		\draw[very thin,color=gray] (-3.1,-1.2) grid (3.1,1.2);
 		\draw[->] (0,0) -- (1.3,0) node[below] {$x$};
 		\draw[->] (0,0) -- (0,1.2) node[left] {$y$};
-		\draw[domain=-3.1:3.1,samples=66,color=blue,smooth] plot (\x,{tanh(\x)});
+		\draw[domain=-3.1:3.1,samples=66,color=blue,smooth] plot (\x, {tanh(\x)}) ;
 	\endtikzpicture
 }%
 \Figure [Index=Courbes!Tangente hyperbolique] Graphe $y=\th(x)$. 
@@ -4393,29 +4364,12 @@ $$
 $$
 \medskip 
 
-
-%%\readdata{\arctangraph}{Graphes/GraphArcTan.txt}
-%%\psset{xunit=1cm, yunit=1cm}
-\pspicture*[](-5,-1.8)(5,2)
-\dataplot[plotstyle=curve,linewidth=.8pt,linecolor=red]{\arctangraph}
-\psaxes*[labels=none,ticks=none]{->}(0,0)(-5,-1.8)(5,2)
-\rput{0}(.2, 1.9){$y$}
-\rput{0}(4.8,-.25){$x$}
-\rput{0}(.25,-.2){$0$}
-\rput{0}(0,1.57){$+$}
-\rput{0}(-.3,1.57){${\pi\F2}$}
-\rput{0}(0,-1.57){$+$}
-\rput{0}(.5,-1.575){$-{\pi\F2}$}
-\psline[linewidth=.5pt,linestyle=dotted]{-}(-5,-1.575)(0,-1.575)
-\psline[linewidth=.5pt,linestyle=dotted]{-}(0,1.575)(5,1.575)
-\endpspicture
-
 \centerline{%
 	\tikzpicture
 		\draw[very thin,color=gray,step={(1,1.570796327)}] (-5.1,-1.67) grid (5.1,1.67);
 		\draw[->] (0,0) -- (5.2,0) node[below] {$x$};
 		\draw[->] (0,0) -- (0,1.77) node[left] {$y$};
-		\draw[color=red,smooth,domain=-5.1:5.1,samples=66] plot (\x,{rad(atan(\x))}); 
+		\draw[color=red,smooth,domain=-5.1:5.1,samples=66] plot (\x,{rad(atan(\x))}) ; 
 		\node [rotate=45,color=red] at (0.1,0.4) {$\arctan x$};
 	\endtikzpicture
 }%
@@ -4454,23 +4408,6 @@ $$
 }
 $$ 
 
-%%\readdata{\argchgraph}{Graphes/GraphArgCh.txt}
-%%\psset{xunit=1cm, yunit=1cm}
-\pspicture*[](-.5,-.4)(5,3)
-\dataplot[plotstyle=curve,linewidth=.8pt,linecolor=red]{\argchgraph}
-\psaxes*[labels=none,ticks=none]{->}(0,0)(-.5,-.4)(5,3)
-\rput{0}(-.3, 2.8){$y$}
-\rput{0}(4.8,-.25){$x$}
-\rput{0}(1,0){$+$}
-\rput{0}(1,-.3){$1$}
-\rput{0}(-.1,-.2){$0$}
-\rput{0}(0,1){$+$}
-\rput{0}(-.3,1){$1$}
-\psline[linewidth=.5pt,linestyle=dotted]{-}(-1,0)(-1,3.141592654)
-\rput{0}(-1,0){$+$}
-\rput{0}(-1.06,-.3){$-1$}
-\psline[linewidth=.5pt,linestyle=dotted]{-}(0,3.141592654)(-1,3.141592654)
-\endpspicture
 
 \medskip
 \centerline{%
@@ -4524,7 +4461,7 @@ $$
 		\draw[very thin,color=gray] (-7.1,-3.2) grid (7.1,3.2);
 		\draw[->,thick] (0,0) -- (7.2,0) node[below] {$x$};
 		\draw[->,thick] (0,0) -- (0,3.3) node[left] {$y$};
-		\draw[domain=-2.7:2.7,samples=66,color=blue,smooth] plot ({sinh(\x)},\x);
+		\draw[domain=-2.7:2.7,samples=66,color=blue,smooth] plot ({sinh(\x)},\x) ;
 	\endtikzpicture
 }%
 \Figure [Index=Courbes!Argument sinus hyperbolique]  Graphe  $y=\argsh(x)$. 
@@ -4550,23 +4487,7 @@ $$
 }
 $$ 
 
-%\readdata{\argthgraph}{Graphes/GraphArgTh.txt}
-%\psset{xunit=2cm, yunit=1cm}
-\pspicture*[](-1.2,-2.646)(1.2,2.646)
-\dataplot[plotstyle=curve,linewidth=.8pt,linecolor=red]{\argthgraph}
-\psaxes*[labels=none,ticks=none]{->}(0,0)(-1.2,-2.646)(1.2,2.646)
-\rput{0}(-.15, 2.5){$y$}
-\rput{0}(1.15,.25){$x$}
-\rput{0}(1,0){$+$}
-\rput{0}(1,-.3){$1$}
-\rput{0}(.2,-.2){$0$}
-\rput{0}(0,1){$+$}
-\rput{0}(-.3,1){$1$}
-\rput{0}(-1,0){$+$}
-\rput{0}(-1,.3){$-1$}
-\psline[linewidth=.5pt,linestyle=dotted]{-}(1,0)(1,2.646)
-\psline[linewidth=.5pt,linestyle=dotted]{-}(-1,0)(-1,-2.646)
-\endpspicture
+
 
 \medskip
 \centerline{%
@@ -4574,7 +4495,7 @@ $$
 		\draw[very thin,color=gray] (-1.2,-3.1) grid (1.2,3.1);
 		\draw[->] (0,0) -- (1.3,0) node[below] {$x$};
 		\draw[->] (0,0) -- (0,3.2) node[left] {$y$};
-\draw[domain=-3.1:3.1,samples=66,color=blue,smooth] plot ({tanh(\x)},\x);
+		\draw[domain=-3.1:3.1,samples=66,color=blue,smooth] plot ({tanh(\x)},\x) ;
 	\endtikzpicture
 }%
 \Figure [Index=Courbes!Argument tangente hyperbolique] Graphe  $y=\argth(x)$. 
@@ -4764,8 +4685,9 @@ $$
 		\draw[->,thick] (-3.1,0) -- (4.3,0) node[below] {$x$};
 		\draw[->,thick] (0,-1.2) -- (0,2.2) node[left] {$y$};
 		\draw [color=blue,thick] (1.1,2) --  (4.1,2) node [below,pos=0.5] {$y=a$} node[above,pos=0.5] {$x\to+\infty$} ;
-		\draw [color=blue,thick] (-3.1,-1) -- (-0.5,-1) node[below,pos=0.5]  {$y=a'$} node [above,pos=0.5] {$-\infty\gets x$} ;				\draw[domain=-0:4.1,samples=66,color=red,smooth] plot (\x,{2*tanh(\x)});
-		\draw[domain=-3.1:0,samples=66,color=red,smooth] plot (\x,{tanh(2*\x)});
+		\draw [color=blue,thick] (-3.1,-1) -- (-0.5,-1) node[below,pos=0.5]  {$y=a'$} node [above,pos=0.5] {$-\infty\gets x$} ;
+		\draw[domain=-0:4.1,samples=66,color=red,smooth,variable=\x] plot (\x,{2*tanh(\x)}) ;
+		\draw[domain=-3.1:0,samples=66,color=red,smooth,variable=\x] plot (\x,{tanh(2*\x)}) ;
 	\endtikzpicture
 }%
 \Figure [Index=Courbes!Asymptotes horizontales] Asymptotes horizontales. 
@@ -13859,10 +13781,10 @@ $$
 	%\unless\ifHtml\font\SvgText=Papyrus\relax\fi
 	\tikzpicture
 	\ifHtml 
-		\node[text height=2\LD@dimenb,text width=2\LD@dimenb,text only=false] (a) {\noindent\smash{\Image[Height=20\LD@dimenb,width=20\LD@dimenb]{E:/Tex/Images/Hekathomb5gray.jpg}}}%
+		\node[text height=2\LD@dimenb,text width=2\LD@dimenb,text only=false] (a) {\noindent\smash{\Image[Height=20\LD@dimenb,width=20\LD@dimenb]{\imageFolder/Hekathomb5gray.jpg}}}%
 	\else
 			\node[text width=\LD@dimena,text height=\LD@dimenb%,draw,line width=2pt,inner sep=0pt
-	] (a) at (0,-2) {\noindent\smash{\Image[Width=\LD@dimena,Height=\LD@dimenb]{E:/Tex/Images/Hekathomb5gray.jpg}}}%
+	] (a) at (0,-2) {\noindent\smash{\Image[Width=\LD@dimena,Height=\LD@dimenb]{\imageFolder/Hekathomb5gray.jpg}}}%
 	\fi
 node [below=0.7cm,inner sep=1pt] (b) at (a.north) {};
 \node [inner sep=1.5pt,above=2.7cm] (c) at (a.south) {};
@@ -17119,8 +17041,8 @@ Le plan $(M, \vec N,\vec B)$ est appelé plan normal à l'arc $(I,f)$ en $M$.\pn
 Le plan $(M, \vec T,\vec B)$ est appelé plan réctifiant de l'arc $(I,f)$ en $M$. 
 
 \centerline{%
-	\Image [Height=4cm,Box=hbox]{E:/Tex/Images/Pdf/hel.pdf}%
-	\Image [Height=4cm,Box=hbox]{E:/Tex/Images/Pdf/hell.pdf}%
+	\Image [Height=4cm,Box=hbox]{\imageFolder/Pdf/hel.pdf}%
+	\Image [Height=4cm,Box=hbox]{\imageFolder/Pdf/hell.pdf}%
 }%
 \Figure [Index=Courbes!Helice@Hélice] Allure et comportement local de l'hélice $t\mapsto \Q(t,\cos\pi t,\sin\pi t\W)$.
 
@@ -17210,7 +17132,7 @@ l'application $t\mapsto M(t)$ est une enveloppe de la famille de droite $(\Delta
 les fonctions $x$ et $y$ définies par \eqref{defxy} sont $\sc C^1$. 
 
 \centerline{%
-	\Image [Height=4cm]{E:/Tex/Images/Pdf/env.pdf}%
+	\Image [Height=4cm]{\imageFolder/Pdf/Env.pdf}%
 }%
 \Figure [Index=Courbes!Enveloppe]  Enveloppe de la famille de droite $\Delta_t:x\cos t+y\sin t=\cos t\sin t$.
 
@@ -17260,12 +17182,12 @@ la tangente à l'arc $(I,f)$ au point $M(t)=\b(x(t),y(t)\b)$.
 de ses droites normales. \bigskip
 
 \centerline{%
-	\Image [Height=3cm]{E:/Tex/Images/Pdf/Card.pdf}%
+	\Image [Height=3cm]{\imageFolder/Pdf/Card.pdf}%
 }%
 \Figure [Index=Courbes!Developpee@Développée!Cardioide@Cardioïde] Développée de la cardioïde d'équation $r(\theta)=1+\cos\theta$.
 
 \centerline{%
-	\Image [Height=3cm]{E:/Tex/Images/Pdf/Dell.pdf}%
+	\Image [Height=3cm]{\imageFolder/Pdf/Dell.pdf}%
 }%
 \Figure [Index=Courbes!Developpee@Développée!Cardioide@Cardioïde] Développée de l'ellipse d'équation $x^2+{y^2\F 3}=1$.
 
@@ -17304,7 +17226,7 @@ l'arc $\Gamma_k$ est une développante de $(I,f)$.
 \bigskip
 
 \centerline{%
-	\Image[Height=4cm]{E:/Tex/Images/Pdf/Dcercle.pdf}%
+	\Image[Height=4cm]{\imageFolder/Pdf/Dcercle.pdf}%
 }%
 \Figure [Index=Courbes!Developpante@Développante!de cercle] Développantes de cercle.
 
@@ -17328,7 +17250,7 @@ au cours du roulement, L'abscisse curviligne de $M_0$ à $M$ sur $(I,f)$ est ég
 \bigskip
 
 \centerline{%
-	\Image[Height=4cm]{E:/Tex/Images/Pdf/Cycloide.pdf}%
+	\Image[Height=4cm]{\imageFolder/Pdf/Cycloide.pdf}%
 }%
 \Figure [Index=Courbes!Cycloide@Cycloïde] Cycloïde $t\mapsto(t-\sin t,1-\cos t)$.
 
@@ -17572,7 +17494,7 @@ plus simple que \eqref{eqnr}.
 \bigskip 
 
 \centerline{%
-	\Image[Height=4cm]{E:/Tex/Images/Pdf/Ellip.pdf}%
+	\Image[Height=4cm]{\imageFolder/Pdf/Ellip.pdf}%
 }%
 \Figure ]Index=Courbes!Ellipse] Une ellipse et un repère orthonormée $(C,e_1,e_2)$ qui la réduit.
 
@@ -17629,7 +17551,7 @@ $D$ et $D'$ d'équation cartésiennes $x=a/e$ et $x=-a/e$.
 \medskip
 
 \centerline{%
-	\Image[Height=4cm]{E:/Tex/Images/Pdf/Ellip2.pdf}%
+	\Image[Height=4cm]{\imageFolder/Pdf/Ellip2.pdf}%
 }%
 \Figure [Index=Courbes!Ellipse] L'ellipse et ses éléments caractéristiques.
 
@@ -17672,7 +17594,7 @@ et l'hyperbole $\sc H$ admet deux asymptotes $A$ et $A'$
 d'équation $ay+bx=0$ et $ay-bx=0$. 
 
 \centerline{%
-	\Image[Width=4cm]{E:/Tex/Images/Pdf/Hyper.pdf}%
+	\Image[Width=4cm]{\imageFolder/Pdf/Hyper.pdf}%
 }%
 \Figure [Index=Courbes!Hyperbole] L'hyperbole et ses éléments caractéristiques.
 
@@ -17707,7 +17629,7 @@ et une directrice $\sc D$ d'équation $x=-p/2$. Son excentricité est $e=1$.
 \medskip
 
 \centerline{%
-	\Image[Width=4cm]{E:/Tex/Images/Pdf/Parabo.pdf}%
+	\Image[Width=4cm]{\imageFolder/Pdf/Parabo.pdf}%
 }%
 \Figure [Index=Courbes!Parabole] La Parabole et ses éléments caractéristiques.
 
@@ -20691,8 +20613,8 @@ et de $f:U\to\ob R^3$ de classe $\sc C^k$. \smallskip\noindent
 L'image $\{f(u,v):(u,v)\in U\}$ de $U$ par $f$ est appelé le support de la nappe $(U,f)$. 
 
 \centerline{%
-	\Image[Height=5cm,Box=hbox]{E:/Tex/Images/Pdf/Surface2.pdf}%
-	\Image[Height=5cm,Box=hbox]{E:/Tex/Images/Pdf/Surface.pdf}%
+	\Image[Height=5cm,Box=hbox]{\imageFolder/Pdf/Surface2.pdf}%
+	\Image[Height=5cm,Box=hbox]{\imageFolder/Pdf/Surface.pdf}%
 }%
 \Figure [Index=Surfaces] Surface $f:(u,v)\mapsto(u+v,\cos u+\cos v,\sin u+\sin v)$.
 
@@ -20755,8 +20677,8 @@ On dit que $M$ est un point singulier de $S$ dans le cas contraire.
 et seulement si, elle est régulière en tous ses points. 
 
 \centerline{%
-	\Image[Height=4cm,Box=hbox]{E:/Tex/Images/Pdf/Surface3.pdf}%
-	\Image[Height=4cm,Box=hbox]{E:/Tex/Images/Pdf/Surface4.pdf}%
+	\Image[Height=4cm,Box=hbox]{\imageFolder/Pdf/Surface3.pdf}%
+	\Image[Height=4cm,Box=hbox]{\imageFolder/Pdf/Surface4.pdf}%
 }%
 \Figure [Index=Surfaces!Cone@Cône]  Le cône $z^2=x^2+3y^2$.
 
@@ -20799,7 +20721,7 @@ $$
 $$
 
 \centerline{%
-	\Image[Height=4cm]{E:/Tex/Images/Pdf/Araignee.pdf}%
+	\Image[Height=4cm]{\imageFolder/Pdf/Araignee.pdf}%
 }%
 \Figure [Index=Surfaces!Representation Cartesienne@Représentation Cartésienne] Graphe de $z=x\cos(xy)$ pour $(x,y)\in[-\pi,\pi]^2$.
 
@@ -20845,8 +20767,8 @@ $$
 
 
 \centerline{%
-	\Image[Height=4cm,Box=hbox]{E:/Tex/Images/Pdf/Plant1.pdf}%
-	\Image[Height=4cm,Box=hbox]{E:/Tex/Images/Pdf/Plant2.pdf}%
+	\Image[Height=4cm,Box=hbox]{\imageFolder/Pdf/Plant1.pdf}%
+	\Image[Height=4cm,Box=hbox]{\imageFolder/Pdf/Plant2.pdf}%
 }%
 \Figure [Index=Surfaces!Plant tangent]  Vecteur normal et plan tangent à $z=\sqrt{1-x^2-y^2}$ en $(0,0,1)$.
 \bigskip
@@ -20891,14 +20813,14 @@ il existe un ouvert $W$ de $\ob R^3$ contenant $M_0$ tel que $W\cap S_1\cap S_2$
 soit le support d'un arc régulier de classe $\sc C^k$ et la tangente 
 à cet arc en $M_0$ est la droite $\Delta=(M_0,\vec V)$. 
 $$
-	\vcenter{\Image[Height=3cm,Box=hbox]{E:/Tex/Images/Pdf/Inter2.pdf}}
+	\vcenter{\Image[Height=3cm,Box=hbox]{\imageFolder/Pdf/Inter2.pdf}}
 	\bigcap\quad
-	\vcenter{\Image[Height=3cm,Box=hbox]{E:/Tex/Images/Pdf/Inter1.pdf}}
+	\vcenter{\Image[Height=3cm,Box=hbox]{\imageFolder/Pdf/Inter1.pdf}}
 	=
-	\vcenter{\Image[Height=3cm,Box=hbox]{E:/Tex/Images/Pdf/Inter5.pdf}}
+	\vcenter{\Image[Height=3cm,Box=hbox]{\imageFolder/Pdf/Inter5.pdf}}
 $$
 \Figure [Index=Surfaces!Intersection]  Intersection de deux surfaces.
-%	\Image[Height=3cm,Box=hbox]{E:/Tex/Images/Pdf/Inter3.pdf}% reunion
+%	\Image[Height=3cm,Box=hbox]{\imageFolder/Pdf/Inter3.pdf}% reunion
 
 \Remarques : a) La condition \eqref{cond} implique est équivalente à 
 $$ 
@@ -20938,8 +20860,8 @@ $$
 \vec{OM}(t,\lambda)=\Gamma(t)+\lambda\vec u(t)\qquad\b(t\in I,\lambda\in\ob R\b).
 $$ 
 \centerline{%
-	\Image[Height=4cm,Box=hbox]{E:/Tex/Images/Pdf/Regle1.pdf}%
-	\Image[Height=4cm,Box=hbox]{E:/Tex/Images/Pdf/Regle2.pdf}%
+	\Image[Height=4cm,Box=hbox]{\imageFolder/Pdf/Regle1.pdf}%
+	\Image[Height=4cm,Box=hbox]{\imageFolder/Pdf/Regle2.pdf}%
 }%
 \Figure [Index=Surfaces!Intersection]  Surface réglée $(t,\lambda)\mapsto( \lambda\cos t,t+\lambda\sin t,
 t+\lambda)$.
@@ -20982,8 +20904,8 @@ une directrice de $S$.
 (resp. base droite de $S$ si $\sc P\perp\Delta$). 
 
 \centerline{%
-	\Image[Height=4cm,Box=hbox]{E:/Tex/Images/Pdf/Cylindre.pdf}%
-	\Image[Height=4cm,Box=hbox]{E:/Tex/Images/Pdf/Cylindre2.pdf}%
+	\Image[Height=4cm,Box=hbox]{\imageFolder/Pdf/Cylindre.pdf}%
+	\Image[Height=4cm,Box=hbox]{\imageFolder/Pdf/Cylindre2.pdf}%
 }%
 \Figure [Index=Surfaces!Cylindre]  Cylindre, base et direction.
 
@@ -21032,9 +20954,9 @@ qui ne contient pas $A$ s'appelle une base de ce cône.
 \bigskip
 
 \centerline{%
-	\Image[Height=4cm,Box=hbox]{E:/Tex/Images/Pdf/Cone1.pdf}%
-	\Image[Height=4cm,Box=hbox]{E:/Tex/Images/Pdf/Cone3.pdf}%
-	\Image[Height=4cm,Box=hbox]{E:/Tex/Images/Pdf/Cone2.pdf}%
+	\Image[Height=4cm,Box=hbox]{\imageFolder/Pdf/Cone1.pdf}%
+	\Image[Height=4cm,Box=hbox]{\imageFolder/Pdf/Cone3.pdf}%
+	\Image[Height=4cm,Box=hbox]{\imageFolder/Pdf/Cone2.pdf}%
 }%
 \Figure [Index=Surfaces!Cone@Cône]  Cône 
 $(t,\lambda)\mapsto (\lambda\cos^2t+\lambda\sin t, \lambda\sin t\cos t,2-2\lambda)$ et base.
@@ -21085,10 +21007,10 @@ L'intersection de $S$ avec un demi-plan de frontière $\Delta$ s'appelle
 une demi-méridienne~de~$S$.
 
 \centerline{%
-	\Image[Height=4cm,Box=hbox]{E:/Tex/Images/Pdf/Revolution1.pdf}%
-	\Image[Height=4cm,Box=hbox]{E:/Tex/Images/Pdf/Revolution2.pdf}%
-	\Image[Height=4cm,Box=hbox]{E:/Tex/Images/Pdf/Revolution4.pdf}%
-	\Image[Height=4cm,Box=hbox]{E:/Tex/Images/Pdf/Revolution3.pdf}%
+	\Image[Height=4cm,Box=hbox]{\imageFolder/Pdf/Revolution1.pdf}%
+	\Image[Height=4cm,Box=hbox]{\imageFolder/Pdf/Revolution2.pdf}%
+	\Image[Height=4cm,Box=hbox]{\imageFolder/Pdf/Revolution4.pdf}%
+	\Image[Height=4cm,Box=hbox]{\imageFolder/Pdf/Revolution3.pdf}%
 }%
 \Figure [Index=Surfaces!de revolution@de révolution]  Surface de révolution, demi-méridienne et parallèle.
 \bigskip
@@ -21201,9 +21123,9 @@ est appelée ellipsoïde de centre $O$ et
 de~plans de symétries $(Oxy)$, $(Oxz)$ et $(Oyz)$. 
 
 \centerline{%
-	\Image[Height=3cm,Box=hbox]{E:/Tex/Images/Pdf/Ellipsoide2.pdf}%
-	\Image[Height=3cm,Box=hbox]{E:/Tex/Images/Pdf/Ellipsoide1.pdf}%
-	\Image[Height=3cm,Box=hbox]{E:/Tex/Images/Pdf/Ellipsoide3.pdf}%
+	\Image[Height=3cm,Box=hbox]{\imageFolder/Pdf/Ellipsoide2.pdf}%
+	\Image[Height=3cm,Box=hbox]{\imageFolder/Pdf/Ellipsoide1.pdf}%
+	\Image[Height=3cm,Box=hbox]{\imageFolder/Pdf/Ellipsoide3.pdf}%
 }%
 \Figure [Index=Surfaces!Ellipsoide@Ellipsoïde]  Ellipsoïde.
 \bigskip
@@ -21229,9 +21151,9 @@ est appelée hyperboloïde à une nappe de centre $O$ et
 de~plans de symétries $(Oxy)$, $(Oxz)$ et $(Oyz)$. 
 
 \centerline{%
-	\Image[Height=3.5cm,Box=hbox]{E:/Tex/Images/Pdf/Hyperboloide2.pdf}%
-	\Image[Height=3.5cm,Box=hbox]{E:/Tex/Images/Pdf/Hyperboloide1.pdf}%
-	\Image[Height=3.5cm,Box=hbox]{E:/Tex/Images/Pdf/Hyperboloide3.pdf}%
+	\Image[Height=3.5cm,Box=hbox]{\imageFolder/Pdf/Hyperboloide2.pdf}%
+	\Image[Height=3.5cm,Box=hbox]{\imageFolder/Pdf/Hyperboloide1.pdf}%
+	\Image[Height=3.5cm,Box=hbox]{\imageFolder/Pdf/Hyperboloide3.pdf}%
 }%
 \Figure [Index=Surfaces!Hyperboloide@Hyperboloïde]  Hyperboloïde à une nappe.
 \bigskip
@@ -21267,9 +21189,9 @@ est appelée hyperboloïde à deux nappes de centre $O$ et
 de~plans de symétries $(Oxy)$, $(Oxz)$ et $(Oyz)$. 
 
 \centerline{%
-	\Image[Height=3cm,Box=hbox]{E:/Tex/Images/Pdf/Hyperboloided2.pdf}%
-	\Image[Height=3cm,Box=hbox]{E:/Tex/Images/Pdf/Hyperboloided3.pdf}%
-	\Image[Height=3cm,Box=hbox]{E:/Tex/Images/Pdf/Hyperboloided1.pdf}%
+	\Image[Height=3cm,Box=hbox]{\imageFolder/Pdf/Hyperboloided2.pdf}%
+	\Image[Height=3cm,Box=hbox]{\imageFolder/Pdf/Hyperboloided3.pdf}%
+	\Image[Height=3cm,Box=hbox]{\imageFolder/Pdf/Hyperboloided1.pdf}%
 }%
 \Figure [Index=Surfaces!Hyperboloide@Hyperboloïde]  Hyperboloïde à deux nappes.
 \bigskip
@@ -21304,10 +21226,10 @@ est appelée paraboloïde elliptique
 de~plans de symétries $(Oxz)$ et $(Oyz)$. 
 
 \centerline{%
-	\Image [Box=hbox,Width=3.2cm]{E:/Tex/Images/Pdf/Paraboloide1.pdf}%
-	\Image [Box=hbox,Width=3.2cm]{E:/Tex/Images/Pdf/Paraboloide2.pdf}%
-	\Image [Box=hbox,Width=3.2cm]{E:/Tex/Images/Pdf/Paraboloide3.pdf}%
-	\Image [Box=hbox,Width=3.2cm]{E:/Tex/Images/Pdf/Paraboloide4.pdf}%
+	\Image [Box=hbox,Width=3.2cm]{\imageFolder/Pdf/Paraboloide1.pdf}%
+	\Image [Box=hbox,Width=3.2cm]{\imageFolder/Pdf/Paraboloide2.pdf}%
+	\Image [Box=hbox,Width=3.2cm]{\imageFolder/Pdf/Paraboloide3.pdf}%
+	\Image [Box=hbox,Width=3.2cm]{\imageFolder/Pdf/Paraboloide4.pdf}%
 }%
 \Figure [Index=Surfaces!Paraboloide elliptique@Paraboloïde elliptique] Paraboloïde elliptique.
 \bigskip
@@ -21335,10 +21257,10 @@ est appelée paraboloïde hyperbolique
 de~plans de symétries $(Oxz)$ et $(Oyz)$. 
 
 \centerline{%
-	\Image [Box=hbox,Height=3.2cm]{E:/Tex/Images/Pdf/Paraboloidee1.pdf}%
-	\Image [Box=hbox,Height=3.2cm]{E:/Tex/Images/Pdf/Paraboloidee2.pdf}%
-	\Image [Box=hbox,Height=3.2cm]{E:/Tex/Images/Pdf/Paraboloidee3.pdf}%
-	\Image [Box=hbox,Height=3.2cm]{E:/Tex/Images/Pdf/Paraboloidee4.pdf}%
+	\Image [Box=hbox,Height=3.2cm]{\imageFolder/Pdf/Paraboloidee1.pdf}%
+	\Image [Box=hbox,Height=3.2cm]{\imageFolder/Pdf/Paraboloidee2.pdf}%
+	\Image [Box=hbox,Height=3.2cm]{\imageFolder/Pdf/Paraboloidee3.pdf}%
+	\Image [Box=hbox,Height=3.2cm]{\imageFolder/Pdf/Paraboloidee4.pdf}%
 }%
 \Figure [Index=Surfaces!Paraboloide hyperbolique@Paraboloïde hyperbolique] Paraboloïde hyperbolique.
 \bigskip
