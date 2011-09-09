@@ -21,9 +21,9 @@ $$
 Soit $A\in\sc M_n(\ob C)$ une matrice de trace nulle. Démontrer que $A$ 
 est semblable à une matrice dont tous les éléments diagonaux sont nuls. 
 
-\exo [Level=1,Fight=2,Learn=1,Field=\DéveloppementsLimités,Type=\Colles,Origin=\MP] d. 
+\exo [Level=1,Fight=2,Learn=1,Field=\DéveloppementsLimités,Type=\Colles,Origin=\MP,Solution={$\ell=f'(0)/2$}] d. 
 Soit $f\in\sc C^1\b([0,1],\ob R\b)$ telle que $f(0)=0$. 
-Déterminer la limite $\ds \lim\limits_{n\to\infty}\sum_{k=1}^nf\Q({k\F n^2}\W)$.  
+Déterminer la limite $\ell:=\ds \lim\limits_{n\to\infty}\sum_{k=1}^nf\Q({k\F n^2}\W)$.  
 
 \exo [Level=1,Fight=3,Learn=1,Field=\DéveloppementsLimités,Type=\Colles,Origin=\MP] e. 
 Soit $f\in\sc C\b([0,1],\ob R\b)$ une fonction 
@@ -42,7 +42,7 @@ Prouver que $f\in\sc C^\infty(\ob R)$.
 Démontrer que $\ds{\d^{n+1}\hfill\F\d x^{n+1}}\b(x^n\ln(1+x)\b)
 =\sum_{0\le k\le n}{n!\F(1+x)^{k+1}}$ pour $n\in\ob N$ et $x>-1$. 
 
-\exo [Level=1,Fight=3,Learn=2,Field=\DéveloppementsLimités,Type=\Convexite,Origin=\MP] h. 
+\exo [Level=1,Fight=3,Learn=2,Field=\DéveloppementsLimités|\Convexite,Type=\Colles,Origin=\MP] h. 
 Soient $f:[0,1]\to\ob R$ une fonction convexe et $a\in\Q]0,1\W[$. \pn
 a) Démontrer que $f$ est continue en $a$. \pn
 b) Démontrer que $f$ admet en $a$ une dérivée à gauche et à droite. 
@@ -205,7 +205,7 @@ Soient $u_0\in\Q]0,1\W[$ et $\{u_n\}_{n\ge1}$ la suite définie par $u_{n+1}:=u_
 a) Démontrer que $\lim_{n\to\infty}u_n=0$. \pn
 b) Nature des séries de terme général $u_n^2$, $\ln(1-u_n)$ et $u_n$. 
  
-\exo [Level=2,Fight=1,Learn=1,Field=\Séries,Type=\Exercices,Origin=\MP] al. 
+\exo [Level=2,Fight=1,Learn=1,Field=\Séries,Type=\Colles,Origin=\MP] al. 
 Soit $\{u_n\}_{n\ge1}$ la suite définie par $u_n:=2\sqrt n-\sum_{1\le k\le n}1/\sqrt k$ pour $n\ge1$. 
 En étudiant la série de terme général $u_{n+1}-u_n$ montrer que la suite $\{u_n\}_{n\ge1}$ converge vers un nombre réel $\ell$ 
 et fournir un équivalent simple de $u_n-\ell$. 
@@ -220,7 +220,7 @@ et que $\sum_{n\ge1}v_n=1$ sinon.
 \exo [Level=2,Fight=1,Learn=1,Field=\DéveloppementsLimités,Type=\Exercices,Origin=\MP] an. 
 Démontrer que $\ds \sum_{2\le k\le n}{1\F\ln k}\sim {n\F\ln n}$ lorsque $n\to+\infty$. 
 
-\exo [Level=2,Fight=2,Learn=2,Field=\Séries,Type=\Colles,Origin=\MP] ao.
+\exo [Level=2,Fight=2,Learn=2,Field=\Séries,Type=\Exercices,Origin=\MP] ao.
 Nature de la série $\ds\sum_{n=2}^\infty{(-1)^n\F n+(-1)^nn/\ln n}$.
 
 \exo [Level=2,Fight=2,Learn=2,Field=\Séries,Type=\Colles,Origin=\MP] ap. 
@@ -746,30 +746,30 @@ a) Démontrer qu'il existe $x\in[0,1/2]$ tel que $f(x+1/2)=f(x)$. \pn
 b) Pour chaque entier $p\ge3$, montrer 
 qu'il existe $x\in[0,1-1/p]$ tel que $f(x+1/p)=f(x)$. 
 
-\exo [Level=2,Fight=2,Learn=1,Type=\Exercices,Field=\DéveloppementsLimités,Origin=] dw.  
+\exo [Level=2,Fight=2,Learn=1,Type=\Colles,Field=\DéveloppementsLimités,Origin=] dw.  
 Développement limité au voisinage de $0$ de $f(x):=\arcsin\b(\exp(-x^2)\b)$. 
 
-\exo [Level=1,Fight=2,Learn=1,Type=\Exercices,Field=\DéveloppementsLimités,Origin=] dx. 
+\exo [Level=1,Fight=3,Learn=1,Type=\Colles,Field=\DéveloppementsLimités,Origin=] dx. 
 Soit $f:\ob R\to\ob R$ l'application définie par $f(0):=0$ 
 et par $\ds f(x):={\e^{x^2}-1\F x}$ pour $x\neq0$. \vskip-0.5em\noindent
 a) Démontrer que $f$ admet une fonction réciproque $g$. \pn
 b) Déterminer un développement limité à l'ordre $5$ de $g$ en $0$. 
 
-\exo [Level=1,Fight=2,Learn=2,Type=\Exercices,Field=\ThéorèmeDeRolle|\DéveloppementsLimités,Origin=] dy. 
+\exo [Level=1,Fight=2,Learn=2,Type=\Colles,Field=\ThéorèmeDeRolle|\DéveloppementsLimités,Origin=] dy. 
 Soit $f:\ob R\to\ob R$ l'application définie par $f(x):=x\sin x$ pour $x\in\ob R$. \pn
 Démontrer que $f'$ s'annule pour une suite $\{x_n\}_{n\ge0}$ de valeurs 
 vérifiant $\forall n\in\ob N,|x_n-n\pi|<\pi/2$. \pn
 Posant $u_n:=x_n-n\pi+\pi/2$ pour $n\ge0$, démontrer que $\ds\lim_{n\to0}u_n=0$ et donner un équivalent~simple
 \vskip-0.5em\noindent de la suite $\{u_n\}_{n\ge0}$. 
 
-\exo [Level=1,Fight=2,Learn=2,Type=\Exercices,Field=\DéveloppementsLimités,Origin=] dz. 
+\exo [Level=1,Fight=3,Learn=2,Type=\Colles,Field=\DéveloppementsLimités,Origin=] dz. 
 Soit $x_0\in[0,\pi/2]$ et soit $\{x_n\}_{n\ge1}$, la suite définie par $x_{n+1}:=\sin x_n$ pour $n\ge0$. \pn
 a) Pour chaque suite convergente $\{u_n\}_{n\in\ob N}$ de limite $\ell$, déterminer la limite 
 $\lim_{n\to\infty}{1\F n}\sum_{1\le k\le n}u_k$. 
 b) Déterminer un nombre réel $\alpha$ tel que la quantité $x_{n+1}^\alpha-x_n^\alpha$ ait une limite non nulle. \pn
 c) En déduire un équivalent simple de la suite $\{x_n\}_{n\ge0}$. 
 
-\exo [Level=1,Fight=2,Learn=2,Type=\Exercices,Field=\DéveloppementsLimités,Origin=] ea. 
+\exo [Level=1,Fight=3,Learn=2,Type=\Colles,Field=\DéveloppementsLimités,Origin=] ea. 
 Soit $\{u_{a,n}\}_{a>1,n\ge0}$ 
 la famille de nombres réels définie par $u_{a,0}:=\e$ et 
 $u_{a,n+1}:=\log_{u_{a,n}}a$ pour $a>1$ et $n\ge0$. \pn
@@ -835,7 +835,7 @@ Montrer qu'il existe une unique fonction $g\in\sc C^n(\ob R,\ob R^p)$
 vérifiant $g^{(n)}=f$ et $g^{(k)}(0)=0\ \,(0\le k<n)$. \pn
 
 
-\exo [Level=1,Fight=2,Learn=2,Type=\Exercices,Field=\DéveloppementsLimités|\Intégration,Origin=] en. 
+\exo [Level=1,Fight=2,Learn=2,Type=\Colles,Field=\DéveloppementsLimités|\Intégration,Origin=] en. 
 Déterminer un équivalent simple lorsque $n$ tends vers $+\infty$ de la suite $\{I_n\}_{n\ge0}$ définie par 
 $\ds I_n:=\int_0^1{\d t\F1+t+\cdots+t^n}$ pour $n\ge0$. 
 
@@ -1225,11 +1225,11 @@ que $\ds\lim_{\ss(x,y,z)\to(0,0,0)\atop\ss x>0,y>0,z>0}{x^\alpha y^\beta z^\gamm
 Calculer $\cos (2\pi/5)+\cos(4\pi/5)$ et $\cos(2\pi/5)\cos(4\pi/5)$. 
 En déduire $\cos(2\pi/5)$. 
 
-\exo [Level=2,Fight=2,Learn=1,Type=\Exercices,Field=\DéveloppementsLimités,Origin=] hg. 
+\exo [Level=2,Fight=3,Learn=1,Type=\Exercices,Field=\DéveloppementsLimités,Origin=,Solution={$f(x)={4\F\sqrt3}x-{x^3\F90\sqrt3}+o_0(x^4)$}] hg. 
 Développement limité au voisinage de $0$ de $f(x)=\arccos\ds{\sin x\F x}$ 
 à l'ordre $4$. 
 
-\exo [Level=1,Fight=2,Learn=1,Type=\Exercices,Field=\DéveloppementsLimités,Origin=] hh. 
+\exo [Level=1,Fight=3,Learn=1,Type=\Colles,Field=\DéveloppementsLimités,Origin=] hh. 
 Pour $x\in\Q]0,\e\W[$, on pose $f(x):=x^{1/x}$. \pn 
 a) Prouver que $f$ est une bijection de $\Q]0,\e\W[$ dans $\Q]0,\e^{1/\e}\W[$. \pn
 b) Existence et calcul du développemet limité en $1^+$ de $g$ à l'ordre $2$. 
@@ -1238,10 +1238,10 @@ b) Existence et calcul du développemet limité en $1^+$ de $g$ à l'ordre $2$.
 Soit $a\in\ob R^n$. Déterminer les applications $f\in\sc C(\ob R^n,\ob R^p)$ 
 telles que $\forall x\in\ob R^n, f(2x+a)=f(x)$. 
 
-\exo [Level=1,Fight=0,Learn=0,Type=\Exercices,Field=\DéveloppementsLimités,Origin=] hj. 
+\exo [Level=1,Fight=1,Learn=0,Type=\TravauxDirigés,Field=\DéveloppementsLimités,Origin=,Solution={$f(x)=\sqrt2+{x\F2\sqrt2}-{x^2\F16\sqrt2}+o_0(x^2)$}] hj. 
 Calculer un développement limité à l'ordre $2$ de $f(x)=\sqrt{2+\sin x}$ en $0$. 
 
-\exo [Level=1,Fight=0,Learn=0,Type=\Exercices,Field=\Equivalents,Origin=] hk. 
+\exo [Level=1,Fight=0,Learn=0,Type=\TravauxDirigés,Field=\Equivalents,Origin=,Solution={$\lim\limits_{x\to0^+}f(x)=1$}] hk. 
 Déterminer la limite (ou un équivalent simple en cas de limite nulle ou infinie) pour $f(x)=(1-\ln x)^x$ en $0^+$. 
 
 \exo [Level=1,Fight=1,Learn=0,Type=\Exercices,Field=\Fonctions,Origin=\CCP] hl. 
@@ -1255,63 +1255,64 @@ Lorsque elle est définie, simplifier l'expression $\ds\argth{1+xy+yz+xz\F x+y+z
 \exo [Level=1,Fight=0,Learn=0,Type=\Exercices,Field=\Courbes,Origin=] hn. 
 Construire la courbe d'équation $y=\ln(\ch x)-x$. 
 
-\exo [Level=1,Fight=1,Learn=0,Type=\Exercices,Field=\Limites,Origin=] ho. 
-Calculer $\ds\lim_{x\to0}\Q({1\F x\e^x(x+1)}-{1\F x\cos x}\W)$. 
+\exo [Level=1,Fight=1,Learn=0,Type=\TravauxDirigés,Field=\Limites,Origin=,Solution={$\ell=-2$}] ho. 
+Calculer $\ell:=\ds\lim_{x\to0}\Q({1\F x\e^x(x+1)}-{1\F x\cos x}\W)$. 
 
-\exo [Level=1,Fight=1,Learn=0,Type=\Exercices,Field=\Limites,Origin=] hp. 
-Calculer $\ds\lim_{x\to1}\Q({2\F1-x^2}-{3\F1-x^3}\W)$. 
+\exo [Level=1,Fight=1,Learn=0,Type=\TravauxDirigés,Field=\Limites,Origin=,Solution={$\ell=-{1\F2}$}] hp. 
+Calculer $\ell:=\ds\lim_{x\to1}\Q({2\F1-x^2}-{3\F1-x^3}\W)$. 
 
-\exo [Level=1,Fight=1,Learn=0,Type=\Exercices,Field=\Limites,Origin=]  hq. 
-Calculer $\ds\lim_{x\to+\infty}\Q(\sqrt{\ln(x^2+1)}-\sqrt{\ln(x^2-1)}\W)$. 
+\exo [Level=1,Fight=1,Learn=0,Type=\Exercices,Field=\Limites,Origin=,Solution={$\ell=0$}]  hq. 
+Calculer $\ell:=\ds\lim_{x\to+\infty}\Q(\sqrt{\ln(x^2+1)}-\sqrt{\ln(x^2-1)}\W)$. 
 
-\exo [Level=1,Fight=1,Learn=0,Type=\Exercices,Field=\Limites,Origin=]  hr. 
-Calculer $\ds\lim_{x\to\e^-}(\ln x)^{\ln(\e-x)}$. 
+\exo [Level=1,Fight=1,Learn=0,Type=\TravauxDirigés,Field=\Limites,Origin=,Solution={$\ell=1$}]  hr. 
+Calculer $\ell:=\ds\lim_{x\to\e^-}(\ln x)^{\ln(\e-x)}$. 
 
-\exo [Level=1,Fight=1,Learn=0,Type=\Exercices,Field=\Limites,Origin=]  hs. 
-Calculer $\lim_{x\to\infty}\Q(\ch\sqrt{x+1}-\ch\sqrt x\W)^{1/\sqrt x}$. 
+\exo [Level=1,Fight=1,Learn=0,Type=\Colles,Field=\Limites,Origin=]  hs. 
+Calculer $\ell:=\lim_{x\to\infty}\Q(\ch\sqrt{x+1}-\ch\sqrt x\W)^{1/\sqrt x}$. 
 
-\exo [Level=1,Fight=1,Learn=0,Type=\Exercices,Field=\Limites,Origin=]  
-ht. Calculer $\lim_{x\to0}x^2\Q(\e^{1/x}-\e^{1/(x-1)}\W)$ et $\lim_{x\to+\infty}x^2\Q(\e^{1/x}-\e^{1/(x-1)}\W)$. 
+\exo [Level=1,Fight=1,Learn=0,Type=\Exercices,Field=\Limites,Origin=,Solution={$\ell_2:=-1$ et $\ell_1$ n'existe pas (limite $0$ à gauche et $+\infty$ à droite)}]  
+ht. Calculer $\ell_1:=\lim_{x\to0}x^2\Q(\e^{1/x}-\e^{1/(x-1)}\W)$ et $\ell_2:=\lim_{x\to+\infty}x^2\Q(\e^{1/x}-\e^{1/(x-1)}\W)$. 
 
-\exo [Level=1,Fight=1,Learn=0,Type=\Exercices,Field=\Limites,Origin=]  hu. 
-Calculer $\ds\lim_{x\to1}\Q({4\F\pi-4\arctan x}+{2\F x-1}\W)$. 
+\exo [Level=1,Fight=1,Learn=0,Type=\Exercices,Field=\Limites,Origin=,Solution={$\ell=-1$}]  hu. 
+Calculer $\ell:=\ds\lim_{x\to1}\Q({4\F\pi-4\arctan x}+{2\F x-1}\W)$. 
 
-\exo [Level=1,Fight=1,Learn=0,Type=\Exercices,Field=\Equivalents,Origin=]  hv. 
+\exo [Level=1,Fight=1,Learn=0,Type=\TravauxDirigés,Field=\Equivalents,Origin=,Solution={$f(x)\Sim_0{x^3\F3}$}]  hv. 
 Trouver un équivalent simple de $\tan x-\sqrt{\tan x^2}$ en $0^+$. 
 
-\exo [Level=1,Fight=1,Learn=0,Type=\Exercices,Field=\Limites,Origin=]  hw. 
-Calculer la limite $\lim_{x\to{\pi\F2}^-}\Q(\Q({\pi\F2}-x\W)\tan x\W)^{\tan x}$. 
+\exo [Level=1,Fight=1,Learn=0,Type=\Exercices,Field=\Limites,Origin=,Solution={$\ell=1$}]  hw. 
+Calculer la limite $\ell:=\lim_{x\to{\pi\F2}^-}\Q(\Q({\pi\F2}-x\W)\tan x\W)^{\tan x}$. 
 
-\exo [Level=1,Fight=1,Learn=0,Type=\Exercices,Field=\Limites,Origin=] hx. 
-Calculer la limite $\lim_{x\to+\infty}\b(\sh(\ch x)-\ch(\sh x)\b)$. 
+\exo [Level=1,Fight=1,Learn=0,Type=\Colles,Field=\Limites,Origin=] hx. 
+Calculer la limite $\ell:=\lim_{x\to+\infty}\b(\sh(\ch x)-\ch(\sh x)\b)$. 
 
-\exo [Level=1,Fight=1,Learn=0,Type=\Exercices,Field=\Limites,Origin=]  hy. 
-Soit $(a,b)\in\ob R^2$ tel que $a\neq0\neq b$. Calculer $\lim_{x\to1}\Q({a\F1-x^a}-{b\F1-x^b}\W)$. 
+\exo [Level=1,Fight=1,Learn=0,Type=\TravauxDirigés,Field=\Limites,Origin=,Solution={$\ell={a-b\F2}$}]  hy. 
+Soit $(a,b)\in\ob R^2$ tel que $a\neq0\neq b$. Calculer $\ell:=\lim_{x\to1}\Q({a\F1-x^a}-{b\F1-x^b}\W)$. 
 
-\exo [Level=1,Fight=1,Learn=0,Type=\Exercices,Field=\Equivalents,Origin=] hz. 
+\exo [Level=1,Fight=1,Learn=0,Type=\TravauxDirigés,Field=\Equivalents,Origin=,Solution={$f(x)\Sim_0-{7\F360}x^3$}] hz. 
 Trouver un équivalent simple de $\ds{1\F x}-{1\F2}\Q({1\F\sin x}+{1\F\sh x}\W)$ en $0$. 
 
-\exo [Level=1,Fight=1,Learn=0,Type=\Exercices,Field=\Equivalents,Origin=] ia. 
+\exo [Level=1,Fight=2,Learn=0,Type=\TravauxDirigés,Field=\Equivalents,Origin=,Solution={$f(x)\Sim_0-{x^7\F45}$}] ia. 
 Trouver un équivalent de $\sin(\sh x)-\sh(\sin x)$ en $0$. 
 
-\exo [Level=1,Fight=1,Learn=0,Type=\Exercices,Field=\Limites,Origin=] ib. 
-Calculer $\ds\lim_{x\to+\infty}\Q({\arctan(x+1)\F\arctan x}\W)^{x^2}$. 
+\exo [Level=1,Fight=1,Learn=0,Type=\Colles,Field=\Limites,Origin=,Solution={$\ell=\e^{2\F\pi}$}] ib. 
+Calculer $\ell:=\ds\lim_{x\to+\infty}\Q({\arctan(x+1)\F\arctan x}\W)^{x^2}$. 
 
-\exo [Level=1,Fight=1,Learn=0,Type=\Exercices,Field=\Limites,Origin=] ic. 
-Determiner la limite de la suite de terme général $u_n=\Q(3\times2^{1/n}-2\times3^{1/n}\W)^n$
+\exo [Level=1,Fight=1,Learn=0,Type=\TravauxDirigés,Field=\Limites,Origin=,Solution={$\ell={8\F9}$}] ic. 
+Determiner la limite $\ell$ de la suite de terme général $u_n=\Q(3\times2^{1/n}-2\times3^{1/n}\W)^n$
 
-\exo [Level=1,Fight=1,Learn=0,Type=\Exercices,Field=\Limites,Origin=] id. 
-Déterminer la limite $\lim_{x\to 0\atop x\neq0}{\ln\cos ax\F\ln\cos bx}$ pour $a,b\in\ob R^*$. 
+\exo [Level=1,Fight=1,Learn=0,Type=\TravauxDirigés,Field=\Limites,Origin=,Solution={$\ell={a^2\F b^2}$}] id. 
+Déterminer la limite $\ell:=\lim_{x\to 0\atop x\neq0}{\ln\cos ax\F\ln\cos bx}$ pour $a,b\in\ob R^*$. 
 
 \exo [Level=1,Fight=1,Learn=0,Type=\Exercices,Field=\DéveloppementsLimités,Origin=] ie. 
 Déterminer la limite $\ds\ell=\lim_{x\to0^+}{(\sin x)^x-1\F x^x-1}$. \pn
 Trouver une meilleure estimation que $o(1)$ pour la  vitesse de convergence 
 vers $\ell$. 
 
-\exo [Level=1,Fight=1,Learn=0,Type=\Exercices,Field=\DéveloppementsLimités,Origin=] if. 
+\exo [Level=1,Fight=1,Learn=0,Type=\TravauxDirigés,Field=\DéveloppementsLimités,Origin=,Solution={$f(x)=1+{x^2\F2}+{5x^4\F24}+{61x^6\F720}+o_0(x^5)$}] if. 
 Effectuer un développement limité au voisinage de $0$ pour $f(x)={1\F\cos x}$ à l'ordre $5$.
  
-\exo [Level=1,Fight=1,Learn=0,Type=\Exercices,Field=\Limites,Origin=] ig. Calculer $\lim_{x\to\infty}{\ln(x+1)\F\ln x}$. 
+\exo [Level=1,Fight=1,Learn=0,Type=\Cours,Field=\Limites,Origin=,Solution={$\ell=1$}] ig. 
+Calculer $\ell:=\lim_{x\to\infty}{\ln(x+1)\F\ln x}$. 
 
 \exo [Level=2,Fight=1,Learn=1,Type=\Exercices,Field=\Diagonalisation,Origin=] ih. Soit $M:=\ds{1\F2}\pmatrix{-1&1&1\cr0&0&1\cr0&0&1\cr}$. 
 Déterminer la limite de la suite de terme général $\ds u_n:=\sum_{1\le k\le n}M^k$. 
@@ -2224,7 +2225,7 @@ $$
 d) En sommant la relation précédente, 
 trouver un équivalent simple de la suite $u_n$ lorsque $n\to\infty$. 
 
-\exo [Level=2,Fight=2,Learn=2,Type=\Exercices,Field=\SériesNumériques,Origin=] oy. 
+\exo [Level=2,Fight=2,Learn=2,Type=\Colles,Field=\SériesNumériques,Origin=] oy. 
 a) Montrer que la série de terme général $u_n=\e^{-\sqrt{\ln n}}$ diverge. \pn
 b) Prouver que $u_n\sim nu_n-(n-1)u_{n-1}$ et en déduire un équivalent 
 de $\sum_{n=1}^ku_n$ lorsque $k\to\infty$. 
@@ -2253,7 +2254,7 @@ Nature de la série $\ds\sum_{n=2}^\infty(\ln n)^{-\ln n}$ ?
 \exo [Level=2,Fight=0,Learn=0,Type=\Exercices,Field=\SériesNumériques,Origin=] pg. 
 Nature de la série $\ds\sum_{n=2}^\infty{1\F(1+\sqrt n)^n}$ ?
 
-\exo [Level=2,Fight=0,Learn=0,Type=\Exercices,Field=\SériesNumériques,Origin=] ph. 
+\exo [Level=2,Fight=0,Learn=0,Type=\Colles,Field=\SériesNumériques,Origin=] ph. 
 Nature de la série $\ds\sum_{n=1}^\infty\arccos\Q({n^3+1\F n^3+2}\W)$ ?
 
 \exo [Level=2,Fight=0,Learn=0,Type=\Exercices,Field=\SériesNumériques,Origin=] pi. 
@@ -2728,7 +2729,7 @@ Nature de la série $\ds\sum_{n=1}^\infty\sin\Q(\sum_{k=1}^n{\pi\F 2^k}\W)$ ?
 Les séries $\ds\sum_{n=0}^\infty|a_n|^2$ et $\ds\sum_{n=0}^\infty|b_n|^2$ étant convergente, 
 prouver que la série $\ds\sum_{n=0}^\infty a_nb_n$ converge. 
 
-\exo [Level=2,Fight=0,Learn=0,Type=\Exercices,Field=\SériesNumériques,Origin=] sn. 
+\exo [Level=2,Fight=0,Learn=0,Type=\Colles,Field=\SériesNumériques,Origin=] sn. 
 Soit $(u_n)_{n\in\ob N^*}$ une suite de limite $\ell$ et soient $(v_n)_{n\in\ob N^*}$ 
 et $(w_n)_{n\in\ob N^*}$  
 les suites définies par 
@@ -2936,7 +2937,7 @@ Rayon de convergence de $\ds\sum_{n=1}^\infty {n+\e^n\F1+ n^{\sqrt n}}x^n$ ?
 \exo [Level=2,Fight=0,Learn=0,Type=\Exercices,Field=\SériesEntières,Origin=] tm. 
 Rayon de convergence de $\ds\sum_{n=1}^\infty{n^{n!}\F n^{\exp n\ln n}}x^n$ ? 
 
-\exo [Level=2,Fight=0,Learn=0,Type=\Exercices,Field=\SériesNumériques,Origin=] tn. 
+\exo [Level=2,Fight=0,Learn=0,Type=\TravauxDirigés,Field=\SériesNumériques,Origin=] tn. 
 a) Prouver que
 $$
 {1\F k+1}\le \ln(k+1)-\ln k\le {1\F k}\qquad(k\in\ob N^*).
@@ -3171,16 +3172,17 @@ u_{n+1}=\sqrt{u_nu_{n-1}}\qquad(n\ge0).
 $$
 Montrer que $(u_n)_{n\in\ob N}$ converge et calculer sa limite. 
 
-\exo [Level=1,Fight=0,Learn=0,Type=\Exercices,Field=\DéveloppementsLimités,Origin=] up. 
+\exo [Level=1,Fight=2,Learn=1,Type=\Exercices,Field=\DéveloppementsLimités,Origin=] up. 
 Montrer que $\ds\sum_{k=0}^n\e^{k^2}\sim\e^{n^2}$ lorsque $n\to\infty$. 
 
-\exo [Level=1,Fight=0,Learn=0,Type=\Exercices,Field=\DéveloppementsLimités,Origin=] uv. Donner un équivalent simple de $\ds\sum_{k=n}^{2n}{1\F k^k}$ lorsque $n\to\infty$. 
+\exo [Level=1,Fight=1,Learn=1,Type=\Exercices,Field=\DéveloppementsLimités,Origin=] uv. 
+Donner un équivalent simple de $\ds\sum_{k=n}^{2n}{1\F k^k}$ lorsque $n\to\infty$. 
  
-\exo [Level=1,Fight=0,Learn=0,Type=\Exercices,Field=\DéveloppementsLimités,Origin=] uw. 
+\exo [Level=1,Fight=0,Learn=1,Type=\Exercices,Field=\DéveloppementsLimités,Origin=] uw. 
 Soient $a\in\ob R$ et soit $(u_n)_{n\in\ob N}$ une suite vérifiant 
 $\ds\lim_{n\to\infty}(u_{n+1}-u_n)=a$. Calculer $\ds\lim_{n\to\infty}{u_n\F n}$. 
 
-\exo [Level=2,Fight=0,Learn=0,Type=\Exercices,Field=\SériesNumériques,Origin=] ux. 
+\exo [Level=2,Fight=0,Learn=0,Type=\TravauxDirigés,Field=\SériesNumériques,Origin=] ux. 
 Soit $u_0\in\ob R$. Pour $n\ge1$, on pose $u_n=\sqrt{1+u_{n-1}^2}$ 
 et $v_n={1\F v_1}+\cdots+{1\F v_n}$. Étudier les suites $u_n$, $v_n$, $v_n-2u_n$ et $v_n/u_n$. 
 
@@ -3459,7 +3461,7 @@ $x\mapsto\sqrt{|x|}\sin(1/x)$.
 Que peut-on dire d'une fonction périodique $f$ de période $T>0$ 
 admettant une limite en $+\infty$ ?
 
-\exo [Level=1,Fight=0,Learn=0,Field=\DéveloppementsLimités,Type=\Exercices,Origin=]  wk. 
+\exo [Level=1,Fight=1,Learn=1,Field=\DéveloppementsLimités,Type=\Exercices,Origin=]  wk. 
 Pour $(a,b)\in\ob R^2$, calculer $\ds\lim_{x\to\infty}\Q(\sqrt{x^2+x+1}-ax-b\W)$. 
 
 \exo [Level=1,Fight=1,Learn=1,Field=\DéveloppementsLimités,Type=\Exercices,Origin=] wl. 
@@ -3468,13 +3470,13 @@ Calculer la limite $\ds\lim_{x\to\infty}\Q(\sh x\F \ch x-1\W)^x$.
 \exo [Level=1,Fight=1,Learn=1,Field=\Continuité,Type=\Exercices,Origin=] wm. 
 étudier la continuité de la fonction $x\mapsto\arccos(\sin x)$. 
 
-\exo [Level=1,Fight=0,Learn=0,Field=\DéveloppementsLimités,Type=\Exercices,Origin=] wn. 
-Pour $x\in\ob R$, calculer la limite $\ds\lim_{n\to\infty}\Q(1-{x\F n}\W)^n$. 
+\exo [Level=1,Fight=0,Learn=0,Field=\DéveloppementsLimités,Type=\TravauxDirigés,Origin=,Solution={$\ell=\e^{-x}$}] wn. 
+Pour $x\in\ob R$, calculer la limite $\ell:=\ds\lim_{n\to\infty}\Q(1-{x\F n}\W)^n$. 
 
-\exo [Level=1,Fight=0,Learn=0,Field=\Limites,Type=\Exercices,Origin=] wo. 
-Calculer la limite $\ds\lim_{x\to1}{\arctan(x)^2-\pi^2/16\F x^2-1}$. 
+\exo [Level=1,Fight=0,Learn=0,Field=\Limites,Type=\Colles,Origin=,Solution={$\ell={\pi\F8}$}] wo. 
+Calculer la limite $\ell:=\ds\lim_{x\to1}{\arctan(x)^2-\pi^2/16\F x^2-1}$. 
 
-\exo [Level=1,Fight=0,Learn=1,Field=\DéveloppementsLimités,Type=\Exercices,Origin=] wp. 
+\exo [Level=1,Fight=0,Learn=1,Field=\DéveloppementsLimités,Type=\Exercices,Origin=,Solution={$\ell={1\F3\pi}$}] wp. 
 Calculer la limite $\ds\lim_{x\to 1}{(x-1)\cos{\pi x}\F\sin(3\pi x)}$
 
 \exo [Level=2,Fight=1,Learn=1,Field=\MatricesSymétriques,Type=\Colles,Origin=] wq. 
@@ -3599,7 +3601,7 @@ b) Notant $\hbox{Argth}$ la bijection réciproque de la fonction $\th$,
 exprimer $\hbox{Argth}\ u$ à l'aide des fonctions élémentaires ($\exp$, 
 $\ln$, $\sin$, $\cos$...)
 
-\exo [Level=1,Fight=1,Learn=1,Field=\DéveloppementsLimités,Type=\Exercices,Origin=\MP]  xm. 
+\exo [Level=1,Fight=2,Learn=1,Field=\DéveloppementsLimités,Type=\Exercices,Origin=\MP]  xm. 
 Calculer un développement limité en $+\infty$ à l'ordre $4$ de 
 $u_n=\ds\arctan\Q(\sqrt{1-\cos(1/n)\F1+\cos(1/n)}\W)$. 
 
@@ -4943,7 +4945,7 @@ $$
 Convergence et somme de $\ds\sum_{n=1}^\infty{2n+1\F n^2(n+2)^2}$ 
 sachant que $\ds\sum_{n=1}^\infty{1\F n^2}={\pi^2\F 6}$. 
 
-\exo [Level=2,Fight=2,Learn=1,Field=\SériesNumériques,Type=\Exercices,Origin=] agi.  
+\exo [Level=2,Fight=2,Learn=1,Field=\SériesNumériques,Type=\Colles,Origin=] agi.  
 La suite de Fibonacci est la suite $(\phi_n)_{n\in\ob N}$ défine par
 $$
 \phi_0=0, \qquad \phi_1=1\quad\hbox{et}\quad \phi_{n+2}=\phi_n+\phi_{n+1}\qquad(n\in\ob N).
@@ -5094,7 +5096,7 @@ Soit $f:\ob R\to\ob R$ telle que $\int_{-\infty}^\infty f(t)\d t$ converge.
 Pour $x\in\ob R$, on pose $F(x):=\ds \int_{x-1}^{x+1}f(t)\d t$. \pn
 Convergence et calcul de $\int_{-\infty}^\infty F(x)\d x$ ? 
 
-\exo [Level=2,Fight=2,Learn=2,Field=\SériesNumériques,Type=\Exercices,Origin=] aih. 
+\exo [Level=2,Fight=2,Learn=2,Field=\SériesNumériques,Type=\TravauxDirigés,Origin=] aih. 
 On pose $u_1=-1$ et pour $n\ge2$, on pose
 $$
 u_n:=(n-1/2)\ln\Q({n\F n-1}\W)-1
@@ -5718,7 +5720,7 @@ est un fermé de $\ob R^p$ pour chaque fermé $O$ de $\ob R^q$. \pn
 Montrer que l'application $(x,y)\mapsto\ds{\sin x+\sin y\F x+y}$ 
 est bornée sur $\{(x,y)\in\ob R^2:x+y\neq0\}$. 
 
-\exo [Level=2,Fight=0,Learn=0,Field=\Séries,Type=\Colles,Origin=\MP] aly. 
+\exo [Level=2,Fight=0,Learn=0,Field=\Séries,Type=\Exercices,Origin=\MP] aly. 
 Nature de la série $\sum_{n=1}^\infty{2^n n!\F n^n}$.
 
 \exo [Level=2,Fight=1,Learn=0,Field=\Séries,Type=\Colles,Origin=\MP] alz. 
@@ -6112,16 +6114,16 @@ Pour $\alpha\in\ob R$, étudier la nature de $\ds I:=\int_0^\infty{\sin t\F t^\a
 \exo [Level=2,Fight=0,Learn=1,Type=\Exercices,Field=\Continuité,Origin=] anw. 
 Étudier l'existence de la limite  $\ds \lim_{(x,y)\to(0,0)\atop(x,y)\neq(0,0)}{\sin x\sin y\F xy}$. 
 
-\exo [Level=1,Fight=0,Learn=0,Type=\Exercices,Field=\DéveloppementsLimités,Origin=] anx. 
+\exo [Level=1,Fight=2,Learn=0,Type=\Exercices,Field=\DéveloppementsLimités,Origin=,Solution={$\ell={\pi\F4}+{x-1\F4}-{(x-1)^2\F8}+o_1\big((x-1)^2_big)$}] anx. 
 Calculer un développement limité à l'ordre $2$ de $f(x)=\arctan\sqrt x$ en $1$. 
 
-\exo [Level=1,Fight=0,Learn=0,Type=\Exercices,Field=\DéveloppementsLimités,Origin=] any. 
+\exo [Level=1,Fight=0,Learn=0,Type=\TravauxDirigés,Field=\DéveloppementsLimités,Origin=,Solution={$f(x)=-{1\F2}+{x\F12}+o_0(x^2)$}] any. 
 Calculer un développement limité à l'ordre $2$ de $f(x)=\ds{1\F\e^x-1}-{1\F x}$ en $0$. 
 
 \exo [Level=1,Fight=0,Learn=0,Type=\Exercices,Field=\Equivalents,Origin=] anz. 
 Déterminer la limite (ou un équivalent simple en cas de limite nulle ou infinie) pour $f(x)=(\sin x-1)\e^{\tan x}$ en $\ds{\pi\F2}$. 
 
-\exo [Level=1,Fight=0,Learn=0,Type=\Exercices,Field=\Equivalents,Origin=] aoa. 
+\exo [Level=1,Fight=0,Learn=0,Type=\Exercices,Field=\Equivalents,Origin=,solution={$f(x)\mathop{\sim}\limits_0{ln(x)x^3\F3}$}] aoa. 
 Déterminer la limite (ou un équivalent simple en cas de limite nulle ou infinie) pour $f(x)=(\sin x)^{\sh x}-(\sh x)^{\sin x}$ en $0^+$. 
 
 \exo [Level=1,Fight=0,Learn=0,Type=\Exercices,Field=\Equivalents,Origin=] aob. 
@@ -6133,31 +6135,31 @@ Construire la courbe d'équation $\ds y=(x^2-1)\ln{x+1\F x}$.
 \exo [Level=1,Fight=0,Learn=0,Type=\Exercices,Field=\Courbes,Origin=] aod. 
 Construire la courbe d'équation $\ds y=\Q(x+2-{1\F x}\W)\arctan x$. 
 
-\exo [Level=1,Fight=1,Learn=0,Type=\Exercices,Field=\DéveloppementsLimités,Origin=] aoe. 
+\exo [Level=1,Fight=2,Learn=0,Type=\Exercices,Field=\DéveloppementsLimités,Origin=,Solution={$f(x)=x-{3\F2}x^2+{11\F6}x^3-{25\F12}x^4+o_0(x^4)$}] aoe. 
 Effectuer un développement limité au voisinage de $0$ pour  $f(x)={\ln(1+x)\F1+x}$ à l'ordre $4$.
 
-\exo [Level=1,Fight=1,Learn=0,Type=\Exercices,Field=\DéveloppementsLimités,Origin=] aof. 
+\exo [Level=1,Fight=1,Learn=0,Type=\TravauxDirigés,Field=\DéveloppementsLimités,Origin=,Solution={$f(x)=-{x^2\F6}-{x^4\F180}+o_0(x^5)$}] aof. 
 Effectuer un développement limité au voisinage de $0$ pour $f(x)=\ln{\sin x\F x}$ à l'ordre $5$.
 
-\exo [Level=1,Fight=1,Learn=0,Type=\Exercices,Field=\DéveloppementsLimités,Origin=] aog. 
+\exo [Level=1,Fight=1,Learn=0,Type=\Exercices,Field=\DéveloppementsLimités,Origin=,Solution={$f(x)=1+x^2-{x^3\F2}+{5\F6}x^4-{3\F4}x^5+o_0(x^5)$}] aog. 
 Effectuer un développement limité au voisinage de $0$ pour $f(x)=(1+x)^x$ à l'ordre $5$. 
 
-\exo [Level=1,Fight=1,Learn=0,Type=\Exercices,Field=\DéveloppementsLimités,Origin=] aoh. 
+\exo [Level=1,Fight=1,Learn=0,Type=\Exercices,Field=\DéveloppementsLimités,Origin=, Solution={$f(x)=\e-{\e\F3}x^2+{\e\F30}x^4+o_0(x^5)$}] aoh. 
 Effectuer un développement limité au voisinage de $0$ pour  $f(x)=\exp{x\F\tan x}$ à l'ordre $5$.
 
-\exo [Level=1,Fight=1,Learn=0,Type=\Exercices,Field=\DéveloppementsLimités,Origin=] aoi. 
+\exo [Level=1,Fight=1,Learn=0,Type=\TravauxDirigés,Field=\DéveloppementsLimités,Origin=,Solution={$f(x)=1+{x^2\F6}+{7x^4\F360}+o_0(x^5)$}] aoi. 
 Effectuer un développement limité au voisinage de $0$ pour $f(x)={x\F\sin x}$ à l'ordre $5$. 
 
-\exo [Level=1,Fight=1,Learn=0,Type=\Exercices,Field=\DéveloppementsLimités,Origin=] aoj. 
+\exo [Level=1,Fight=1,Learn=0,Type=\TravauxDirigés,Field=\DéveloppementsLimités,Origin=,Solution={$f(x)=x^2+{2x^4\F3}+{17x^6\F45}+o_0(x^7)$}] aoj. 
 Effectuer un développement limité au voisinage de $0$ pour  $f(x)=(\tan x)^2$ à l'ordre $7$. 
 
-\exo [Level=1,Fight=1,Learn=0,Type=\Exercices,Field=\DéveloppementsLimités,Origin=] aok. 
+\exo [Level=1,Fight=1,Learn=0,Type=\Exercices,Field=\DéveloppementsLimités,Origin=,Solution={$f(x)=1+x^2+{x^4\F3}+{x^6\F120}+o_0(x^6)$}] aok. 
 Effectuer un développement limité au voisinage de $0$ pour  $f(x)=\e^{x\sin x}$ à l'ordre $6$. 
 
-\exo [Level=1,Fight=1,Learn=0,Type=\Exercices,Field=\DéveloppementsLimités,Origin=] aol. 
+\exo [Level=1,Fight=1,Learn=0,Type=\Exercices,Field=\DéveloppementsLimités,Origin=,Solution={$f(x)=\e-{\e\F2}x+{11\e\F24}x^2+-{7\e\F16}x^3+o_0(x^3)$}] aol. 
 Effectuer un développement limité au voisinage de $0$ pour  $f(x)=(1+x)^{1/F x}$ à l'ordre $3$. 
 
-\exo [Level=1,Fight=1,Learn=0,Type=\Exercices,Field=\DéveloppementsLimités,Origin=] aom. 
+\exo [Level=1,Fight=1,Learn=0,Type=\TravauxDirigés,Field=\DéveloppementsLimités,Origin=,Solution={$f(x)=1+x+{x^2\F2}+{x^3\F6}+o_0(x^3)$}] aom. 
 Effectuer un développement limité au voisinage de $0$ pour $f(x)=\sqrt{1+\e^{2x}}$ à l'ordre $3$. 
 
 \exo [Level=2,Fight=0,Learn=1,Type=\TravauxDirigés,Field=\Dérivation,Origin=] aon. 
@@ -6566,5 +6568,16 @@ b. $x = 2y$, $z^2 = 1 + 5y^2$.
 Soit ${\cal S}$ la surface d'équation cartésienne $z^2-x^2-y^2 = 1$. \PAR\noindent
 a. Reconnaître ${\cal S}$. \PAR\noindent
 b. Soit $D$ la droite d'équations : $2x+y = 0$, $z=0$. Déterminer les points $M$ de ${\cal S}$ tels que le plan tangent à ${\cal S}$ en $M$ est parallèle à $D$. (Contour apparent de ${\cal S}$ dans la direction de $D$)
+
+\exo [Level=1,Fight=1,Learn=2,Type=\TravauxDirigés,Field=\DéveloppementsLimités,Origin=\Lakedaemon,Solution={$\Q\{\eqalign{
+	\sin(x)&={1\F\sqrt2}+{x-\pi/4\F\sqrt2}-{(x-\pi/4)^2)\F2\sqrt2}+o_{\pi\F4}\Q((x-\pi/4)^2\W)\cr
+	\e^x&=\e^{\pi\F4}\Q(1+(x-\pi/4)+{(x-\pi/4)^2\F 2}\W)+o_{\pi\F4}\Q((x-\pi/4)^2\W)\cr
+	\ln(x)&=\ln{\pi\F4}+{4\F\pi}(x-\pi/4)-{8\F\pi^2}(x-\pi/4)^2+o_{\pi\F4}\Q((x-\pi/4)^2\W)\cr
+		{1\F x}&={4\F \pi}-{16\F\pi^2}(x-\pi/4)+{64\F\pi^3}(x-\pi/4)^2+o_{\pi\F4}\Q((x-\pi/4)^2\W)}\W.
+	$}] aqs.
+Calculer un développement à l'ordre $2$ des fonctions suivantes en $x={\pi\F 4}$ : 
+$$
+f(x)=\sin(x), \qquad g(x)=\e^x, \qquad h(x)=\ln(x), \qquad k(x)={1\F x}.
+$$
 
 \endinput

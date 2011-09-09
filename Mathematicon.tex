@@ -3,7 +3,7 @@
 \input LD@Library.tex
 \input LD@Typesetting.tex
 \input LD@Exercices.tex
-
+\def\Inferno{}
 
 \def\LD@Exercice@Display@Code{\eightpts}%
 \LD@Exo@Label@Hide
@@ -19602,12 +19602,12 @@ $$
 \!\!f(t,x)\d t\d x=\int_c^d\bigg(\int_a^bf(t,x)\d t\bigg)\d x.
 $$
 
-
+\eject
 \hautspages{Olus Livius Bindus}{Séries}%
 
-\Chapter rah, Séries. 
+\Chapter series, Séries. 
 
-\Section rah, Séries numériques. 
+\Section seriess, Séries numériques. 
 
 Etant donnée des nombres complexes $(u_n)_{n\in\ob N}$, nous étudions dans cette section la série $\sum_{u=0}^\infty u_n$, c'est-à-dire la suite des sommes partielles définie par  
 $$
@@ -19631,7 +19631,7 @@ est satisfaite puis nous utilisons, au besoin, les outils suivants :
 \item{8.} Sommation des $o$
 \item{9.} Comparaison série-intégrale
 
-\Subsection rah, Définitions. 
+\Subsection seriesdef, Définitions. 
 
 Dans toute cette section, le symbole $\ob K$ désigne le corps $\ob R$ ou le corps $\ob C$. 
 \bigskip
@@ -19939,6 +19939,20 @@ Supposons que la limite $\ds\ell:=\lim_{n\to\infty}\Q|{u_{n+1}\F u_n}\W|$ existe
 Si $\ell<1$, la série $\sum_{n=1}^\infty u_n$ converge. \smallskip\noindent
 Si $\ell>1$, la série $\sum_{n=1}^\infty u_n$ diverge grossièrement. \smallskip\noindent
 Si $\ell=1$, on ne peut rien dire. 
+
+\Inferno{\input LD@Inferno@Macros.tex
+\def\LD@List{\Séries,\SériesNumériques}%
+\def\LD@Font@Arial{}%
+
+\Subsection go, Exercices.
+
+\eightpts
+\def\Chapter#1, #2.{}%
+\LD@Exo@Theme@Display{2}\LD@List{%
+	\Exercices%,\Colles%,\Problèmes,\Others,\Mathematica,\Maple,\LD@Empty
+}%
+\eject
+}
 
 \Section Rah, Séries Entières. 
 
